@@ -2,9 +2,8 @@
 using System.Collections;
 
 public class OceanBehaviour : MonoBehaviour {
-	bool verbose = true;
+	bool verbose = false;
 	public GUIText gameOver;
-	public GameObject thePlank;
 	
 	// Use this for initialization
 	void Start () {
