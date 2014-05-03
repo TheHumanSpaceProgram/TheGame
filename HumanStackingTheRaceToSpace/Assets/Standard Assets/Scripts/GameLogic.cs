@@ -26,6 +26,8 @@ public class Player : MonoBehaviour {
 
 public class GameLogic : MonoBehaviour {
 
+	public GUIText _guiText;
+	string PlayerName { get; set; }
 	private Player _playerTurn;
 	private List<Player> _playersList = new List<Player>();
 
@@ -71,14 +73,21 @@ public class GameLogic : MonoBehaviour {
 	}
 
 
+	void OnGui(){
+
+
+		_guiText.text = "Player: " + _playerTurn.PlayerName;
+		_guiText.color = Color.blue;
+	}
+
 	// Use this for initialization
 	void Start () {
-
-	
+		this._guiText.text = "sdf";
+		this.CreatePlayers ();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 }
