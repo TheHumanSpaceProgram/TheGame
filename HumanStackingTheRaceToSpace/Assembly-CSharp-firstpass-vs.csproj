@@ -47,8 +47,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
+<<<<<<< HEAD
      <Compile Include="Assets\Standard Assets\Scripts\GameLogic.cs" />
+=======
+     <Compile Include="Assets\Standard Assets\Scripts\DragMovement.cs" />
+>>>>>>> 9eb99c4a4c9bcf0ebbb46a66ceb0e2a3c034f6fe
      <Compile Include="Assets\Standard Assets\Scripts\General Scripts\ActivateTrigger.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\OceanBehaviour.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\mainmenu.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\quit.cs" />
      <Compile Include="Assets\Standard Assets\Water (Basic)\Sources\Scripts\WaterSimple.cs" />
