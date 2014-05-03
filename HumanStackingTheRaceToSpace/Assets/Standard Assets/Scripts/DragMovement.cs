@@ -5,11 +5,13 @@ public class DragMovement : MonoBehaviour {
 	
 	private Vector3 screenPoint;
 	private Vector3 offset;
-	private float gravityScale;
+	private float oldGravityScale;
+	private float oldMass;
 	
 	// Use this for initialization
 	void Start () {
-		gravityScale = rigidbody2D.gravityScale;
+		oldGravityScale = rigidbody2D.gravityScale;
+		oldMass = rigidbody2D.mass;
 	}
 	
 	// Update is called once per frame
@@ -40,6 +42,7 @@ public class DragMovement : MonoBehaviour {
 	void OnMouseUp(){
 		gameObject.AddComponent("Rigidbody2D");
 		gameObject.AddComponent("BoxCollider2D");
-		rigidbody2D.gravityScale = gravityScale;
+		rigidbody2D.gravityScale = oldGravityScale;
+		rigidbody2D.mass = oldMass;
 	}
 }
