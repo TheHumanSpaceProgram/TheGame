@@ -18,7 +18,7 @@ public class OceanBehaviour : MonoBehaviour {
 	
 	//The game is lost
 	public void OnTriggerEnter2D(Collider2D theCollider){
-		if(!theCollider.gameObject.Equals(thePlank)){
+		if(!theCollider.tag.Equals("HumanObject")){
 			if(verbose){
 				print ("Collision enter");
 			}
