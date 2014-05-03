@@ -16,7 +16,7 @@ public class mainmenu : MonoBehaviour {
 		GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), ((Screen.height / 2) - (groupHeigth / 2)), groupWidth, groupHeigth));
 		if(GUI.Button(new Rect(0,0,buttonWidth,buttonHeight), "Start The Stacking"))
 		{
-			Application.LoadLevel("project");
+			Application.LoadLevel("humanStacking");
 		}
 		if(GUI.Button(new Rect(0,60,buttonWidth,buttonHeight), "Quit"))
 		{
