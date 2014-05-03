@@ -23,7 +23,7 @@ public class OceanBehaviour : MonoBehaviour {
 				print ("Collision enter");
 			}
 			
-			this.gameOver.text = "Game Over";
+			this.gameOver.text = "<b>Game Over</b>";
 			theCollider.gameObject.audio.Play();
 		}
 	}
