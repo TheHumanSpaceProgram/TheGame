@@ -23,9 +23,8 @@ public class DragMovement : MonoBehaviour {
 		offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
 		
 		//Makes the shape stop moving and rotating
-		rigidbody2D.gravityScale = 0;
-		rigidbody2D.velocity = new Vector2(0,0);
-		rigidbody2D.angularVelocity = 0.0f;
+		Destroy(gameObject.GetComponent ("Rigidbody2D"));
+		Destroy(gameObject.GetComponent ("BoxCollider2D"));
 	}
 	
 	//Moves the shape
@@ -39,6 +38,9 @@ public class DragMovement : MonoBehaviour {
 	
 	//Commits the shape's position and reset it's properties
 	void OnMouseUp(){
+		gameObject.AddComponent("Rigidbody2D");
+		gameObject.AddComponent("BoxCollider2D");
+		gameObject.rigidbody2D.gravityScale = gravityScale;
 		rigidbody2D.gravityScale = gravityScale;
 	}
 }
