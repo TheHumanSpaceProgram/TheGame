@@ -82,8 +82,8 @@ public class GameLogic : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		this._guiText.text = "sdf";
 		this.CreatePlayers ();
+		this._guiText.text = "Player: " + _playerTurn.PlayerName;
 	}
 
 	// Update is called once per frame

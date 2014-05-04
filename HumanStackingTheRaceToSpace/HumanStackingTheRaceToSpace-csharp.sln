@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
@@ -18,7 +17,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-			GlobalSection(MonoDevelopProperties) = preSolution
+				GlobalSection(MonoDevelopProperties) = preSolution
 =======
 													GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> 9eb99c4a4c9bcf0ebbb46a66ceb0e2a3c034f6fe
@@ -39,29 +38,7 @@ Global
 		$3.inheritsScope = text/plain
 		$3.scope = text/plain
 	EndGlobalSection
-
-EndGlobal
-=======
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{63CA1800-BF4A-6E13-0CA5-33DC3D7A130B}") = "HumanStackingTheRaceToSpace", "Assembly-CSharp-firstpass-vs.csproj", "{C887AD46-5C5F-01E8-4C52-2CB7F0F9F152}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C887AD46-5C5F-01E8-4C52-2CB7F0F9F152}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C887AD46-5C5F-01E8-4C52-2CB7F0F9F152}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C887AD46-5C5F-01E8-4C52-2CB7F0F9F152}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C887AD46-5C5F-01E8-4C52-2CB7F0F9F152}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-																		GlobalSection(MonoDevelopProperties) = preSolution
+																	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
@@ -81,4 +58,3 @@ Global
 	EndGlobalSection
 
 EndGlobal
->>>>>>> fb92ca919b5362bdd849c3dbad3e4c820dcf8f64
