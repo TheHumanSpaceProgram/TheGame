@@ -74,18 +74,34 @@ public class GameLogic : MonoBehaviour {
 	}
 
 
-	void OnGui(){
+	private int buttonWidth = 200;
+	private int buttonHeight = 50;
+	private int groupWidth = 200;
+	private int groupHeigth = 50;
+	
+	void OnGUI () {
+		GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), (30), groupWidth, groupHeigth));
+		if(GUI.Button(new Rect(0,0,buttonWidth,buttonHeight), "Next Player"))
+		{
+			Player next = this.nextPlayer ();
+			this.guiPlayerNameText.text = "Player Turn: " + _playerTurn.PlayerName;
+			this.CurrentPlayerScore.text = "Player Score: " + _playerTurn.PlayerCurrentScore;
+		}
+
+		GUI.EndGroup();
+	
 
 
-		this.guiPlayerNameText.text = "Player: " + _playerTurn.PlayerName;
-		this.guiPlayerNameText.color = Color.blue;
+
 	}
 
 	// Use this for initialization
 	void Start () {
 		this.CreatePlayers ();
 		this._playerTurn = _playersList [0];
-		this.guiPlayerNameText.text = "Player: " + _playerTurn.PlayerName;
+
+		this.guiPlayerNameText.text = "Player Turn: " + _playerTurn.PlayerName;
+		this.CurrentPlayerScore.text = "Player Score: " + _playerTurn.PlayerCurrentScore;
 	}
 
 	// Update is called once per frame
