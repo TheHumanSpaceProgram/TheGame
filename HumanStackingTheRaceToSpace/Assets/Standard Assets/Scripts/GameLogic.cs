@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Timers;
+
 
 public class Player : MonoBehaviour {
 
@@ -28,7 +30,15 @@ public class GameLogic : MonoBehaviour {
 
 	public GUIText guiPlayerNameText;
 	public GUIText CurrentPlayerScore;
+	public GUIText guiTimeForEachTurn;
+	public GUIText guiTurnCount;
+
 	string PlayerName { get; set; }
+
+	private Timer _Timer;
+	private int _StartTime = 40;
+	private int _Time;
+	private int _TurnCount;
 	private Player _playerTurn;
 	private List<Player> _playersList = new List<Player>();
 
@@ -51,11 +61,20 @@ public class GameLogic : MonoBehaviour {
 			_playerTurn = _playersList[_playerTurn.PlayerNumber + 1];
 		}
 
+		_TurnCount++;
+		_Timer = new Timer (1000000);
+		_Timer.Start ();
+
+
+
+
 		return _playerTurn;
 	}
+	
 
+	
 	public List<Player> CreatePlayers(){
-
+		
 		_playersList.Clear ();
 
 		Player player1 = new Player ();
@@ -100,6 +119,8 @@ public class GameLogic : MonoBehaviour {
 
 		this.guiPlayerNameText.text = "Player Turn: " + _playerTurn.PlayerName;
 		this.CurrentPlayerScore.text = "Player Score: " + _playerTurn.PlayerCurrentScore;
+		this._TurnCount = 1;
+		this.guiTurnCount.text = "Turn: " + this._TurnCount;
 	}
 
 	// Update is called once per frame
@@ -112,6 +133,7 @@ public class GameLogic : MonoBehaviour {
 		//Player next = this.nextPlayer ();
 		//this.guiPlayerNameText.text = "Player Turn: " + _playerTurn.PlayerName;
 		//this.CurrentPlayerScore.text = "Player Score: " + _playerTurn.PlayerCurrentScore;
+		this.guiTimeForEachTurn.text = "Sec: " + this._Timer.Interval;
 	}
 
 	int count = 0;
