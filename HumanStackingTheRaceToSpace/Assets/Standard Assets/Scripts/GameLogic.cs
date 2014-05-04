@@ -114,5 +114,12 @@ public class GameLogic : MonoBehaviour {
 		//this.CurrentPlayerScore.text = "Player Score: " + _playerTurn.PlayerCurrentScore;
 	}
 
+	int count = 0;
+	void OnMouseDown() {
+
+		count++;
+		this.CurrentPlayerScore.text = "Player Score: " + count;
+	}
+
 
 }
