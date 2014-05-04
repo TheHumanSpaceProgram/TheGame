@@ -26,7 +26,8 @@ public class Player : MonoBehaviour {
 
 public class GameLogic : MonoBehaviour {
 
-	public GUIText _guiText;
+	public GUIText guiPlayerNameText;
+	public GUIText CurrentPlayerScore;
 	string PlayerName { get; set; }
 	private Player _playerTurn;
 	private List<Player> _playersList = new List<Player>();
@@ -76,14 +77,15 @@ public class GameLogic : MonoBehaviour {
 	void OnGui(){
 
 
-		_guiText.text = "Player: " + _playerTurn.PlayerName;
-		_guiText.color = Color.blue;
+		this.guiPlayerNameText.text = "Player: " + _playerTurn.PlayerName;
+		this.guiPlayerNameText.color = Color.blue;
 	}
 
 	// Use this for initialization
 	void Start () {
 		this.CreatePlayers ();
-		this._guiText.text = "Player: " + _playerTurn.PlayerName;
+		this._playerTurn = _playersList [0];
+		this.guiPlayerNameText.text = "Player: " + _playerTurn.PlayerName;
 	}
 
 	// Update is called once per frame
