@@ -65,6 +65,7 @@ public class GameLogic : MonoBehaviour {
 		_Timer = new Timer (1000000);
 		// Hook up the Elapsed event for the timer.
 		_Timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+		_Timer.Interval = 1000;
 		_Timer.Enabled = true;
 		_Timer.Start ();
 
