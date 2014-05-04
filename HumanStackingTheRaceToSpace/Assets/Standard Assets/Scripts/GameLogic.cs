@@ -36,7 +36,7 @@ public class GameLogic : MonoBehaviour {
 	string PlayerName { get; set; }
 
 	private Timer _Timer;
-	private int _StartTime = 40;
+	private static int _StartTime = 5000;
 	private static int _Time;
 	private int _TurnCount;
 	private Player _playerTurn;
@@ -61,16 +61,13 @@ public class GameLogic : MonoBehaviour {
 			_playerTurn = _playersList[_playerTurn.PlayerNumber + 1];
 		}
 
-		_TurnCount++;
-		_Timer = new Timer (1000000);
+		_Timer = new Timer (_StartTime);
 		// Hook up the Elapsed event for the timer.
 		_Timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
 		_Timer.Interval = 1000;
+		_Timer.AutoReset = true;
 		_Timer.Enabled = true;
 		_Timer.Start ();
-
-
-
 
 		return _playerTurn;
 	}
@@ -105,11 +102,9 @@ public class GameLogic : MonoBehaviour {
 	void OnGUI () {
 
 		GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), (30), groupWidth, groupHeigth));
-		if(GUI.Button(new Rect(0,0,buttonWidth,buttonHeight), "Next Player"))
+		if(GUI.Button(new Rect(0,0,buttonWidth,buttonHeight), "Start Game"))
 		{
-			Player next = this.nextPlayer ();
-			this.guiPlayerNameText.text = "Player Turn: " + _playerTurn.PlayerName;
-			this.CurrentPlayerScore.text = "Player Score: " + _playerTurn.PlayerCurrentScore;
+			this.nextPlayer ();
 		}
 
 		GUI.EndGroup();
@@ -119,8 +114,7 @@ public class GameLogic : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		this.CreatePlayers ();
-		this._playerTurn = _playersList [0];
-
+		this._playerTurn = _playersList [0];	
 		this.guiPlayerNameText.text = "Player Turn: " + _playerTurn.PlayerName;
 		this.CurrentPlayerScore.text = "Player Score: " + _playerTurn.PlayerCurrentScore;
 		this._TurnCount = 1;
@@ -129,7 +123,10 @@ public class GameLogic : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
+		this.guiTimeForEachTurn.text = "Sec: " + _Time;			
+		this.guiPlayerNameText.text = "Player Turn: " + _playerTurn.PlayerName;
+		this.CurrentPlayerScore.text = "Player Score: " + _playerTurn.PlayerCurrentScore;
+		this.guiTurnCount.text = "Turn: " + this._TurnCount;
 	}
 
 	void FixedUpdate(){
@@ -137,19 +134,22 @@ public class GameLogic : MonoBehaviour {
 		//Player next = this.nextPlayer ();
 		//this.guiPlayerNameText.text = "Player Turn: " + _playerTurn.PlayerName;
 		//this.CurrentPlayerScore.text = "Player Score: " + _playerTurn.PlayerCurrentScore;
-		this.guiTimeForEachTurn.text = "Sec: " + _Time;
+		if (_Time > 30) {
+			_Timer.Stop();
+			_Timer.Enabled = false;
+			_Timer.Dispose();
+			
+			this._TurnCount++;
+			this._playerTurn = nextPlayer();
+		}
 	}
-
-	int count = 0;
-	void OnMouseDown() {
-
-		count++;
-		this.CurrentPlayerScore.text = "Player Score: " + count;
-	}
+	
 
 	private static void OnTimedEvent(object source, ElapsedEventArgs e)
 	{
+
 		_Time = e.SignalTime.Second;
+
 	}
 	
 }
