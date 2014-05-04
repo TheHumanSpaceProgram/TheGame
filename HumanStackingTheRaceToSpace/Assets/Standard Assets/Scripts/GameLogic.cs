@@ -37,7 +37,7 @@ public class GameLogic : MonoBehaviour {
 
 	private Timer _Timer;
 	private int _StartTime = 40;
-	private int _Time;
+	private static int _Time;
 	private int _TurnCount;
 	private Player _playerTurn;
 	private List<Player> _playersList = new List<Player>();
@@ -63,6 +63,9 @@ public class GameLogic : MonoBehaviour {
 
 		_TurnCount++;
 		_Timer = new Timer (1000000);
+		// Hook up the Elapsed event for the timer.
+		_Timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+		_Timer.Enabled = true;
 		_Timer.Start ();
 
 
@@ -133,7 +136,7 @@ public class GameLogic : MonoBehaviour {
 		//Player next = this.nextPlayer ();
 		//this.guiPlayerNameText.text = "Player Turn: " + _playerTurn.PlayerName;
 		//this.CurrentPlayerScore.text = "Player Score: " + _playerTurn.PlayerCurrentScore;
-		this.guiTimeForEachTurn.text = "Sec: " + this._Timer.Interval;
+		this.guiTimeForEachTurn.text = "Sec: " + _Time;
 	}
 
 	int count = 0;
@@ -143,5 +146,9 @@ public class GameLogic : MonoBehaviour {
 		this.CurrentPlayerScore.text = "Player Score: " + count;
 	}
 
-
+	private static void OnTimedEvent(object source, ElapsedEventArgs e)
+	{
+		_Time = e.SignalTime.Second;
+	}
+	
 }
