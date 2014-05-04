@@ -80,6 +80,7 @@ public class GameLogic : MonoBehaviour {
 	private int groupHeigth = 50;
 	
 	void OnGUI () {
+
 		GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), (30), groupWidth, groupHeigth));
 		if(GUI.Button(new Rect(0,0,buttonWidth,buttonHeight), "Next Player"))
 		{
@@ -90,9 +91,6 @@ public class GameLogic : MonoBehaviour {
 
 		GUI.EndGroup();
 	
-
-
-
 	}
 
 	// Use this for initialization
@@ -108,4 +106,13 @@ public class GameLogic : MonoBehaviour {
 	void Update () {
 
 	}
+
+	void FixedUpdate(){
+
+		//Player next = this.nextPlayer ();
+		//this.guiPlayerNameText.text = "Player Turn: " + _playerTurn.PlayerName;
+		//this.CurrentPlayerScore.text = "Player Score: " + _playerTurn.PlayerCurrentScore;
+	}
+
+
 }
