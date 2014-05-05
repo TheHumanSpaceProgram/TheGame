@@ -4,7 +4,8 @@ using System.Collections;
 public class OceanBehaviour : MonoBehaviour {
 	bool verbose = false;
 	public GUIText gameOver;
-	
+
+
 	// Use this for initialization
 	void Start () {
 		this.gameOver.text = "";
@@ -14,6 +15,7 @@ public class OceanBehaviour : MonoBehaviour {
 	void Update () {
 		
 	}
+
 	
 	//The game is lost
 	public void OnTriggerEnter2D(Collider2D theCollider){
@@ -24,6 +26,8 @@ public class OceanBehaviour : MonoBehaviour {
 			
 			this.gameOver.text = "<b>Game Over</b>";
 			theCollider.gameObject.audio.Play();
+
+			//GameLogic.GameOver();
 		}
 	}
 }
