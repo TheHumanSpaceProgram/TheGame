@@ -105,7 +105,7 @@ public class GameLogic : MonoBehaviour {
 			_Timer.Dispose();
 		}
 		_Timer = new Timer (_StartTime);
-		_Time = 0;
+		_Time = _TurnCount;				// Make shorter time each turn
 		// Hook up the Elapsed event for the timer.
 		_Timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
 
@@ -139,40 +139,43 @@ public class GameLogic : MonoBehaviour {
 		}
 		*/
 	
-		if(GUI.Button(new Rect(0,0,buttonWidth,buttonHeight), TXT_START_GAME_BUTTON))
-		{
 
-			CreatePlayers();
-			CreatePlayers();
 
-			this._playerTurn = _playersList [0];
-			this._TurnCount = 1;
+		if (GUI.Button (new Rect (0, 0, buttonWidth, buttonHeight), TXT_START_GAME_BUTTON)) {
 
-			this.gameStarted = true;
+				CreatePlayers ();
+				CreatePlayers ();
 
-			StartTimer();
-			UpdateGuiTXT();
-			enabled = false;
+				this._playerTurn = _playersList [0];
+				this._TurnCount = 1;
+
+				this.gameStarted = true;
+
+				StartTimer ();
+							
 		}		
-		
-		GUI.EndGroup();
+
+		GUI.EndGroup ();
 
 	}
 
 	
 	void OnGUI () {
-	
-		StartGameButtons ();
+		if (!this.gameStarted) 
+		{
+			StartGameButtons ();
+		}
 	}
 
 	public void UpdateGuiTXT()
 	{
-		//if(gameStarted){
+
+		if(gameStarted){
 			this.guiPlayerNameText.text 	= TXT_PLAYER_NAME 	+ this._playerTurn.PlayerName;
 			this.CurrentPlayerScore.text 	= TXT_PLAYER_SCORE 	+ this._playerTurn.PlayerCurrentScore;
 			this.guiTimeForEachTurn.text	= TXT_TIME_COUNT 	+ (_TimePrTurn - _Time);
 			this.guiTurnCount.text 			= TXT_TURNS 		+ this._TurnCount;
-	//	}
+		}
 	}
 
 	public void UpdateGUIClockTXT()
@@ -192,7 +195,7 @@ public class GameLogic : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-
+		
 		if (_Time > _TimePrTurn) 
 		{						
 			this._TurnCount++;

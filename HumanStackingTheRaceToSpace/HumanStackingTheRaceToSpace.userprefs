@@ -1,22 +1,11 @@
 ﻿<Properties GitUserInfo="UsingGIT">
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\OceanMovement.cs">
-    <Files>
-      <File FileName="Assets\OceanMovement.cs" Line="30" Column="37" />
-      <File FileName="Assets\Standard Assets\Scripts\GameLogic.cs" Line="60" Column="3" />
-      <File FileName="Assets\Standard Assets\Scripts\quit.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\mainmenu.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\OceanBehaviour.cs" Line="1" Column="1" />
-=======
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Scripts\OceanBehaviour.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Scripts\GameLogic.cs">
     <Files>
-      <File FileName="Assets\Standard Assets\Scripts\GameLogic.cs" Line="136" Column="20" />
       <File FileName="Assets\Standard Assets\Scripts\quit.cs" Line="15" Column="38" />
       <File FileName="Assets\Standard Assets\Scripts\mainmenu.cs" Line="19" Column="4" />
-      <File FileName="Assets\Standard Assets\Scripts\OceanBehaviour.cs" Line="18" Column="20" />
->>>>>>> cd2375d4dc7c1e61f8e36875d915aa902f165409
+      <File FileName="Assets\Standard Assets\Scripts\OceanBehaviour.cs" Line="27" Column="44" />
+      <File FileName="Assets\Standard Assets\Scripts\GameLogic.cs" Line="49" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
