@@ -37,8 +37,8 @@ public class GameLogic : MonoBehaviour {
 
 	private Timer _Timer;
 
-	private static int _StartTime = 10000;
-	private int _TimePrTurn = 10 ;
+	private static int _StartTime = 15000;
+	private int _TimePrTurn = _StartTime / 1000 ;
 
 	private static int _Time;
 	private int _TurnCount;
@@ -129,7 +129,6 @@ public class GameLogic : MonoBehaviour {
 
 			this.CreatePlayers ();
 
-
 			this._playerTurn = _playersList [0];
 			this._TurnCount = 1;
 			StartTimer();
@@ -168,8 +167,7 @@ public class GameLogic : MonoBehaviour {
 	void FixedUpdate(){
 
 		if (_Time > _TimePrTurn) 
-		{
-			
+		{			
 			_Time = 0;
 			
 			this._TurnCount++;
