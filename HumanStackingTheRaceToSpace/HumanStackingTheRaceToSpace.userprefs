@@ -5,7 +5,7 @@
       <File FileName="Assets\Standard Assets\Scripts\quit.cs" Line="15" Column="38" />
       <File FileName="Assets\Standard Assets\Scripts\mainmenu.cs" Line="19" Column="4" />
       <File FileName="Assets\Standard Assets\Scripts\OceanBehaviour.cs" Line="27" Column="44" />
-      <File FileName="Assets\Standard Assets\Scripts\GameLogic.cs" Line="49" Column="2" />
+      <File FileName="Assets\Standard Assets\Scripts\GameLogic.cs" Line="69" Column="30" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

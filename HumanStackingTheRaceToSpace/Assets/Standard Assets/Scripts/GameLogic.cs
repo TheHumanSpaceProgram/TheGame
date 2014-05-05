@@ -42,7 +42,6 @@ public class GameLogic : MonoBehaviour {
 	private int _TimePrTurn = _StartTime / 1000 ;
 	private static int _Time;
 
-	private int _PlayersCount;
 	private int _TurnCount;
 	private Player _playerTurn;
 	private List<Player> _playersList = new List<Player>();
@@ -131,14 +130,12 @@ public class GameLogic : MonoBehaviour {
 		GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), (30), groupWidth, groupHeigth));
 
 		/* FOR MULTIPLAYER MORE THAN 2 PLAYERS
-		 * 
-		if (GUI.Button (new Rect (0, 60, buttonWidth, buttonHeight), TXT_ADD_PLAYER_BUTTON + (_PlayersCount + 1))) 
+		 */
+		if (GUI.Button (new Rect (0, 60, buttonWidth, buttonHeight), TXT_ADD_PLAYER_BUTTON + (_playersList.Count + 1))) 
 		{
-			_PlayersCount++;
 			CreatePlayers ();
 		}
-		*/
-	
+
 
 
 		if (GUI.Button (new Rect (0, 0, buttonWidth, buttonHeight), TXT_START_GAME_BUTTON)) {
@@ -169,10 +166,6 @@ public class GameLogic : MonoBehaviour {
 
 	public void UpdateGuiTXT()
 	{
-<<<<<<< HEAD
-
-=======
->>>>>>> 0490250d9d07f4e0f5953c747c8b911a0c59d801
 		if(gameStarted){
 			this.guiPlayerNameText.text 	= TXT_PLAYER_NAME 	+ this._playerTurn.PlayerName;
 			this.CurrentPlayerScore.text 	= TXT_PLAYER_SCORE 	+ this._playerTurn.PlayerCurrentScore;
