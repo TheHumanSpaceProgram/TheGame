@@ -15,7 +15,7 @@ Platform assembly: C:\Users\Ebet\Desktop\DÓT\skóli\2014 Vor\Game design and de
 Loading C:\Users\Ebet\Desktop\DÓT\skóli\2014 Vor\Game design and development\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
 Platform assembly: C:\Users\Ebet\Desktop\DÓT\skóli\2014 Vor\Game design and development\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
 Loading C:\Users\Ebet\Desktop\DÓT\skóli\2014 Vor\Game design and development\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
-- Completed reload, in  0.055 seconds
+- Completed reload, in  0.054 seconds
 desktop: 1600x900 60Hz; virtual: 1600x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -23,9 +23,9 @@ The referenced script on this Behaviour is missing!
  
 (Filename:  Line: 1699)
 
-UnloadTime: 0.594352 ms
+UnloadTime: 0.465110 ms
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
 Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 187.
-Total: 1.311870 ms (FindLiveObjects: 0.021067 ms CreateObjectMapping: 0.023498 ms MarkObjects: 0.214728 ms  DeleteObjects: 0.007292 ms)
+Total: 1.159939 ms (FindLiveObjects: 0.020662 ms CreateObjectMapping: 0.023903 ms MarkObjects: 0.216754 ms  DeleteObjects: 0.008102 ms)
 
