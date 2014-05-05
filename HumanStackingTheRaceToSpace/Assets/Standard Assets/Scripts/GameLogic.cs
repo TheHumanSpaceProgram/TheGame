@@ -125,29 +125,33 @@ public class GameLogic : MonoBehaviour {
 	}
 
 
-
-	
-	void OnGUI () {
-	
+	public void StartGameButtons()
+	{
 		GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), (30), groupWidth, groupHeigth));
 		if(GUI.Button(new Rect(0,60,buttonWidth,buttonHeight), TXT_ADD_PLAYER_BUTTON + (_PlayersCount + 1)))
 		{
 			_PlayersCount++;
 			CreatePlayers();
-		}
 
+		}
+		
 		if(GUI.Button(new Rect(0,0,buttonWidth,buttonHeight), TXT_START_GAME_BUTTON))
 		{
 			this._playerTurn = _playersList [0];
 			this._TurnCount = 1;
 			StartTimer();
 			UpdateGuiTXT();
-			
-		}
-
-
+			enabled = false;
+		}		
+		
 		GUI.EndGroup();
+
+	}
+
 	
+	void OnGUI () {
+	
+		StartGameButtons ();
 	}
 
 	public void UpdateGuiTXT()
