@@ -45,6 +45,7 @@ public class GameLogic : MonoBehaviour {
 	private int _TurnCount;
 	private Player _playerTurn;
 	private List<Player> _playersList = new List<Player>();
+	private bool gameStarted;
 
 	private static string TXT_PLAYER_NAME 			= "Player: ";
 	private static string TXT_TURNS 				= "Turn: ";
@@ -126,6 +127,7 @@ public class GameLogic : MonoBehaviour {
 		{
 			this._playerTurn = _playersList [0];
 			this._TurnCount = 1;
+			this.gameStarted = true;
 			StartTimer();
 			UpdateGuiTXT();
 			
@@ -138,10 +140,12 @@ public class GameLogic : MonoBehaviour {
 
 	public void UpdateGuiTXT()
 	{
-		this.guiPlayerNameText.text 	= TXT_PLAYER_NAME 	+ this._playerTurn.PlayerName;
-		this.CurrentPlayerScore.text 	= TXT_PLAYER_SCORE 	+ this._playerTurn.PlayerCurrentScore;
-		this.guiTimeForEachTurn.text	= TXT_TIME_COUNT 	+ _Time;
-		this.guiTurnCount.text 			= TXT_TURNS 		+ this._TurnCount;
+		if(gameStarted){
+			this.guiPlayerNameText.text 	= TXT_PLAYER_NAME 	+ this._playerTurn.PlayerName;
+			this.CurrentPlayerScore.text 	= TXT_PLAYER_SCORE 	+ this._playerTurn.PlayerCurrentScore;
+			this.guiTimeForEachTurn.text	= TXT_TIME_COUNT 	+ _Time;
+			this.guiTurnCount.text 			= TXT_TURNS 		+ this._TurnCount;
+		}
 	}
 
 	public void UpdateGUIClockTXT()
@@ -154,6 +158,7 @@ public class GameLogic : MonoBehaviour {
 		_PlayersCount = 1;
 		CreatePlayers ();
 		this._playerTurn = _playersList [0];
+		gameStarted = false;
 	}
 
 	// Update is called once per frame
