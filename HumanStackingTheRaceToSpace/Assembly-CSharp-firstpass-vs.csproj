@@ -50,6 +50,7 @@
      <Compile Include="Assets\Standard Assets\Scripts\DragMovement.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\GameLogic.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\General Scripts\ActivateTrigger.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\General Scripts\OceanMovement.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\OceanBehaviour.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\mainmenu.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\quit.cs" />
