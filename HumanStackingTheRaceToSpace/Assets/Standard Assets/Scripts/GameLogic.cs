@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Timers;
 
 
-public class Player : MonoBehaviour {
+public class Player {
 
 	public string PlayerName { get; set; }
 	public int PlayerNumber { get; set; }
