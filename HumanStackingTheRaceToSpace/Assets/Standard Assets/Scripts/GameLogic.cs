@@ -128,17 +128,21 @@ public class GameLogic : MonoBehaviour {
 	public void StartGameButtons()
 	{
 		GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), (30), groupWidth, groupHeigth));
-		if(GUI.Button(new Rect(0,60,buttonWidth,buttonHeight), TXT_ADD_PLAYER_BUTTON + (_PlayersCount + 1)))
+		/*
+		if (GUI.Button (new Rect (0, 60, buttonWidth, buttonHeight), TXT_ADD_PLAYER_BUTTON + (_PlayersCount + 1))) 
 		{
 			_PlayersCount++;
-			CreatePlayers();
-
+			CreatePlayers ();
 		}
-		
+		*/
 		if(GUI.Button(new Rect(0,0,buttonWidth,buttonHeight), TXT_START_GAME_BUTTON))
 		{
 			this._playerTurn = _playersList [0];
 			this._TurnCount = 1;
+
+			CreatePlayers();
+			CreatePlayers();
+
 			StartTimer();
 			UpdateGuiTXT();
 			enabled = false;
@@ -169,9 +173,7 @@ public class GameLogic : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		_PlayersCount = 1;
-		CreatePlayers ();
-		this._playerTurn = _playersList [0];
+
 	}
 
 	// Update is called once per frame
