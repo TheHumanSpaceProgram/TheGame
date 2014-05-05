@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
 using System.Timers;
@@ -47,12 +48,28 @@ public class GameLogic : MonoBehaviour {
 	private List<Player> _playersList = new List<Player>();
 	private bool gameStarted;
 
+	private int buttonWidth = 200;
+	private int buttonHeight = 50;
+	private int groupWidth = 200;
+	private int groupHeigth = 150;
+
 	private static string TXT_PLAYER_NAME 			= "Player: ";
 	private static string TXT_TURNS 				= "Turn: ";
 	private static string TXT_TIME_COUNT			= "Seconds left: ";
 	private static string TXT_PLAYER_SCORE  		= "Players Score: ";
 	private static string TXT_START_GAME_BUTTON		= "Start Game";
 	private static string TXT_ADD_PLAYER_BUTTON		= "Add Player ";
+
+
+
+
+
+	public static void GameOver(){
+
+		EditorUtility.DisplayDialog ("Game Over" , "Game Over" , "OK");
+		Application.LoadLevel("mainMenu");
+
+	}
 
 	public void AddPlayer(Player player)
 	{
@@ -109,10 +126,7 @@ public class GameLogic : MonoBehaviour {
 	}
 
 
-	private int buttonWidth = 200;
-	private int buttonHeight = 50;
-	private int groupWidth = 200;
-	private int groupHeigth = 150;
+
 	
 	void OnGUI () {
 	
@@ -143,14 +157,14 @@ public class GameLogic : MonoBehaviour {
 		if(gameStarted){
 			this.guiPlayerNameText.text 	= TXT_PLAYER_NAME 	+ this._playerTurn.PlayerName;
 			this.CurrentPlayerScore.text 	= TXT_PLAYER_SCORE 	+ this._playerTurn.PlayerCurrentScore;
-			this.guiTimeForEachTurn.text	= TXT_TIME_COUNT 	+ _Time;
+			this.guiTimeForEachTurn.text	= TXT_TIME_COUNT 	+ (_TimePrTurn - _Time);
 			this.guiTurnCount.text 			= TXT_TURNS 		+ this._TurnCount;
 		}
 	}
 
 	public void UpdateGUIClockTXT()
 	{
-		this.guiTimeForEachTurn.text	= TXT_TIME_COUNT 	+ _Time;
+		this.guiTimeForEachTurn.text	= TXT_TIME_COUNT + (_TimePrTurn - _Time);	
 	}
 
 	// Use this for initialization
