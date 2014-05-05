@@ -27,7 +27,7 @@ public class OceanBehaviour : MonoBehaviour {
 			this.gameOver.text = "<b>Game Over</b>";
 			theCollider.gameObject.audio.Play();
 
-			//GameLogic.GameOver();
+			GameLogic.GameOver();
 		}
 	}
 }
