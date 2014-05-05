@@ -85,6 +85,7 @@ public class GameLogic : MonoBehaviour {
 			_Timer.Dispose();
 		}
 		_Timer = new Timer (_StartTime);
+		_Time = 0;
 		// Hook up the Elapsed event for the timer.
 		_Timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
 
@@ -126,14 +127,13 @@ public class GameLogic : MonoBehaviour {
 		GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), (30), groupWidth, groupHeigth));
 		if(GUI.Button(new Rect(0,0,buttonWidth,buttonHeight), TXT_START_GAME_BUTTON))
 		{
-
 			this.CreatePlayers ();
 
 			this._playerTurn = _playersList [0];
 			this._TurnCount = 1;
 			StartTimer();
 			UpdateGuiTXT();
-
+		
 		}
 
 		GUI.EndGroup();
@@ -167,9 +167,7 @@ public class GameLogic : MonoBehaviour {
 	void FixedUpdate(){
 
 		if (_Time > _TimePrTurn) 
-		{			
-			_Time = 0;
-			
+		{						
 			this._TurnCount++;
 			this._playerTurn = nextPlayer ();
 		} 
@@ -185,6 +183,7 @@ public class GameLogic : MonoBehaviour {
 
 	private static void OnTimedEvent(object source, ElapsedEventArgs e)
 	{
+
 		_Time++;
 	}
 	
