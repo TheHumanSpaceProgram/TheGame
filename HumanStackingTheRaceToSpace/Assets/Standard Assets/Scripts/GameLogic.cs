@@ -36,9 +36,10 @@ public class GameLogic : MonoBehaviour {
 
 	string PlayerName { get; set; }
 
-	private Timer _Timer;
+	private static Timer _Timer;
 
-	private static int _StartTime = 5000;
+	private static int _MinTimeLimit = 5;
+	private static int _StartTime = 7000;
 	private int _TimePrTurn = _StartTime / 1000 ;
 	private static int _Time;
 
@@ -65,7 +66,7 @@ public class GameLogic : MonoBehaviour {
 
 
 	public static void GameOver(){
-
+		_Timer.Elapsed -= OnTimedEvent;
 		EditorUtility.DisplayDialog ("Game Over" , "Game Over" , "OK");
 		Application.LoadLevel("mainMenu");
 
@@ -104,8 +105,16 @@ public class GameLogic : MonoBehaviour {
 			_Timer.Stop();
 			_Timer.Dispose();
 		}
+
 		_Timer = new Timer (_StartTime);
-		_Time = _TurnCount;				// Make shorter time each turn
+	
+
+		_Time = 0;
+		if (_TimePrTurn > _MinTimeLimit) 
+		{
+			_TimePrTurn--;
+		}
+
 		// Hook up the Elapsed event for the timer.
 		_Timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
 
@@ -211,6 +220,7 @@ public class GameLogic : MonoBehaviour {
 	{
 
 		_Time++;
+				
 	}
 	
 }
