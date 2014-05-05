@@ -46,6 +46,7 @@ public class GameLogic : MonoBehaviour {
 	private int _TurnCount;
 	private Player _playerTurn;
 	private List<Player> _playersList = new List<Player>();
+	private bool gameStarted;
 
 	private int buttonWidth = 200;
 	private int buttonHeight = 50;
@@ -128,20 +129,26 @@ public class GameLogic : MonoBehaviour {
 	public void StartGameButtons()
 	{
 		GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), (30), groupWidth, groupHeigth));
-		/*
+
+		/* FOR MULTIPLAYER MORE THAN 2 PLAYERS
+		 * 
 		if (GUI.Button (new Rect (0, 60, buttonWidth, buttonHeight), TXT_ADD_PLAYER_BUTTON + (_PlayersCount + 1))) 
 		{
 			_PlayersCount++;
 			CreatePlayers ();
 		}
 		*/
+	
 		if(GUI.Button(new Rect(0,0,buttonWidth,buttonHeight), TXT_START_GAME_BUTTON))
 		{
-			this._playerTurn = _playersList [0];
-			this._TurnCount = 1;
 
 			CreatePlayers();
 			CreatePlayers();
+
+			this._playerTurn = _playersList [0];
+			this._TurnCount = 1;
+
+			this.gameStarted = true;
 
 			StartTimer();
 			UpdateGuiTXT();
@@ -160,10 +167,12 @@ public class GameLogic : MonoBehaviour {
 
 	public void UpdateGuiTXT()
 	{
-		this.guiPlayerNameText.text 	= TXT_PLAYER_NAME 	+ this._playerTurn.PlayerName;
-		this.CurrentPlayerScore.text 	= TXT_PLAYER_SCORE 	+ this._playerTurn.PlayerCurrentScore;
-		this.guiTimeForEachTurn.text	= TXT_TIME_COUNT 	+ (_TimePrTurn - _Time);
-		this.guiTurnCount.text 			= TXT_TURNS 		+ this._TurnCount;
+		//if(gameStarted){
+			this.guiPlayerNameText.text 	= TXT_PLAYER_NAME 	+ this._playerTurn.PlayerName;
+			this.CurrentPlayerScore.text 	= TXT_PLAYER_SCORE 	+ this._playerTurn.PlayerCurrentScore;
+			this.guiTimeForEachTurn.text	= TXT_TIME_COUNT 	+ (_TimePrTurn - _Time);
+			this.guiTurnCount.text 			= TXT_TURNS 		+ this._TurnCount;
+	//	}
 	}
 
 	public void UpdateGUIClockTXT()
