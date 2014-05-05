@@ -169,7 +169,10 @@ public class GameLogic : MonoBehaviour {
 
 	public void UpdateGuiTXT()
 	{
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0490250d9d07f4e0f5953c747c8b911a0c59d801
 		if(gameStarted){
 			this.guiPlayerNameText.text 	= TXT_PLAYER_NAME 	+ this._playerTurn.PlayerName;
 			this.CurrentPlayerScore.text 	= TXT_PLAYER_SCORE 	+ this._playerTurn.PlayerCurrentScore;
