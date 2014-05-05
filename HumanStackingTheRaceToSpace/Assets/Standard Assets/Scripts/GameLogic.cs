@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
 using System.Timers;
@@ -48,6 +47,7 @@ public class GameLogic : MonoBehaviour {
 	private List<Player> _playersList = new List<Player>();
 	private int maxPlayers = 2;
 	private bool gameStarted = false;
+	private static bool gameOver = false;
 
 	private int buttonWidth = 200;
 	private int buttonHeight = 50;
@@ -59,6 +59,7 @@ public class GameLogic : MonoBehaviour {
 	private static string TXT_TIME_COUNT			= "Seconds left: ";
 	private static string TXT_PLAYER_SCORE  		= "Players Score: ";
 	private static string TXT_START_GAME_BUTTON		= "Start Game";
+	private static string TXT_END_GAME_BUTTON		= "Game Over";
 	private static string TXT_ADD_PLAYER_BUTTON		= "Add Player ";
 
 
@@ -67,9 +68,7 @@ public class GameLogic : MonoBehaviour {
 
 	public static void GameOver(){
 		_Timer.Elapsed -= OnTimedEvent;
-		EditorUtility.DisplayDialog ("Game Over" , "Game Over" , "OK");
-		Application.LoadLevel("mainMenu");
-
+		gameOver = true;
 	}
 
 	public void AddPlayer(Player player)
@@ -165,11 +164,24 @@ public class GameLogic : MonoBehaviour {
 
 	}
 
+	public void EndGameButtons(){
+		GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), (30), groupWidth, groupHeigth));
+		if (GUI.Button (new Rect (0, 60, buttonWidth, buttonHeight), TXT_END_GAME_BUTTON)) {
+
+			Application.LoadLevel("mainMenu");
+			
+		}
+		GUI.EndGroup ();
+	}
+
 	
 	void OnGUI () {
 		if (!this.gameStarted) 
 		{
 			StartGameButtons ();
+		}
+		if(gameOver){
+			EndGameButtons ();
 		}
 	}
 
@@ -190,7 +202,7 @@ public class GameLogic : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		gameOver = false;
 	}
 
 	// Update is called once per frame

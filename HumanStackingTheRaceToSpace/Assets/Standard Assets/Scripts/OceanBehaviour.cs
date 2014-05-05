@@ -3,12 +3,11 @@ using System.Collections;
 
 public class OceanBehaviour : MonoBehaviour {
 	bool verbose = false;
-	public GUIText gameOver;
 
 
 	// Use this for initialization
 	void Start () {
-		this.gameOver.text = "";
+
 	}
 	
 	// Update is called once per frame
@@ -23,8 +22,7 @@ public class OceanBehaviour : MonoBehaviour {
 			if(verbose){
 				print ("Collision enter");
 			}
-			
-			this.gameOver.text = "<b>Game Over</b>";
+
 			theCollider.gameObject.audio.Play();
 
 			GameLogic.GameOver();
