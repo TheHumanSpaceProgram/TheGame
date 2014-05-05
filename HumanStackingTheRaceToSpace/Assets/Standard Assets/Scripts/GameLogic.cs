@@ -45,6 +45,7 @@ public class GameLogic : MonoBehaviour {
 	private int _TurnCount;
 	private Player _playerTurn;
 	private List<Player> _playersList = new List<Player>();
+	private int maxPlayers;
 	private bool gameStarted;
 
 	private int buttonWidth = 200;
@@ -131,16 +132,15 @@ public class GameLogic : MonoBehaviour {
 
 		/* FOR MULTIPLAYER MORE THAN 2 PLAYERS
 		 */
-		if (GUI.Button (new Rect (0, 60, buttonWidth, buttonHeight), TXT_ADD_PLAYER_BUTTON + (_playersList.Count + 1))) 
-		{
-			CreatePlayers ();
+		if(maxPlayers >= _playersList.Count){
+			if (GUI.Button (new Rect (0, 60, buttonWidth, buttonHeight), TXT_ADD_PLAYER_BUTTON + (_playersList.Count + 2))) 
+			{
+				CreatePlayers ();
+			}
 		}
 
 
-
 		if (GUI.Button (new Rect (0, 0, buttonWidth, buttonHeight), TXT_START_GAME_BUTTON)) {
-
-				CreatePlayers ();
 				CreatePlayers ();
 
 				this._playerTurn = _playersList [0];
