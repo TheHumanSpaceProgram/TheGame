@@ -126,40 +126,53 @@ public class GameLogic : MonoBehaviour {
 	}
 
 
+	public void StartGameButtons()
+	{
+		GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), (30), groupWidth, groupHeigth));
+
+		/* FOR MULTIPLAYER MORE THAN 2 PLAYERS
+		 * 
+		if (GUI.Button (new Rect (0, 60, buttonWidth, buttonHeight), TXT_ADD_PLAYER_BUTTON + (_PlayersCount + 1))) 
+		{
+			_PlayersCount++;
+			CreatePlayers ();
+		}
+		*/
+	
+		if(GUI.Button(new Rect(0,0,buttonWidth,buttonHeight), TXT_START_GAME_BUTTON))
+		{
+
+			CreatePlayers();
+			CreatePlayers();
+
+			this._playerTurn = _playersList [0];
+			this._TurnCount = 1;
+
+			this.gameStarted = true;
+
+			StartTimer();
+			UpdateGuiTXT();
+			enabled = false;
+		}		
+		
+		GUI.EndGroup();
+
+	}
 
 	
 	void OnGUI () {
 	
-		GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), (30), groupWidth, groupHeigth));
-		if(GUI.Button(new Rect(0,60,buttonWidth,buttonHeight), TXT_ADD_PLAYER_BUTTON + (_PlayersCount + 1)))
-		{
-			_PlayersCount++;
-			CreatePlayers();
-		}
-
-		if(GUI.Button(new Rect(0,0,buttonWidth,buttonHeight), TXT_START_GAME_BUTTON))
-		{
-			this._playerTurn = _playersList [0];
-			this._TurnCount = 1;
-			this.gameStarted = true;
-			StartTimer();
-			UpdateGuiTXT();
-			
-		}
-
-
-		GUI.EndGroup();
-	
+		StartGameButtons ();
 	}
 
 	public void UpdateGuiTXT()
 	{
-		if(gameStarted){
+		//if(gameStarted){
 			this.guiPlayerNameText.text 	= TXT_PLAYER_NAME 	+ this._playerTurn.PlayerName;
 			this.CurrentPlayerScore.text 	= TXT_PLAYER_SCORE 	+ this._playerTurn.PlayerCurrentScore;
 			this.guiTimeForEachTurn.text	= TXT_TIME_COUNT 	+ (_TimePrTurn - _Time);
 			this.guiTurnCount.text 			= TXT_TURNS 		+ this._TurnCount;
-		}
+	//	}
 	}
 
 	public void UpdateGUIClockTXT()
@@ -169,10 +182,7 @@ public class GameLogic : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		_PlayersCount = 1;
-		CreatePlayers ();
-		this._playerTurn = _playersList [0];
-		gameStarted = false;
+
 	}
 
 	// Update is called once per frame
