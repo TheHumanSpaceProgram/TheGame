@@ -46,7 +46,7 @@ public class GameLogic : MonoBehaviour {
 	private Player _playerTurn;
 	private List<Player> _playersList = new List<Player>();
 	private int maxPlayers = 2;
-	private bool gameStarted;
+	private bool gameStarted = false;
 
 	private int buttonWidth = 200;
 	private int buttonHeight = 50;
