@@ -37,10 +37,11 @@ public class GameLogic : MonoBehaviour {
 
 	private Timer _Timer;
 
-	private static int _StartTime = 15000;
+	private static int _StartTime = 5000;
 	private int _TimePrTurn = _StartTime / 1000 ;
-
 	private static int _Time;
+
+	private int _PlayersCount;
 	private int _TurnCount;
 	private Player _playerTurn;
 	private List<Player> _playersList = new List<Player>();
@@ -50,6 +51,7 @@ public class GameLogic : MonoBehaviour {
 	private static string TXT_TIME_COUNT			= "Seconds left: ";
 	private static string TXT_PLAYER_SCORE  		= "Players Score: ";
 	private static string TXT_START_GAME_BUTTON		= "Start Game";
+	private static string TXT_ADD_PLAYER_BUTTON		= "Add Player";
 
 	public void AddPlayer(Player player)
 	{
@@ -96,20 +98,11 @@ public class GameLogic : MonoBehaviour {
 	}
 	
 	public List<Player> CreatePlayers(){
-		
-		_playersList.Clear ();
 
-		Player player1 = new Player ();
-		Player player2 = new Player ();
-
-		player1.PlayerName = "Player1";
-		player1.PlayerNumber = 0;
-
-		player2.PlayerName = "Player2";
-		player2.PlayerNumber = 1;
-				
-		_playersList.Add (player1);
-		_playersList.Add (player2);
+		Player newPlayer = new Player();
+		newPlayer.PlayerName = "Player" + (_playersList.Count + 1);
+		newPlayer.PlayerNumber = _playersList.Count;
+		_playersList.Add(newPlayer);
 
 		return _playersList;
 	}
@@ -118,23 +111,26 @@ public class GameLogic : MonoBehaviour {
 	private int buttonWidth = 200;
 	private int buttonHeight = 50;
 	private int groupWidth = 200;
-	private int groupHeigth = 50;
+	private int groupHeigth = 150;
 	
 	void OnGUI () {
-
-
-
+	
 		GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), (30), groupWidth, groupHeigth));
+		if(GUI.Button(new Rect(0,60,buttonWidth,buttonHeight), TXT_ADD_PLAYER_BUTTON + _PlayersCount))
+		{
+			_PlayersCount++;
+			CreatePlayers();
+		}
+
 		if(GUI.Button(new Rect(0,0,buttonWidth,buttonHeight), TXT_START_GAME_BUTTON))
 		{
-			this.CreatePlayers ();
-
 			this._playerTurn = _playersList [0];
 			this._TurnCount = 1;
 			StartTimer();
 			UpdateGuiTXT();
-		
+			
 		}
+
 
 		GUI.EndGroup();
 	
