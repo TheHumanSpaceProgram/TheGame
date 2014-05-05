@@ -167,12 +167,12 @@ public class GameLogic : MonoBehaviour {
 
 	public void UpdateGuiTXT()
 	{
-		//if(gameStarted){
+		if(gameStarted){
 			this.guiPlayerNameText.text 	= TXT_PLAYER_NAME 	+ this._playerTurn.PlayerName;
 			this.CurrentPlayerScore.text 	= TXT_PLAYER_SCORE 	+ this._playerTurn.PlayerCurrentScore;
 			this.guiTimeForEachTurn.text	= TXT_TIME_COUNT 	+ (_TimePrTurn - _Time);
 			this.guiTurnCount.text 			= TXT_TURNS 		+ this._TurnCount;
-	//	}
+		}
 	}
 
 	public void UpdateGUIClockTXT()
