@@ -51,7 +51,7 @@ public class GameLogic : MonoBehaviour {
 	private static string TXT_TIME_COUNT			= "Seconds left: ";
 	private static string TXT_PLAYER_SCORE  		= "Players Score: ";
 	private static string TXT_START_GAME_BUTTON		= "Start Game";
-	private static string TXT_ADD_PLAYER_BUTTON		= "Add Player";
+	private static string TXT_ADD_PLAYER_BUTTON		= "Add Player ";
 
 	public void AddPlayer(Player player)
 	{
@@ -116,7 +116,7 @@ public class GameLogic : MonoBehaviour {
 	void OnGUI () {
 	
 		GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), (30), groupWidth, groupHeigth));
-		if(GUI.Button(new Rect(0,60,buttonWidth,buttonHeight), TXT_ADD_PLAYER_BUTTON + _PlayersCount))
+		if(GUI.Button(new Rect(0,60,buttonWidth,buttonHeight), TXT_ADD_PLAYER_BUTTON + (_PlayersCount + 1)))
 		{
 			_PlayersCount++;
 			CreatePlayers();
@@ -151,7 +151,9 @@ public class GameLogic : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		_PlayersCount = 1;
+		CreatePlayers ();
+		this._playerTurn = _playersList [0];
 	}
 
 	// Update is called once per frame
