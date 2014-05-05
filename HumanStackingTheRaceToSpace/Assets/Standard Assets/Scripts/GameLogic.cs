@@ -100,7 +100,7 @@ public class GameLogic : MonoBehaviour {
 	public List<Player> CreatePlayers(){
 
 		Player newPlayer = new Player();
-		newPlayer.PlayerName = "Player" + (_playersList.Count + 1);
+		newPlayer.PlayerName = "Player " + (_playersList.Count + 1);
 		newPlayer.PlayerNumber = _playersList.Count;
 		_playersList.Add(newPlayer);
 
