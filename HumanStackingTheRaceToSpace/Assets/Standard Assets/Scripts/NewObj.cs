@@ -51,18 +51,18 @@ public class NewObj : MonoBehaviour {
 				GiveRigid();
 				
 				commited = true;
+				GameLogic.ChangePlayer();
+
 				transform.parent = null;
 				MoveSelectionOnScreen();
+				
 				
 			}
 			if(GUI.Button(new Rect(0,60,buttonWidth,buttonHeight), "change shape"))
 			{
 				MoveSelectionOnScreen();
 				Destroy(instance);
-				
-				GameLogic.ChangePlayer();
-				
-				
+
 			}
 			GUI.EndGroup();
 		}
