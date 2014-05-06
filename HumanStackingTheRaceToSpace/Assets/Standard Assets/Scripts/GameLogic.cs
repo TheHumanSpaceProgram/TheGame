@@ -73,7 +73,7 @@ public class GameLogic : MonoBehaviour {
 
 	public static void ChangePlayer(){
 		_Timer.Stop ();
-		System.Threading.Thread.Sleep(3000);
+		//System.Threading.Thread.Sleep(3000);
 		_playerTurnCount++;
 	}
 
