@@ -33,6 +33,7 @@ public class NewObj : MonoBehaviour {
 		instance.rigidbody2D.mass = 200;
 		instance.rigidbody2D.gravityScale = 1;
 		instance.rigidbody2D.isKinematic = false;
+
 	}
 
 	void OnGUI () {
