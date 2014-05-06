@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Timers;
@@ -25,6 +25,8 @@ public class Player {
 	}
 }
 
+
+
 public delegate void OnPlayerChange();
 
 public class GameLogic : MonoBehaviour {
@@ -37,11 +39,13 @@ public class GameLogic : MonoBehaviour {
 	string PlayerName { get; set; }
 
 	private static Timer _Timer;
+	private static Timer _WaitTimer;
 
 	private static int _MinTimeLimit = 5;
-	private static int _StartTime = 7000;
+	private static int _StartTime = 10000;
 	private int _TimePrTurn = _StartTime / 1000 ;
 	private static int _Time;
+	private static int _WaitTimeCounter;
 
 	private int _TurnCount;
 	private static int _playerTurnCount;
@@ -72,9 +76,21 @@ public class GameLogic : MonoBehaviour {
 	}
 
 	public static void ChangePlayer(){
-		_Timer.Stop ();
-		//System.Threading.Thread.Sleep(3000);
-		_playerTurnCount++;
+		_Timer.Stop ();		 
+		if(_WaitTimer != null)
+		{
+			_WaitTimer.Elapsed -= OnTimedEvent;
+			_WaitTimer.Stop();
+			_WaitTimer.Dispose();
+		}
+		_WaitTimer = new Timer (4000);
+		_WaitTimer.Elapsed += new ElapsedEventHandler (OnWaitTimedEvent);
+		_WaitTimer.Interval = 1000;
+		_WaitTimer.AutoReset = true;
+		_WaitTimeCounter = 0;
+		_WaitTimer.Start ();
+
+
 	}
 
 	public void AddPlayer(Player player)
@@ -218,6 +234,10 @@ public class GameLogic : MonoBehaviour {
 
 	}
 
+	private void Wait(){
+
+	}
+	
 	void FixedUpdate(){
 		if (_Time == _TimePrTurn) 
 		{
@@ -226,6 +246,8 @@ public class GameLogic : MonoBehaviour {
 		if (_TurnCount < _playerTurnCount) 
 		{
 			this._TurnCount++;
+			this._playerTurn.AddCurrentScore((_TimePrTurn*_TurnCount) - _Time);
+
 			this._playerTurn = nextPlayer();
 
 		}
@@ -247,5 +269,17 @@ public class GameLogic : MonoBehaviour {
 		_Time++;				
 	}
 
+	private static void OnWaitTimedEvent(object source, ElapsedEventArgs e)
+	{
+		_WaitTimeCounter++;
+		if (_WaitTimeCounter == 4) {
+			_WaitTimeCounter = 0;		
+			_playerTurnCount++;
 
+			_WaitTimer.Elapsed -= OnWaitTimedEvent;
+			_WaitTimer.Stop();
+			_WaitTimer.Dispose();
+			_WaitTimer = null;
+		}
+	}
 }
