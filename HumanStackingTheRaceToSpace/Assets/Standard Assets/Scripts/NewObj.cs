@@ -11,6 +11,7 @@ public class NewObj : MonoBehaviour {
 	public GameObject theObj;
 	public GameObject instance;
 	public MoveRussianSelection russianSelect;
+	public MoveAmericanSelection americanSelect;
 	
 	// Use this for initialization
 	void Start () {
@@ -68,8 +69,11 @@ public class NewObj : MonoBehaviour {
 	}
 	void MoveSelectionAway (){
 		russianSelect.away ();
+		americanSelect.away ();
+
 	}
 	void MoveSelectionOnScreen (){
 		russianSelect.back ();
+		americanSelect.back ();
 	}
 }
