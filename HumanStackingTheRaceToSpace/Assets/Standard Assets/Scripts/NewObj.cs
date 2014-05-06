@@ -41,7 +41,11 @@ public class NewObj : MonoBehaviour {
 			if(GUI.Button(new Rect(0,0,buttonWidth,buttonHeight), "Commit"))
 			{
 				GiveRigid();
+
 				commited = true;
+
+				GameLogic.ChangePlayer();
+
 			}
 			GUI.EndGroup();
 		}

@@ -25,6 +25,7 @@ public class Player {
 	}
 }
 
+public delegate void OnPlayerChange();
 
 public class GameLogic : MonoBehaviour {
 
@@ -43,6 +44,7 @@ public class GameLogic : MonoBehaviour {
 	private static int _Time;
 
 	private int _TurnCount;
+	private static int _playerTurnCount;
 	private Player _playerTurn;
 	private List<Player> _playersList = new List<Player>();
 	private int maxPlayers = 2;
@@ -64,11 +66,15 @@ public class GameLogic : MonoBehaviour {
 
 
 
-
-
 	public static void GameOver(){
 		_Timer.Elapsed -= OnTimedEvent;
 		gameOver = true;
+	}
+
+	public static void ChangePlayer(){
+		_Timer.Stop ();
+		System.Threading.Thread.Sleep(3000);
+		_playerTurnCount++;
 	}
 
 	public void AddPlayer(Player player)
@@ -149,14 +155,15 @@ public class GameLogic : MonoBehaviour {
 
 
 		if (GUI.Button (new Rect (0, 0, buttonWidth, buttonHeight), TXT_START_GAME_BUTTON)) {
-				CreatePlayers ();
+			CreatePlayers ();
 
-				this._playerTurn = _playersList [0];
-				this._TurnCount = 1;
+			this._playerTurn = _playersList [0];
+			this._TurnCount = 1;
+			_playerTurnCount = 1;
 
-				this.gameStarted = true;
+			this.gameStarted = true;
 
-				StartTimer ();
+			StartTimer ();
 							
 		}		
 
@@ -212,9 +219,19 @@ public class GameLogic : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		
+		if (_Time == _TimePrTurn) 
+		{
+			GameOver();
+		}
+		if (_TurnCount < _playerTurnCount) 
+		{
+			this._TurnCount++;
+			this._playerTurn = nextPlayer();
+
+		}
 		if (_Time > _TimePrTurn) 
 		{						
+
 			this._TurnCount++;
 			this._playerTurn = nextPlayer ();
 		} 
@@ -222,17 +239,13 @@ public class GameLogic : MonoBehaviour {
 		{
 			UpdateGuiTXT();
 		}
-
-
-
 	}
 	
 
 	private static void OnTimedEvent(object source, ElapsedEventArgs e)
 	{
-
-		_Time++;
-				
+		_Time++;				
 	}
-	
+
+
 }
