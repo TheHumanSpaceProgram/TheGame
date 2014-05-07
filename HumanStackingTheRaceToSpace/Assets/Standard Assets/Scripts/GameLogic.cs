@@ -158,6 +158,9 @@ public class GameLogic : MonoBehaviour {
 
 	public void StartGameButtons()
 	{
+		var water2 = GameObject.Find("water2");
+		Destroy(water2.GetComponent("OceanMovement"));
+
 		GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), (30), groupWidth, groupHeigth));
 
 		/* FOR MULTIPLAYER MORE THAN 2 PLAYERS
@@ -178,6 +181,7 @@ public class GameLogic : MonoBehaviour {
 			_playerTurnCount = 1;
 
 			this.gameStarted = true;
+			water2.AddComponent("OceanMovement");
 
 			StartTimer ();
 							
