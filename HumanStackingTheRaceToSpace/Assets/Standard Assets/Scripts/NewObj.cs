@@ -42,8 +42,8 @@ public class NewObj : MonoBehaviour {
 			if(TimeOut)
 			{
 				commited = true;
-				GiveRigid ();
 				TimeOut = false;
+				GiveRigid ();
 				GameLogic.ChangePlayer();
 			}
 		}

@@ -43,8 +43,8 @@ public class GameLogic : MonoBehaviour {
 	private static Timer _Timer;
 	private static Timer _WaitTimer;
 
-	private static int _MinTimeLimit = 5;
-	private static int _StartTime = 10000;
+	private static int _MinTimeLimit = 7;
+	private static int _StartTime = 20000;
 	private int _TimePrTurn = _StartTime / 1000 ;
 	private static int _Time;
 	private static int _WaitTimeCounter;
@@ -65,7 +65,7 @@ public class GameLogic : MonoBehaviour {
 
 	private static string TXT_PLAYER_NAME 			= "Player: ";
 	private static string TXT_TURNS 				= "Turn: ";
-	private static string TXT_TIME_COUNT			= "Seconds left: ";
+	private static string TXT_TIME_COUNT			= "Seconds: ";
 	private static string TXT_PLAYER_SCORE  		= "Players Score: ";
 	private static string TXT_START_GAME_BUTTON		= "Start Game";
 	private static string TXT_END_GAME_BUTTON		= "Game Over";
@@ -118,7 +118,7 @@ public class GameLogic : MonoBehaviour {
 			_WaitTimer.Stop();
 			_WaitTimer.Dispose();
 		}
-		_WaitTimer = new Timer (4000);
+		_WaitTimer = new Timer (6000);
 		_WaitTimer.Elapsed += new ElapsedEventHandler (OnWaitTimedEvent);
 		_WaitTimer.Interval = 1000;
 		_WaitTimer.AutoReset = true;
