@@ -25,7 +25,7 @@ public class NewObj : MonoBehaviour {
 		
 	}
 	void OnMouseDown () {
-		if (created == false) {
+		if ((created == false) && GameLogic.GetGameStarted()) {
 			GameObject instance = (GameObject)Instantiate(theObj, transform.position, transform.rotation);
 			instance.transform.parent = GameObject.Find("P1selection").transform;
 			instance.transform.localScale = transform.localScale;
