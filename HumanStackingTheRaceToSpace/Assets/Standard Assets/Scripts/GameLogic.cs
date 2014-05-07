@@ -31,6 +31,8 @@ public delegate void OnPlayerChange();
 
 public class GameLogic : MonoBehaviour {
 
+	private bool alphaVersion = true;
+
 	public GUIText guiPlayerNameText;
 	public GUIText CurrentPlayerScore;
 	public GUIText guiTimeForEachTurn;
@@ -52,7 +54,7 @@ public class GameLogic : MonoBehaviour {
 	private Player _playerTurn;
 	private List<Player> _playersList = new List<Player>();
 	private int maxPlayers = 2;
-	private bool gameStarted = false;
+	private static bool gameStarted = false;
 	private static bool gameOver = false;
 
 	private int buttonWidth = 200;
@@ -73,6 +75,32 @@ public class GameLogic : MonoBehaviour {
 	public static void GameOver(){
 		_Timer.Elapsed -= OnTimedEvent;
 		gameOver = true;
+	}
+
+	public static bool GetGameStarted(){
+		return gameStarted;
+	}
+
+	public void StartGame(){
+		if(alphaVersion){
+			CreatePlayers ();
+			CreatePlayers ();
+		}
+		else{
+			CreatePlayers ();
+		}
+		this._playerTurn = _playersList [0];
+		this._TurnCount = 1;
+		_playerTurnCount = 1;
+		MoveAmericanSelection.MoveAway = true;
+		MoveRussianSelection.MoveAway  = false;
+		
+		gameStarted = true;
+
+		var water2 = GameObject.Find("water2");
+		water2.AddComponent("OceanMovement");
+		
+		StartTimer ();
 	}
 
 	public static void ChangePlayer(){
@@ -166,28 +194,18 @@ public class GameLogic : MonoBehaviour {
 
 		/* FOR MULTIPLAYER MORE THAN 2 PLAYERS
 		 */
-		if(maxPlayers > (_playersList.Count + 1)){
-			if (GUI.Button (new Rect (0, 60, buttonWidth, buttonHeight), TXT_ADD_PLAYER_BUTTON + (_playersList.Count + 2))) 
-			{
-				CreatePlayers ();
+		if(!alphaVersion){
+			if(maxPlayers > (_playersList.Count + 1)){
+				if (GUI.Button (new Rect (0, 60, buttonWidth, buttonHeight), TXT_ADD_PLAYER_BUTTON + (_playersList.Count + 2))) 
+				{
+					CreatePlayers ();
+				}
 			}
 		}
 
 
 		if (GUI.Button (new Rect (0, 0, buttonWidth, buttonHeight), TXT_START_GAME_BUTTON)) {
-			CreatePlayers ();
-
-			this._playerTurn = _playersList [0];
-			this._TurnCount = 1;
-			_playerTurnCount = 1;
-			MoveAmericanSelection.MoveAway = true;
-			MoveRussianSelection.MoveAway  = false;
-
-			this.gameStarted = true;
-			water2.AddComponent("OceanMovement");
-
-			StartTimer ();
-							
+			StartGame ();				
 		}		
 
 		GUI.EndGroup ();
@@ -206,11 +224,12 @@ public class GameLogic : MonoBehaviour {
 
 	
 	void OnGUI () {
-		if (!this.gameStarted) 
+		if (!gameStarted) 
 		{
 			StartGameButtons ();
 		}
 		if(gameOver){
+			_Timer.Stop();
 			EndGameButtons ();
 		}
 	}
@@ -233,6 +252,7 @@ public class GameLogic : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		gameOver = false;
+		gameStarted = false;
 	}
 
 	// Update is called once per frame
@@ -264,7 +284,7 @@ public class GameLogic : MonoBehaviour {
 			this._TurnCount++;
 			this._playerTurn = nextPlayer ();
 		} 
-		else 
+		else if(gameStarted)
 		{
 			UpdateGuiTXT();
 		}
