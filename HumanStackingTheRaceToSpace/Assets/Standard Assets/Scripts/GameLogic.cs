@@ -57,6 +57,7 @@ public class GameLogic : MonoBehaviour {
 	private static bool gameStarted = false;
 	private static bool gameOver = false;
 
+
 	private int buttonWidth = 200;
 	private int buttonHeight = 50;
 	private int groupWidth = 200;
@@ -75,6 +76,11 @@ public class GameLogic : MonoBehaviour {
 	public static void GameOver(){
 		_Timer.Elapsed -= OnTimedEvent;
 		gameOver = true;
+	}
+
+	private void TimeOut(){
+		_Timer.Elapsed -= OnTimedEvent;
+		NewObj.TimeOut = true;
 	}
 
 	public static bool GetGameStarted(){
@@ -228,6 +234,7 @@ public class GameLogic : MonoBehaviour {
 		{
 			StartGameButtons ();
 		}
+
 		if(gameOver){
 			_Timer.Stop();
 			EndGameButtons ();
@@ -269,7 +276,7 @@ public class GameLogic : MonoBehaviour {
 		if(gameStarted){
 			if (_Time == _TimePrTurn) 
 			{
-				GameOver();
+				TimeOut();
 			}
 			if (_TurnCount < _playerTurnCount) 
 			{
