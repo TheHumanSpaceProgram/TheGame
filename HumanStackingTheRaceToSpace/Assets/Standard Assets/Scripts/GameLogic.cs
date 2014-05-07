@@ -77,6 +77,7 @@ public class GameLogic : MonoBehaviour {
 
 	public static void ChangePlayer(){
 		_Timer.Stop ();		 
+
 		if(_WaitTimer != null)
 		{
 			_WaitTimer.Elapsed -= OnTimedEvent;
@@ -179,6 +180,8 @@ public class GameLogic : MonoBehaviour {
 			this._playerTurn = _playersList [0];
 			this._TurnCount = 1;
 			_playerTurnCount = 1;
+			MoveAmericanSelection.MoveAway = true;
+			MoveRussianSelection.MoveAway  = false;
 
 			this.gameStarted = true;
 			water2.AddComponent("OceanMovement");
@@ -208,6 +211,7 @@ public class GameLogic : MonoBehaviour {
 			StartGameButtons ();
 		}
 		if(gameOver){
+			_Timer.Stop();
 			EndGameButtons ();
 		}
 	}
@@ -249,8 +253,8 @@ public class GameLogic : MonoBehaviour {
 		}
 		if (_TurnCount < _playerTurnCount) 
 		{
-			this._TurnCount++;
-			this._playerTurn.AddCurrentScore((_TimePrTurn*_TurnCount) - _Time);
+			this._TurnCount++; 
+			this._playerTurn.AddCurrentScore((_TimePrTurn*_TurnCount) - _Time*_TurnCount);
 
 			this._playerTurn = nextPlayer();
 
@@ -276,14 +280,30 @@ public class GameLogic : MonoBehaviour {
 	private static void OnWaitTimedEvent(object source, ElapsedEventArgs e)
 	{
 		_WaitTimeCounter++;
+
+
+		if (_playerTurnCount % 2 != 0) {
+						MoveRussianSelection.MoveAway = true;
+				} else {
+						MoveAmericanSelection.MoveAway = true;
+				}
+
+		if (_playerTurnCount % 2 == 0) {
+			MoveRussianSelection.MoveAway = false;
+		} else {
+			MoveAmericanSelection.MoveAway = false;
+		}
+
 		if (_WaitTimeCounter == 4) {
 			_WaitTimeCounter = 0;		
 			_playerTurnCount++;
+
 
 			_WaitTimer.Elapsed -= OnWaitTimedEvent;
 			_WaitTimer.Stop();
 			_WaitTimer.Dispose();
 			_WaitTimer = null;
+
 		}
 	}
 }

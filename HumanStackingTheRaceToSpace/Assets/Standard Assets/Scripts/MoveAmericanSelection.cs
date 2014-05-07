@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class MoveAmericanSelection : MonoBehaviour {
-	bool MoveAway = false;
+	public static bool MoveAway = false;
 	// Use this for initialization
 	void Start () {
 		
