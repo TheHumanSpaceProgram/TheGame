@@ -13,7 +13,8 @@ public class NewObj : MonoBehaviour {
 	public MoveRussianSelection russianSelect;
 	public MoveAmericanSelection americanSelect;
 	private PolygonCollider2D polyC;
-	
+
+	public static bool TimeOut = false;
 	// Use this for initialization
 	void Start () {
 		
@@ -55,7 +56,6 @@ public class NewObj : MonoBehaviour {
 				GiveRigid();
 				
 				commited = true;
-
 				GameLogic.ChangePlayer();
 
 				
@@ -69,6 +69,14 @@ public class NewObj : MonoBehaviour {
 
 			}
 			GUI.EndGroup();
+
+			if(TimeOut)
+			{
+				GiveRigid ();
+				commited = true;
+				TimeOut = false;
+				GameLogic.ChangePlayer();
+			}
 		}
 	}
 
