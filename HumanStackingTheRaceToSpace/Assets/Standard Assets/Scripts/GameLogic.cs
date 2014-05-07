@@ -75,6 +75,23 @@ public class GameLogic : MonoBehaviour {
 		gameOver = true;
 	}
 
+	public void StartGame(){
+		CreatePlayers ();
+		
+		this._playerTurn = _playersList [0];
+		this._TurnCount = 1;
+		_playerTurnCount = 1;
+		MoveAmericanSelection.MoveAway = true;
+		MoveRussianSelection.MoveAway  = false;
+		
+		this.gameStarted = true;
+
+		var water2 = GameObject.Find("water2");
+		water2.AddComponent("OceanMovement");
+		
+		StartTimer ();
+	}
+
 	public static void ChangePlayer(){
 		_Timer.Stop ();		 
 
@@ -175,19 +192,7 @@ public class GameLogic : MonoBehaviour {
 
 
 		if (GUI.Button (new Rect (0, 0, buttonWidth, buttonHeight), TXT_START_GAME_BUTTON)) {
-			CreatePlayers ();
-
-			this._playerTurn = _playersList [0];
-			this._TurnCount = 1;
-			_playerTurnCount = 1;
-			MoveAmericanSelection.MoveAway = true;
-			MoveRussianSelection.MoveAway  = false;
-
-			this.gameStarted = true;
-			water2.AddComponent("OceanMovement");
-
-			StartTimer ();
-							
+			StartGame ();				
 		}		
 
 		GUI.EndGroup ();
