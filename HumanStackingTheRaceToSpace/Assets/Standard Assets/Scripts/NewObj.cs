@@ -13,7 +13,8 @@ public class NewObj : MonoBehaviour {
 	public MoveRussianSelection russianSelect;
 	public MoveAmericanSelection americanSelect;
 	private PolygonCollider2D polyC;
-	
+
+	public static bool TimeOut = false;
 	// Use this for initialization
 	void Start () {
 		
@@ -22,8 +23,24 @@ public class NewObj : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (commited == false && created == true) {
+			if (Input.GetKey("a")){
+				gameObject.transform.Rotate(Vector3.forward * Time.deltaTime * 75, Space.World);
+			}
+			if (Input.GetKey("d")){
+				gameObject.transform.Rotate(Vector3.back * Time.deltaTime * 75, Space.World);
+			}
+			if(Input.GetKey("space")){
+
+				commited = true;
+				GiveRigid();
+				GameLogic.ChangePlayer();
+				//MoveSelectionOnScreen();
+			}
+		}
 	}
+
+		
 	void OnMouseDown () {
 
 		if (created == false && GameLogic.GetGameStarted()) {
@@ -50,17 +67,16 @@ public class NewObj : MonoBehaviour {
 	void OnGUI () {
 		if (commited == false) {
 			GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), ((Screen.height / 2) - (groupHeigth / 2)), groupWidth, groupHeigth));
-			if(GUI.Button(new Rect(0,0,buttonWidth,buttonHeight), "Commit"))
+			/*if(GUI.Button(new Rect(0,0,buttonWidth,buttonHeight), "Commit"))
 			{
 				GiveRigid();
 				
 				commited = true;
-
 				GameLogic.ChangePlayer();
 
 				
-			}
-			if(GUI.Button(new Rect(0,60,buttonWidth,buttonHeight), "change shape"))
+			}*/
+			if(GUI.Button(new Rect(0,0,buttonWidth,buttonHeight), "change shape"))
 			{
 
 
@@ -69,6 +85,14 @@ public class NewObj : MonoBehaviour {
 
 			}
 			GUI.EndGroup();
+
+			if(TimeOut)
+			{
+				GiveRigid ();
+				commited = true;
+				TimeOut = false;
+				GameLogic.ChangePlayer();
+			}
 		}
 	}
 
