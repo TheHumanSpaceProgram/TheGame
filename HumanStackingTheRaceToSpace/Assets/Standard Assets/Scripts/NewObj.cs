@@ -23,6 +23,8 @@ public class NewObj : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+
 		if (commited == false && created == true) {
 			if (Input.GetKey("a")){
 				gameObject.transform.Rotate(Vector3.forward * Time.deltaTime * 75, Space.World);
@@ -36,6 +38,13 @@ public class NewObj : MonoBehaviour {
 				GiveRigid();
 				GameLogic.ChangePlayer();
 				//MoveSelectionOnScreen();
+			}
+			if(TimeOut)
+			{
+				commited = true;
+				GiveRigid ();
+				TimeOut = false;
+				GameLogic.ChangePlayer();
 			}
 		}
 	}
@@ -86,13 +95,7 @@ public class NewObj : MonoBehaviour {
 			}
 			GUI.EndGroup();
 
-			if(TimeOut)
-			{
-				GiveRigid ();
-				commited = true;
-				TimeOut = false;
-				GameLogic.ChangePlayer();
-			}
+
 		}
 	}
 
