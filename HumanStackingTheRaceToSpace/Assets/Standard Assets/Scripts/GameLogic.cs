@@ -266,27 +266,29 @@ public class GameLogic : MonoBehaviour {
 	}
 	
 	void FixedUpdate(){
-		if (_Time == _TimePrTurn) 
-		{
-			GameOver();
-		}
-		if (_TurnCount < _playerTurnCount) 
-		{
-			this._TurnCount++; 
-			this._playerTurn.AddCurrentScore((_TimePrTurn*_TurnCount) - _Time*_TurnCount);
+		if(gameStarted){
+			if (_Time == _TimePrTurn) 
+			{
+				GameOver();
+			}
+			if (_TurnCount < _playerTurnCount) 
+			{
+				this._TurnCount++; 
+				this._playerTurn.AddCurrentScore((_TimePrTurn*_TurnCount) - _Time*_TurnCount);
 
-			this._playerTurn = nextPlayer();
+				this._playerTurn = nextPlayer();
 
-		}
-		if (_Time > _TimePrTurn) 
-		{						
+			}
+			if (_Time > _TimePrTurn) 
+			{						
 
-			this._TurnCount++;
-			this._playerTurn = nextPlayer ();
-		} 
-		else if(gameStarted)
-		{
-			UpdateGuiTXT();
+				this._TurnCount++;
+				this._playerTurn = nextPlayer ();
+			} 
+			else
+			{
+				UpdateGuiTXT();
+			}
 		}
 	}
 	
