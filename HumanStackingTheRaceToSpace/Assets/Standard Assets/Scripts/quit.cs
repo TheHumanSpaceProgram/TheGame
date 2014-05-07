@@ -11,7 +11,7 @@ public class quit : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-		if (Input.GetKeyDown ("q")) {
+		if (Input.GetKeyDown ("escape")) {
 			Application.LoadLevel("mainMenu");
 		}
 
