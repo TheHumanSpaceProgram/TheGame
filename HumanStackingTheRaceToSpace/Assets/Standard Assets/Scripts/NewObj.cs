@@ -13,7 +13,7 @@ public class NewObj : MonoBehaviour {
 	public MoveRussianSelection russianSelect;
 	public MoveAmericanSelection americanSelect;
 	private PolygonCollider2D polyC;
-
+	
 	public static bool TimeOut = false;
 	// Use this for initialization
 	void Start () {
@@ -23,8 +23,8 @@ public class NewObj : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-
+		
+		
 		if (commited == false && created == true) {
 			if (Input.GetKey("a")){
 				gameObject.transform.Rotate(Vector3.forward * Time.deltaTime * 75, Space.World);
@@ -32,26 +32,32 @@ public class NewObj : MonoBehaviour {
 			if (Input.GetKey("d")){
 				gameObject.transform.Rotate(Vector3.back * Time.deltaTime * 75, Space.World);
 			}
-			if(Input.GetKey("space")){
-
+			if(Input.GetKey("space") && (!Input.GetKey("mouse 0"))){
+				
 				commited = true;
 				GiveRigid();
 				GameLogic.ChangePlayer();
 				//MoveSelectionOnScreen();
 			}
-			if(TimeOut)
+			if(Input.GetKey("e")){
+				
+				MoveSelectionOnScreen();
+				Destroy(instance);
+				//MoveSelectionOnScreen();
+			}
+			/*if(TimeOut)
 			{
-				commited = true;
 				TimeOut = false;
+				commited = true;
 				GiveRigid ();
 				GameLogic.ChangePlayer();
-			}
+			}*/
 		}
 	}
-
-		
+	
+	
 	void OnMouseDown () {
-
+		
 		if (created == false && GameLogic.GetGameStarted()) {
 			GameObject instance = (GameObject)Instantiate(theObj, transform.position, transform.rotation);
 			instance.transform.parent = gameObject.transform.parent;
@@ -70,13 +76,13 @@ public class NewObj : MonoBehaviour {
 		instance.rigidbody2D.mass = 200;
 		instance.rigidbody2D.gravityScale = 1;
 		instance.rigidbody2D.isKinematic = false;
-
+		
 	}
 	
 	void OnGUI () {
-		if (commited == false) {
+		/*if (commited == false) {
 			GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), ((Screen.height / 2) - (groupHeigth / 2)), groupWidth, groupHeigth));
-			/*if(GUI.Button(new Rect(0,0,buttonWidth,buttonHeight), "Commit"))
+			if(GUI.Button(new Rect(0,0,buttonWidth,buttonHeight), "Commit"))
 			{
 				GiveRigid();
 				
@@ -84,7 +90,7 @@ public class NewObj : MonoBehaviour {
 				GameLogic.ChangePlayer();
 
 				
-			}*/
+			}
 			if(GUI.Button(new Rect(0,0,buttonWidth,buttonHeight), "change shape"))
 			{
 
@@ -96,14 +102,14 @@ public class NewObj : MonoBehaviour {
 			GUI.EndGroup();
 
 
-		}
+		}*/
 	}
-
+	
 	void MoveSelectionAway (){
-
-			MoveRussianSelection.MoveAway = true;
-			MoveAmericanSelection.MoveAway = true;
-
+		
+		MoveRussianSelection.MoveAway = true;
+		MoveAmericanSelection.MoveAway = true;
+		
 	}
 	void MoveSelectionOnScreen (){
 		if(GameLogic._playerTurnCount % 2 != 0)
