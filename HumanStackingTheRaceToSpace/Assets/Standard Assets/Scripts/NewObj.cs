@@ -34,7 +34,6 @@ public class NewObj : MonoBehaviour {
 			MoveSelectionAway();
 			polyC = (PolygonCollider2D)instance.GetComponent("PolygonCollider2D");
 			polyC.enabled = true;
-			print ("blaaa");
 		}
 		
 	}
