@@ -65,6 +65,8 @@ public class NewObj : MonoBehaviour {
 			}
 			if(GUI.Button(new Rect(0,60,buttonWidth,buttonHeight), "change shape"))
 			{
+
+
 				MoveSelectionOnScreen();
 				Destroy(instance);
 
@@ -80,7 +82,14 @@ public class NewObj : MonoBehaviour {
 
 	}
 	void MoveSelectionOnScreen (){
-		//russianSelect.back ();
-		//americanSelect.back ();
+		if(GameLogic._playerTurnCount % 2 != 0)
+		{
+			MoveRussianSelection.MoveAway = false;
+			
+		}
+		else
+		{
+			MoveAmericanSelection.MoveAway = false;
+		}
 	}
 }
