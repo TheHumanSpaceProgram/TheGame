@@ -29,7 +29,7 @@ public class NewObj : MonoBehaviour {
 		if (created == false) {
 
 			GameObject instance = (GameObject)Instantiate(theObj, transform.position, transform.rotation);
-			instance.transform.parent = GameObject.Find("P1selection").transform;
+			instance.transform.parent = gameObject.transform.parent;
 			instance.transform.localScale = transform.localScale;
 			created = true;
 			commited = false;
