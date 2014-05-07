@@ -48,7 +48,7 @@ public class GameLogic : MonoBehaviour {
 	private static int _WaitTimeCounter;
 
 	private int _TurnCount;
-	private static int _playerTurnCount;
+	public static int _playerTurnCount;
 	private Player _playerTurn;
 	private List<Player> _playersList = new List<Player>();
 	private int maxPlayers = 2;
