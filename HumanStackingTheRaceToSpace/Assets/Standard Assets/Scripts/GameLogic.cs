@@ -307,16 +307,16 @@ public class GameLogic : MonoBehaviour {
 						MoveAmericanSelection.MoveAway = true;
 				}
 
-		if (_playerTurnCount % 2 == 0) {
-			MoveRussianSelection.MoveAway = false;
-		} else {
-			MoveAmericanSelection.MoveAway = false;
-		}
+
 
 		if (_WaitTimeCounter == 4) {
 			_WaitTimeCounter = 0;		
 			_playerTurnCount++;
-
+			if (_playerTurnCount % 2 != 0) {
+				MoveRussianSelection.MoveAway = false;
+			} else {
+				MoveAmericanSelection.MoveAway = false;
+			}
 
 			_WaitTimer.Elapsed -= OnWaitTimedEvent;
 			_WaitTimer.Stop();
