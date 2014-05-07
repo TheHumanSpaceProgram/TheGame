@@ -26,8 +26,7 @@ public class NewObj : MonoBehaviour {
 	}
 	void OnMouseDown () {
 
-		if (created == false) {
-
+		if (created == false && GameLogic.GetGameStarted()) {
 			GameObject instance = (GameObject)Instantiate(theObj, transform.position, transform.rotation);
 			instance.transform.parent = gameObject.transform.parent;
 			instance.transform.localScale = transform.localScale;
@@ -37,7 +36,6 @@ public class NewObj : MonoBehaviour {
 			polyC = (PolygonCollider2D)instance.GetComponent("PolygonCollider2D");
 			polyC.enabled = true;
 		}
-		
 	}
 	
 	void GiveRigid (){
@@ -65,6 +63,8 @@ public class NewObj : MonoBehaviour {
 			}
 			if(GUI.Button(new Rect(0,60,buttonWidth,buttonHeight), "change shape"))
 			{
+
+
 				MoveSelectionOnScreen();
 				Destroy(instance);
 
@@ -80,7 +80,14 @@ public class NewObj : MonoBehaviour {
 
 	}
 	void MoveSelectionOnScreen (){
-		//russianSelect.back ();
-		//americanSelect.back ();
+		if(GameLogic._playerTurnCount % 2 != 0)
+		{
+			MoveRussianSelection.MoveAway = false;
+			
+		}
+		else
+		{
+			MoveAmericanSelection.MoveAway = false;
+		}
 	}
 }
