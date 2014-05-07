@@ -68,12 +68,12 @@ public class NewObj : MonoBehaviour {
 		}
 	}
 	void MoveSelectionAway (){
-		russianSelect.away ();
-		americanSelect.away ();
+		//russianSelect.away ();
+		//americanSelect.away ();
 
 	}
 	void MoveSelectionOnScreen (){
-		russianSelect.back ();
-		americanSelect.back ();
+		//russianSelect.back ();
+		//americanSelect.back ();
 	}
 }
