@@ -211,6 +211,7 @@ public class GameLogic : MonoBehaviour {
 			StartGameButtons ();
 		}
 		if(gameOver){
+			_Timer.Stop();
 			EndGameButtons ();
 		}
 	}
