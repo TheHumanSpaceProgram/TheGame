@@ -31,6 +31,8 @@ public delegate void OnPlayerChange();
 
 public class GameLogic : MonoBehaviour {
 
+	private bool alphaVersion = true;
+
 	public GUIText guiPlayerNameText;
 	public GUIText CurrentPlayerScore;
 	public GUIText guiTimeForEachTurn;
@@ -80,8 +82,13 @@ public class GameLogic : MonoBehaviour {
 	}
 
 	public void StartGame(){
-		CreatePlayers ();
-		
+		if(alphaVersion){
+			CreatePlayers ();
+			CreatePlayers ();
+		}
+		else{
+			CreatePlayers ();
+		}
 		this._playerTurn = _playersList [0];
 		this._TurnCount = 1;
 		_playerTurnCount = 1;
@@ -187,10 +194,12 @@ public class GameLogic : MonoBehaviour {
 
 		/* FOR MULTIPLAYER MORE THAN 2 PLAYERS
 		 */
-		if(maxPlayers > (_playersList.Count + 1)){
-			if (GUI.Button (new Rect (0, 60, buttonWidth, buttonHeight), TXT_ADD_PLAYER_BUTTON + (_playersList.Count + 2))) 
-			{
-				CreatePlayers ();
+		if(!alphaVersion){
+			if(maxPlayers > (_playersList.Count + 1)){
+				if (GUI.Button (new Rect (0, 60, buttonWidth, buttonHeight), TXT_ADD_PLAYER_BUTTON + (_playersList.Count + 2))) 
+				{
+					CreatePlayers ();
+				}
 			}
 		}
 
