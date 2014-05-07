@@ -12,6 +12,7 @@ public class NewObj : MonoBehaviour {
 	public GameObject instance;
 	public MoveRussianSelection russianSelect;
 	public MoveAmericanSelection americanSelect;
+	private PolygonCollider2D polyC;
 	
 	// Use this for initialization
 	void Start () {
@@ -31,6 +32,8 @@ public class NewObj : MonoBehaviour {
 			created = true;
 			commited = false;
 			MoveSelectionAway();
+			polyC = (PolygonCollider2D)instance.GetComponent("PolygonCollider2D");
+			polyC.enabled = true;
 		}
 		
 	}
