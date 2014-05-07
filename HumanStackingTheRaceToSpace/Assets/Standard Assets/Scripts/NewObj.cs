@@ -34,7 +34,7 @@ public class NewObj : MonoBehaviour {
 				commited = true;
 				GiveRigid();
 				GameLogic.ChangePlayer();
-				MoveSelectionOnScreen();
+				//MoveSelectionOnScreen();
 			}
 		}
 	}
