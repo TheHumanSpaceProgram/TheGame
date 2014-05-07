@@ -30,6 +30,7 @@ public class NewObj : MonoBehaviour {
 			GameObject instance = (GameObject)Instantiate(theObj, transform.position, transform.rotation);
 			instance.transform.parent = gameObject.transform.parent;
 			instance.transform.localScale = transform.localScale;
+			transform.parent = null;
 			created = true;
 			commited = false;
 			MoveSelectionAway();
@@ -55,8 +56,6 @@ public class NewObj : MonoBehaviour {
 				
 				commited = true;
 				GameLogic.ChangePlayer();
-
-				transform.parent = null;
 				MoveSelectionOnScreen();
 				
 				
