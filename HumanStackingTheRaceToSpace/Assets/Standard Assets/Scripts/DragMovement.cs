@@ -26,7 +26,7 @@ public class DragMovement : MonoBehaviour {
 		
 		//Makes the shape stop moving, rotating and colliding with other things
 		Destroy(gameObject.GetComponent ("Rigidbody2D"));
-		Destroy(gameObject.GetComponent ("BoxCollider2D"));
+		Destroy(gameObject.GetComponent ("PolygonCollider2D"));
 	}
 	
 	//Moves the shape
@@ -41,7 +41,7 @@ public class DragMovement : MonoBehaviour {
 	//Commits the shape's position and reset it's properties
 	void OnMouseUp(){
 		gameObject.AddComponent("Rigidbody2D");
-		gameObject.AddComponent("BoxCollider2D");
+		gameObject.AddComponent("PolygonCollider2D");
 		rigidbody2D.gravityScale = oldGravityScale;
 		rigidbody2D.mass = oldMass;
 	}
