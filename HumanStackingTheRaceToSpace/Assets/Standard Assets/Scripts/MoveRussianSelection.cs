@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class MoveRussianSelection : MonoBehaviour {
-	bool MoveAway = false;
+	public static bool MoveAway = false;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -10,6 +11,7 @@ public class MoveRussianSelection : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		if (MoveAway == true) {
 						if (transform.position.x < 60) {
 								transform.Translate (Vector3.right * 50 * Time.deltaTime, Space.World);
