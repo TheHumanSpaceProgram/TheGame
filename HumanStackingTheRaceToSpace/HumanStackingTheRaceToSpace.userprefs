@@ -1,24 +1,15 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Scripts\DragMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Scripts\GameLogic.cs">
     <Files>
-<<<<<<< HEAD
-      <File FileName="Assets\Standard Assets\Scripts\GameLogic.cs" Line="302" Column="3" />
-      <File FileName="Assets\Standard Assets\Scripts\quit.cs" Line="8" Column="2" />
-      <File FileName="Assets\Standard Assets\Scripts\mainmenu.cs" Line="19" Column="4" />
-      <File FileName="Assets\Standard Assets\Scripts\MoveRussianSelection.cs" Line="22" Column="5" />
-      <File FileName="Assets\Standard Assets\Scripts\MoveAmericanSelection.cs" Line="14" Column="2" />
-      <File FileName="Assets\Standard Assets\Scripts\NewObj.cs" Line="94" Column="1" />
-=======
       <File FileName="Assets\Standard Assets\Scripts\OceanBehaviour.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\GameLogic.cs" Line="330" Column="1" />
+      <File FileName="Assets\Standard Assets\Scripts\GameLogic.cs" Line="277" Column="58" />
       <File FileName="Assets\Standard Assets\Scripts\quit.cs" Line="1" Column="1" />
       <File FileName="Assets\Standard Assets\Scripts\mainmenu.cs" Line="1" Column="1" />
       <File FileName="Assets\Standard Assets\Scripts\NewObj.cs" Line="39" Column="4" />
-      <File FileName="Assets\Standard Assets\Scripts\DragMovement.cs" Line="24" Column="65" />
+      <File FileName="Assets\Standard Assets\Scripts\DragMovement.cs" Line="25" Column="7" />
       <File FileName="Assets\Standard Assets\Scripts\MoveRussianSelection.cs" Line="1" Column="1" />
       <File FileName="Assets\Standard Assets\Scripts\MoveAmericanSelection.cs" Line="1" Column="1" />
->>>>>>> 5388294d2581f26b857a71dde7fbf3b77da04308
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
