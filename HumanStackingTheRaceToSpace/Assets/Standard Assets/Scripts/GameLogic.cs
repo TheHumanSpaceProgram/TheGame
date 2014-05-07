@@ -243,6 +243,7 @@ public class GameLogic : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		gameOver = false;
+		gameStarted = false;
 	}
 
 	// Update is called once per frame
@@ -274,7 +275,7 @@ public class GameLogic : MonoBehaviour {
 			this._TurnCount++;
 			this._playerTurn = nextPlayer ();
 		} 
-		else 
+		else if(gameStarted)
 		{
 			UpdateGuiTXT();
 		}
