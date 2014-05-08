@@ -4,7 +4,7 @@ using System.Collections;
 public class CameraMovement : MonoBehaviour {
 	private bool verbose = false;
 	private float movementSpeed = 0.5f;
-	private float maxUp = 134f;
+	private float maxUp = 290f;
 	private float maxDown = 120f;
 
 	// Use this for initialization
