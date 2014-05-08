@@ -45,8 +45,11 @@ public class NewObj : MonoBehaviour {
 				Destroy(instance);
 				//MoveSelectionOnScreen();
 			}
-			if(TimeOut)
-			{
+		}
+		
+		if(TimeOut)
+		{
+			if(DragMovement.shapePicked){
 				TimeOut = false;
 				commited = true;
 				gameObject.AddComponent("Rigidbody2D");
@@ -55,6 +58,9 @@ public class NewObj : MonoBehaviour {
 				rigidbody2D.mass = DragMovement.oldMass;
 				GiveRigid ();
 				GameLogic.ChangePlayer();
+			}
+			else{
+				GameLogic.GameOver();
 			}
 		}
 	}
