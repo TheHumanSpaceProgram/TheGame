@@ -15,20 +15,14 @@ Platform assembly: C:\Users\Gvendur Stefáns\Documents\GitHub\TheGame\HumanStack
 Loading C:\Users\Gvendur Stefáns\Documents\GitHub\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
 Platform assembly: C:\Users\Gvendur Stefáns\Documents\GitHub\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
 Loading C:\Users\Gvendur Stefáns\Documents\GitHub\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
-- Completed reload, in  0.121 seconds
+- Completed reload, in  0.064 seconds
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 Platform assembly: C:\Users\Gvendur Stefáns\Documents\GitHub\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\System.dll (this message is harmless)
-UnloadTime: 0.430536 ms
+UnloadTime: 0.435668 ms
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 323.
-Total: 0.894428 ms (FindLiveObjects: 0.026684 ms CreateObjectMapping: 0.012315 ms MarkObjects: 0.165235 ms  DeleteObjects: 0.006157 ms)
-
-UnloadTime: 0.731758 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 142.
-Total: 1.770896 ms (FindLiveObjects: 0.010776 ms CreateObjectMapping: 0.011289 ms MarkObjects: 0.189867 ms  DeleteObjects: 0.921112 ms)
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 138.
+Total: 0.985770 ms (FindLiveObjects: 0.011802 ms CreateObjectMapping: 0.007697 ms MarkObjects: 0.109301 ms  DeleteObjects: 0.008210 ms)
 
