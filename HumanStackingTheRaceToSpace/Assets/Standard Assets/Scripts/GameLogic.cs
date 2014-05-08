@@ -53,11 +53,11 @@ public class GameLogic : MonoBehaviour {
 
 	private int _TurnCount;
 	public static int _playerTurnCount;
-	private Player _playerTurn;
+	private static Player _playerTurn;
 	private List<Player> _playersList = new List<Player>();
 	private int maxPlayers = 2;
 	private static bool gameStarted = false;
-	private static bool gameOver = false;
+	public static bool gameOver = false;
 	private static bool timeOutCalled = false;
 
 
@@ -71,7 +71,7 @@ public class GameLogic : MonoBehaviour {
 	private static string TXT_TIME_COUNT			= "Time: ";
 	private static string TXT_PLAYER_SCORE  		= "Score: ";
 	private static string TXT_START_GAME_BUTTON		= "Start Game";
-	private static string TXT_END_GAME_BUTTON		= "Game Over";
+	private static string TXT_END_GAME_BUTTON		= "";
 	private static string TXT_ADD_PLAYER_BUTTON		= "Add Player ";
 
 
@@ -79,6 +79,9 @@ public class GameLogic : MonoBehaviour {
 	public static void GameOver(){
 		_Timer.Elapsed -= OnTimedEvent;
 		gameOver = true;
+		TXT_END_GAME_BUTTON  = _playerTurn.PlayerName + " has lost";
+		MoveRussianSelection.MoveAway = true;
+		MoveAmericanSelection.MoveAway = true;;
 	}
 
 	private void TimeOut(){
@@ -98,7 +101,7 @@ public class GameLogic : MonoBehaviour {
 		else{
 			CreatePlayers ();
 		}
-		this._playerTurn = _playersList [0];
+		_playerTurn = _playersList [0];
 		this._TurnCount = 1;
 		_playerTurnCount = 1;
 		MoveAmericanSelection.MoveAway = true;
@@ -139,6 +142,7 @@ public class GameLogic : MonoBehaviour {
 
 	public Player nextPlayer()
 	{
+		DragMovement.shapePicked = false;
 		int playersCount = _playersList.Count;
 		int currentPlayer = _playerTurn.PlayerNumber;
 
@@ -182,7 +186,6 @@ public class GameLogic : MonoBehaviour {
 		_Timer.Enabled = true;
 		_Timer.Start ();
 		timeOutCalled = false;
-		DragMovement.shapePicked = false;
 	}
 	
 	public List<Player> CreatePlayers(){
@@ -249,11 +252,11 @@ public class GameLogic : MonoBehaviour {
 	public void UpdateGuiTXT()
 	{
 		if(gameStarted){
-			this.guiPlayerNameText.text 	= TXT_PLAYER_NAME 	+ this._playerTurn.PlayerName;
-			this.CurrentPlayerScore.text 	= TXT_PLAYER_SCORE 	+ this._playerTurn.PlayerCurrentScore;
+			this.guiPlayerNameText.text 	= TXT_PLAYER_NAME 	+ _playerTurn.PlayerName;
+			this.CurrentPlayerScore.text 	= TXT_PLAYER_SCORE 	+ _playerTurn.PlayerCurrentScore;
 			this.guiTurnCount.text 			= TXT_TURNS 		+ this._TurnCount;
 
-			if((_TimePrTurn - _Time) ==  7 || (_TimePrTurn - _Time) == 5 || (_TimePrTurn - _Time) == 3 || (_TimePrTurn - _Time) == 1)
+			if((_TimePrTurn - _Time) == 7 || (_TimePrTurn - _Time) == 5 || (_TimePrTurn - _Time) == 3 || (_TimePrTurn - _Time) == 1)
 			{
 				this.guiTimeForEachTurn.text	= "";
 
@@ -306,16 +309,16 @@ public class GameLogic : MonoBehaviour {
 			if (_TurnCount < _playerTurnCount) 
 			{
 				this._TurnCount++; 
-				this._playerTurn.AddCurrentScore((_TimePrTurn*_TurnCount) - _Time*_TurnCount);
+				_playerTurn.AddCurrentScore((_TimePrTurn*_TurnCount) - _Time*_TurnCount);
 
-				this._playerTurn = nextPlayer();
+				_playerTurn = nextPlayer();
 
 			}
 			if (_Time > _TimePrTurn) 
 			{						
 
 				this._TurnCount++;
-				this._playerTurn = nextPlayer ();
+				_playerTurn = nextPlayer ();
 			} 
 			else
 			{
