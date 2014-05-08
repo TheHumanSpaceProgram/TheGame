@@ -182,6 +182,7 @@ public class GameLogic : MonoBehaviour {
 		_Timer.Enabled = true;
 		_Timer.Start ();
 		timeOutCalled = false;
+		DragMovement.shapePicked = false;
 	}
 	
 	public List<Player> CreatePlayers(){

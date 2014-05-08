@@ -5,8 +5,9 @@ public class DragMovement : MonoBehaviour {
 	
 	private Vector3 screenPoint;
 	private Vector3 offset;
-	private float oldGravityScale;
-	private float oldMass;
+	public static float oldGravityScale;
+	public static float oldMass;
+	public static bool shapePicked;
 	
 	// Use this for initialization
 	void Start () {
@@ -28,6 +29,7 @@ public class DragMovement : MonoBehaviour {
 			//Makes the shape stop moving, rotating and colliding with other things
 			Destroy(gameObject.GetComponent ("Rigidbody2D"));
 			Destroy(gameObject.GetComponent ("PolygonCollider2D"));
+			shapePicked = true;
 		}
 	}
 	

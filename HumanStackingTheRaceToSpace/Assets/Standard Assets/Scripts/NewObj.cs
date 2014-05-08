@@ -2,12 +2,14 @@
 using System.Collections;
 
 public class NewObj : MonoBehaviour {
+	/*
 	private int buttonWidth = 200;
 	private int buttonHeight = 50;
-	private bool created = false;
-	private bool commited = true;
 	private int groupWidth = 200;
 	private int groupHeigth = 170;
+	*/
+	private bool created = false;
+	private bool commited = true;
 	public GameObject theObj;
 	public GameObject instance;
 	public MoveRussianSelection russianSelect;
@@ -45,12 +47,22 @@ public class NewObj : MonoBehaviour {
 				Destroy(instance);
 				//MoveSelectionOnScreen();
 			}
-			if(TimeOut)
-			{
+		}
+		
+		if(TimeOut)
+		{
+			if(DragMovement.shapePicked){
 				TimeOut = false;
 				commited = true;
+				gameObject.AddComponent("Rigidbody2D");
+				gameObject.AddComponent("PolygonCollider2D");
+				rigidbody2D.gravityScale = DragMovement.oldGravityScale;
+				rigidbody2D.mass = DragMovement.oldMass;
 				GiveRigid ();
 				GameLogic.ChangePlayer();
+			}
+			else{
+				GameLogic.GameOver();
 			}
 		}
 	}

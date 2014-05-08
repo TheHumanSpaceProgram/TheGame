@@ -15,20 +15,20 @@ Platform assembly: C:\Users\Gvendur Stefáns\Documents\GitHub\TheGame\HumanStack
 Loading C:\Users\Gvendur Stefáns\Documents\GitHub\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
 Platform assembly: C:\Users\Gvendur Stefáns\Documents\GitHub\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
 Loading C:\Users\Gvendur Stefáns\Documents\GitHub\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
-- Completed reload, in  0.110 seconds
+- Completed reload, in  0.069 seconds
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 Platform assembly: C:\Users\Gvendur Stefáns\Documents\GitHub\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\System.dll (this message is harmless)
-UnloadTime: 0.421300 ms
+UnloadTime: 0.391537 ms
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 314.
-Total: 0.992954 ms (FindLiveObjects: 0.023091 ms CreateObjectMapping: 0.011802 ms MarkObjects: 0.164722 ms  DeleteObjects: 0.009236 ms)
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 323.
+Total: 0.644009 ms (FindLiveObjects: 0.018986 ms CreateObjectMapping: 0.008210 ms MarkObjects: 0.128288 ms  DeleteObjects: 0.004618 ms)
 
-UnloadTime: 0.859021 ms
+UnloadTime: 0.660943 ms
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 32 unused Assets to reduce memory usage. Loaded Objects now: 139.
-Total: 2.028500 ms (FindLiveObjects: 0.011289 ms CreateObjectMapping: 0.012315 ms MarkObjects: 0.230919 ms  DeleteObjects: 1.022204 ms)
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 142.
+Total: 1.302899 ms (FindLiveObjects: 0.007184 ms CreateObjectMapping: 0.007697 ms MarkObjects: 0.151380 ms  DeleteObjects: 0.684035 ms)
 
