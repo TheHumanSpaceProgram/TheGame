@@ -56,8 +56,6 @@ public class NewObj : MonoBehaviour {
 				commited = true;
 				gameObject.AddComponent("Rigidbody2D");
 				gameObject.AddComponent("PolygonCollider2D");
-				rigidbody2D.gravityScale = DragMovement.oldGravityScale;
-				rigidbody2D.mass = DragMovement.oldMass;
 				GiveRigid ();
 				GameLogic.ChangePlayer();
 			}

@@ -57,7 +57,7 @@ public class GameLogic : MonoBehaviour {
 	private List<Player> _playersList = new List<Player>();
 	private int maxPlayers = 2;
 	private static bool gameStarted = false;
-	private static bool gameOver = false;
+	public static bool gameOver = false;
 	private static bool timeOutCalled = false;
 
 
@@ -139,6 +139,7 @@ public class GameLogic : MonoBehaviour {
 
 	public Player nextPlayer()
 	{
+		DragMovement.shapePicked = false;
 		int playersCount = _playersList.Count;
 		int currentPlayer = _playerTurn.PlayerNumber;
 
@@ -182,7 +183,6 @@ public class GameLogic : MonoBehaviour {
 		_Timer.Enabled = true;
 		_Timer.Start ();
 		timeOutCalled = false;
-		DragMovement.shapePicked = false;
 	}
 	
 	public List<Player> CreatePlayers(){
@@ -253,7 +253,7 @@ public class GameLogic : MonoBehaviour {
 			this.CurrentPlayerScore.text 	= TXT_PLAYER_SCORE 	+ this._playerTurn.PlayerCurrentScore;
 			this.guiTurnCount.text 			= TXT_TURNS 		+ this._TurnCount;
 
-			if((_TimePrTurn - _Time) ==  7 || (_TimePrTurn - _Time) == 5 || (_TimePrTurn - _Time) == 3 || (_TimePrTurn - _Time) == 1)
+			if((_TimePrTurn - _Time) == 7 || (_TimePrTurn - _Time) == 5 || (_TimePrTurn - _Time) == 3 || (_TimePrTurn - _Time) == 1)
 			{
 				this.guiTimeForEachTurn.text	= "";
 
