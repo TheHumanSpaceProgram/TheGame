@@ -55,6 +55,7 @@ public class GameLogic : MonoBehaviour {
 	private int maxPlayers = 2;
 	private static bool gameStarted = false;
 	private static bool gameOver = false;
+	private static bool timeOutCalled = false;
 
 
 	private int buttonWidth = 200;
@@ -109,7 +110,7 @@ public class GameLogic : MonoBehaviour {
 	}
 
 	public static void ChangePlayer(){
-		_Timer.Stop ();		 
+		_Timer.Stop ();
 
 		if(_WaitTimer != null)
 		{
@@ -177,6 +178,7 @@ public class GameLogic : MonoBehaviour {
 		_Timer.AutoReset = true;
 		_Timer.Enabled = true;
 		_Timer.Start ();
+		timeOutCalled = false;
 	}
 	
 	public List<Player> CreatePlayers(){
@@ -286,8 +288,9 @@ public class GameLogic : MonoBehaviour {
 	
 	void FixedUpdate(){
 		if(gameStarted){
-			if (_Time == _TimePrTurn) 
+			if ((_Time == _TimePrTurn) && !timeOutCalled) 
 			{
+				timeOutCalled = true;
 				TimeOut();
 			}
 			if (_TurnCount < _playerTurnCount) 
