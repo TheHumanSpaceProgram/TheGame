@@ -37,7 +37,6 @@ public class GameLogic : MonoBehaviour {
 	public GUIText CurrentPlayerScore;
 	public GUIText guiTimeForEachTurn;
 	public GUIText guiTurnCount;
-
 	string PlayerName { get; set; }
 
 	private static Timer _Timer;
@@ -65,7 +64,7 @@ public class GameLogic : MonoBehaviour {
 
 	private static string TXT_PLAYER_NAME 			= "Player: ";
 	private static string TXT_TURNS 				= "Turn: ";
-	private static string TXT_TIME_COUNT			= "Seconds: ";
+	private static string TXT_TIME_COUNT			= "Time: ";
 	private static string TXT_PLAYER_SCORE  		= "Players Score: ";
 	private static string TXT_START_GAME_BUTTON		= "Start Game";
 	private static string TXT_END_GAME_BUTTON		= "Game Over";
@@ -246,8 +245,21 @@ public class GameLogic : MonoBehaviour {
 		if(gameStarted){
 			this.guiPlayerNameText.text 	= TXT_PLAYER_NAME 	+ this._playerTurn.PlayerName;
 			this.CurrentPlayerScore.text 	= TXT_PLAYER_SCORE 	+ this._playerTurn.PlayerCurrentScore;
-			this.guiTimeForEachTurn.text	= TXT_TIME_COUNT 	+ (_TimePrTurn - _Time);
 			this.guiTurnCount.text 			= TXT_TURNS 		+ this._TurnCount;
+
+			if((_TimePrTurn - _Time) ==  7 || (_TimePrTurn - _Time) == 5 || (_TimePrTurn - _Time) == 3 || (_TimePrTurn - _Time) == 1)
+			{
+				this.guiTimeForEachTurn.text	= "";
+
+				this.guiTimeForEachTurn.audio.Play();	
+			}
+			else
+			{
+				this.guiTimeForEachTurn.text	= TXT_TIME_COUNT 	+ (_TimePrTurn - _Time);
+				this.guiTimeForEachTurn.audio.Play();
+			}
+
+
 		}
 	}
 
