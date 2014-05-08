@@ -17,8 +17,12 @@ public class mainmenu : MonoBehaviour {
 		if(GUI.Button(new Rect(0,0,buttonWidth,buttonHeight), "Start The Stacking"))
 		{
 			Application.LoadLevel("humanStacking");
+		}		
+		if(GUI.Button(new Rect(0,60,buttonWidth,buttonHeight), "How To Play"))
+		{
+			Application.LoadLevel("tutorial");
 		}
-		if(GUI.Button(new Rect(0,60,buttonWidth,buttonHeight), "Quit"))
+		if(GUI.Button(new Rect(0,120,buttonWidth,buttonHeight), "Quit"))
 		{
 			Application.Quit();
 		}
