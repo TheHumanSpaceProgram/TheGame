@@ -2,12 +2,14 @@
 using System.Collections;
 
 public class NewObj : MonoBehaviour {
+	/*
 	private int buttonWidth = 200;
 	private int buttonHeight = 50;
-	private bool created = false;
-	private bool commited = true;
 	private int groupWidth = 200;
 	private int groupHeigth = 170;
+	*/
+	private bool created = false;
+	private bool commited = true;
 	public GameObject theObj;
 	public GameObject instance;
 	public MoveRussianSelection russianSelect;
