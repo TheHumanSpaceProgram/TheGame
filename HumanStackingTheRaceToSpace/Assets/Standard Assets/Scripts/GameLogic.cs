@@ -279,8 +279,6 @@ public class GameLogic : MonoBehaviour {
 			if ((_Time == _TimePrTurn) && !timeOutCalled) 
 			{
 				timeOutCalled = true;
-				print("TimeOut called from FixedUpdate");
-				print("_Time: " + _Time + "\n_TimePrTurn: " + _TimePrTurn);
 				TimeOut();
 			}
 			if (_TurnCount < _playerTurnCount) 
