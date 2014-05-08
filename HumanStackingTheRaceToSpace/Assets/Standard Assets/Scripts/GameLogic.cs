@@ -79,6 +79,8 @@ public class GameLogic : MonoBehaviour {
 	public static void GameOver(){
 		_Timer.Elapsed -= OnTimedEvent;
 		gameOver = true;
+		MoveRussianSelection.MoveAway = true;
+		MoveAmericanSelection.MoveAway = true;;
 	}
 
 	private void TimeOut(){
