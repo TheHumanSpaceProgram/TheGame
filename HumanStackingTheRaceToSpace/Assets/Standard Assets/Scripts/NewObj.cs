@@ -45,19 +45,19 @@ public class NewObj : MonoBehaviour {
 				Destroy(instance);
 				//MoveSelectionOnScreen();
 			}
-			/*if(TimeOut)
+			if(TimeOut)
 			{
 				TimeOut = false;
 				commited = true;
 				GiveRigid ();
 				GameLogic.ChangePlayer();
-			}*/
+			}
 		}
 	}
 	
 	
 	void OnMouseDown () {
-		
+		print ("TimeOut: " + TimeOut);
 		if (created == false && GameLogic.GetGameStarted()) {
 			GameObject instance = (GameObject)Instantiate(theObj, transform.position, transform.rotation);
 			instance.transform.parent = gameObject.transform.parent;
