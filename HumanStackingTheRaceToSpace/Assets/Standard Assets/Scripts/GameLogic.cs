@@ -66,7 +66,7 @@ public class GameLogic : MonoBehaviour {
 	private static string TXT_PLAYER_NAME 			= "Player: ";
 	private static string TXT_TURNS 				= "Turn: ";
 	private static string TXT_TIME_COUNT			= "Time: ";
-	private static string TXT_PLAYER_SCORE  		= "Players Score: ";
+	private static string TXT_PLAYER_SCORE  		= "Score: ";
 	private static string TXT_START_GAME_BUTTON		= "Start Game";
 	private static string TXT_END_GAME_BUTTON		= "Game Over";
 	private static string TXT_ADD_PLAYER_BUTTON		= "Add Player ";
