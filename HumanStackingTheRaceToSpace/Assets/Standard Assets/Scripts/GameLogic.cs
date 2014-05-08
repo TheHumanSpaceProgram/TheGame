@@ -257,9 +257,6 @@ public class GameLogic : MonoBehaviour {
 			{
 				this.guiTimeForEachTurn.text	= "";
 
-				AudioListener.volume = 0.999999F;
-				AudioSource.PlayClipAtPoint(clip, new Vector3(5, 1, 2));
-
 			}
 			else
 			{
@@ -267,7 +264,13 @@ public class GameLogic : MonoBehaviour {
 
 			}
 
-
+			if((_TimePrTurn - _Time) == 5 || (_TimePrTurn - _Time) == 3)
+			{
+				AudioListener.volume = 0.999999F;			
+				AudioSource.PlayClipAtPoint(clip, new Vector3(5, 1, 2), 0.999999999F);
+			}
+			
+			
 		}
 	}
 
