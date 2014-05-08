@@ -106,8 +106,9 @@ public class GameLogic : MonoBehaviour {
 		_playerTurnCount = 1;
 		MoveAmericanSelection.MoveAway = true;
 		MoveRussianSelection.MoveAway  = false;
-		
+		gameOver = false;
 		gameStarted = true;
+		TXT_END_GAME_BUTTON = "";
 
 		var water2 = GameObject.Find("water2");
 		water2.AddComponent("OceanMovement");
@@ -229,7 +230,6 @@ public class GameLogic : MonoBehaviour {
 	public void EndGameButtons(){
 		GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), (30), groupWidth, groupHeigth));
 		if (GUI.Button (new Rect (0, 60, buttonWidth, buttonHeight), TXT_END_GAME_BUTTON)) {
-
 			Application.LoadLevel("mainMenu");
 			
 		}
