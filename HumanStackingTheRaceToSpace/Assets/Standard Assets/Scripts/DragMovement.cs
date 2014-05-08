@@ -5,8 +5,8 @@ public class DragMovement : MonoBehaviour {
 	
 	private Vector3 screenPoint;
 	private Vector3 offset;
-	private float oldGravityScale;
-	private float oldMass;
+	public static float oldGravityScale;
+	public static float oldMass;
 	
 	// Use this for initialization
 	void Start () {
