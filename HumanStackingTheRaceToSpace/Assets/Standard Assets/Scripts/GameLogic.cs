@@ -37,7 +37,10 @@ public class GameLogic : MonoBehaviour {
 	public GUIText CurrentPlayerScore;
 	public GUIText guiTimeForEachTurn;
 	public GUIText guiTurnCount;
+	public AudioClip clip;
+	//public AudioSource audioSource;
 	string PlayerName { get; set; }
+
 
 	private static Timer _Timer;
 	private static Timer _WaitTimer;
@@ -253,12 +256,14 @@ public class GameLogic : MonoBehaviour {
 			{
 				this.guiTimeForEachTurn.text	= "";
 
-				this.guiTimeForEachTurn.audio.Play();	
+				AudioListener.volume = 0.999999F;
+				AudioSource.PlayClipAtPoint(clip, new Vector3(5, 1, 2));
+
 			}
 			else
 			{
 				this.guiTimeForEachTurn.text	= TXT_TIME_COUNT 	+ (_TimePrTurn - _Time);
-				this.guiTimeForEachTurn.audio.Play();
+
 			}
 
 
@@ -274,6 +279,7 @@ public class GameLogic : MonoBehaviour {
 	void Start () {
 		gameOver = false;
 		gameStarted = false;
+
 	}
 
 	// Update is called once per frame
