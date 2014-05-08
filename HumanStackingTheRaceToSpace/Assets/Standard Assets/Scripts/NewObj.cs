@@ -15,6 +15,7 @@ public class NewObj : MonoBehaviour {
 	public MoveRussianSelection russianSelect;
 	public MoveAmericanSelection americanSelect;
 	private PolygonCollider2D polyC;
+	public PhysicsMaterial2D myMat;
 	
 	public static bool TimeOut = false;
 	// Use this for initialization
@@ -87,6 +88,9 @@ public class NewObj : MonoBehaviour {
 		instance.rigidbody2D.mass = 200;
 		instance.rigidbody2D.gravityScale = 1;
 		instance.rigidbody2D.isKinematic = false;
+		instance.collider2D.sharedMaterial = myMat;
+		instance.collider2D.enabled = false;
+		instance.collider2D.enabled = true;
 		
 	}
 	
