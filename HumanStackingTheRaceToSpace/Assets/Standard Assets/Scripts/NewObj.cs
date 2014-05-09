@@ -29,20 +29,21 @@ public class NewObj : MonoBehaviour {
 		
 		
 		if (commited == false && created == true) {
+			gameObject.transform.Rotate(Vector3.back * Input.GetAxis("Mouse ScrollWheel") * 75, Space.World);
 			if (Input.GetKey("a")){
 				gameObject.transform.Rotate(Vector3.forward * Time.deltaTime * 75, Space.World);
 			}
 			if (Input.GetKey("d")){
 				gameObject.transform.Rotate(Vector3.back * Time.deltaTime * 75, Space.World);
 			}
-			if(Input.GetKey("space") && (!Input.GetKey("mouse 0"))){
+			if((Input.GetKey("mouse 1") || Input.GetKey("space")) && (!Input.GetKey("mouse 0"))){
 				
 				commited = true;
 				GiveRigid();
 				GameLogic.ChangePlayer();
 				//MoveSelectionOnScreen();
 			}
-			if(Input.GetKey("e")){
+			if((Input.GetKey("e") || Input.GetKey("mouse 2"))){
 				
 				MoveSelectionOnScreen();
 				Destroy(instance);
