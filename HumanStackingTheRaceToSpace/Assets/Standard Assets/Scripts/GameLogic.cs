@@ -54,7 +54,7 @@ public class GameLogic : MonoBehaviour {
 	private int _TurnCount;
 	public static int _playerTurnCount;
 	private static Player _playerTurn;
-	private List<Player> _playersList = new List<Player>();
+	private static List<Player> _playersList = new List<Player>();
 	private int maxPlayers = 2;
 	private static bool gameStarted = false;
 	public static bool gameOver = false;
@@ -76,12 +76,22 @@ public class GameLogic : MonoBehaviour {
 
 
 
-	public static void GameOver(){
+	public static void GameOver(bool actionTaken){
 		_Timer.Elapsed -= OnTimedEvent;
 		gameOver = true;
-		TXT_END_GAME_BUTTON  = _playerTurn.PlayerName + " has lost";
 		MoveRussianSelection.MoveAway = true;
-		MoveAmericanSelection.MoveAway = true;;
+		MoveAmericanSelection.MoveAway = true;
+		if(actionTaken){
+			TXT_END_GAME_BUTTON  = _playerTurn.PlayerName + " has lost";
+		}
+		else{
+			if(_playerTurn.PlayerNumber == 0){
+				TXT_END_GAME_BUTTON = _playersList[_playersList.Count - 1].PlayerName + " has lost";
+			}
+			else{
+				TXT_END_GAME_BUTTON = _playersList[_playerTurn.PlayerNumber - 1].PlayerName + " has lost";
+			}
+		}
 	}
 
 	private void TimeOut(){
@@ -144,6 +154,7 @@ public class GameLogic : MonoBehaviour {
 	public Player nextPlayer()
 	{
 		DragMovement.shapePicked = false;
+		NewObj.actionTaken = false;
 		int playersCount = _playersList.Count;
 		int currentPlayer = _playerTurn.PlayerNumber;
 

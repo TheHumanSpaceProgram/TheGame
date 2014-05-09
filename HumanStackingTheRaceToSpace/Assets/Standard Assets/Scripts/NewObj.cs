@@ -8,8 +8,12 @@ public class NewObj : MonoBehaviour {
 	private int groupWidth = 200;
 	private int groupHeigth = 170;
 	*/
+	//Note to self: DON'T make these two variables static!
 	private bool created = false;
-	private bool commited = true;
+	private bool commited = false;
+
+	public static bool actionTaken = false;
+
 	public GameObject theObj;
 	public GameObject instance;
 	public MoveRussianSelection russianSelect;
@@ -62,7 +66,7 @@ public class NewObj : MonoBehaviour {
 				GameLogic.ChangePlayer();
 			}
 			else{
-				GameLogic.GameOver();
+				GameLogic.GameOver(commited);
 			}
 		}
 	}
@@ -70,6 +74,7 @@ public class NewObj : MonoBehaviour {
 	
 	void OnMouseDown () {
 		if (created == false && GameLogic.GetGameStarted()) {
+			actionTaken = true;
 			GameObject instance = (GameObject)Instantiate(theObj, transform.position, transform.rotation);
 			instance.transform.parent = gameObject.transform.parent;
 			instance.transform.localScale = transform.localScale;
