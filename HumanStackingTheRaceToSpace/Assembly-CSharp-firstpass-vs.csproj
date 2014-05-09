@@ -56,6 +56,7 @@
      <Compile Include="Assets\Standard Assets\Scripts\MoveRussianSelection.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\NewObj.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\OceanBehaviour.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\cloudMovement.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\mainmenu.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\quit.cs" />
      <Compile Include="Assets\Standard Assets\Water (Basic)\Sources\Scripts\WaterSimple.cs" />

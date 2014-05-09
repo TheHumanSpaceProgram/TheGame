@@ -15,32 +15,44 @@ Platform assembly: C:\Users\Kristinn\Desktop\Kiddi\version 13\TheGame\HumanStack
 Loading C:\Users\Kristinn\Desktop\Kiddi\version 13\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
 Platform assembly: C:\Users\Kristinn\Desktop\Kiddi\version 13\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
 Loading C:\Users\Kristinn\Desktop\Kiddi\version 13\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
-- Completed reload, in  1.348 seconds
+- Completed reload, in  0.411 seconds
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 Platform assembly: C:\Users\Kristinn\Desktop\Kiddi\version 13\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\System.dll (this message is harmless)
-UnloadTime: 1.033355 ms
+UnloadTime: 0.718767 ms
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 138.
-Total: 2.190495 ms (FindLiveObjects: 0.041717 ms CreateObjectMapping: 0.036246 ms MarkObjects: 0.376138 ms  DeleteObjects: 0.023936 ms)
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 323.
+Total: 1.808202 ms (FindLiveObjects: 0.062917 ms CreateObjectMapping: 0.031458 ms MarkObjects: 0.340576 ms  DeleteObjects: 0.025987 ms)
 
-UnloadTime: 0.635332 ms
+UnloadTime: 1.744600 ms
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 134.
-Total: 1.808202 ms (FindLiveObjects: 0.018464 ms CreateObjectMapping: 0.032142 ms MarkObjects: 0.299543 ms  DeleteObjects: 0.019148 ms)
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 141.
+Total: 5.308344 ms (FindLiveObjects: 0.023936 ms CreateObjectMapping: 0.040349 ms MarkObjects: 0.492399 ms  DeleteObjects: 2.873700 ms)
 
-UnloadTime: 0.659268 ms
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 296.
-Total: 1.993535 ms (FindLiveObjects: 0.044452 ms CreateObjectMapping: 0.037613 ms MarkObjects: 0.369983 ms  DeleteObjects: 0.025303 ms)
-
-UnloadTime: 1.560634 ms
+UnloadTime: 0.615499 ms
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 138.
-Total: 5.224910 ms (FindLiveObjects: 0.022568 ms CreateObjectMapping: 0.038297 ms MarkObjects: 0.439740 ms  DeleteObjects: 3.052195 ms)
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 323.
+Total: 3.017317 ms (FindLiveObjects: 0.250987 ms CreateObjectMapping: 0.039665 ms MarkObjects: 0.479406 ms  DeleteObjects: 0.029407 ms)
+
+UnloadTime: 1.584570 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 141.
+Total: 5.218755 ms (FindLiveObjects: 0.024619 ms CreateObjectMapping: 0.041033 ms MarkObjects: 0.511548 ms  DeleteObjects: 2.919521 ms)
+
+UnloadTime: 0.670894 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 323.
+Total: 2.375829 ms (FindLiveObjects: 0.052659 ms CreateObjectMapping: 0.043768 ms MarkObjects: 0.583357 ms  DeleteObjects: 0.027355 ms)
+
+UnloadTime: 1.709038 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 140.
+Total: 5.388359 ms (FindLiveObjects: 0.023936 ms CreateObjectMapping: 0.042401 ms MarkObjects: 0.588144 ms  DeleteObjects: 2.970129 ms)
 

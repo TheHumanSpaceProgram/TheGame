@@ -45,8 +45,8 @@ public class GameLogic : MonoBehaviour {
 	private static Timer _Timer;
 	private static Timer _WaitTimer;
 
-	private static int _MinTimeLimit = 7;
-	private static int _StartTime = 20000;
+	private static int _MinTimeLimit = 15;
+	private static int _StartTime = 30000;
 	private int _TimePrTurn = _StartTime / 1000 ;
 	private static int _Time;
 	private static int _WaitTimeCounter;
@@ -106,8 +106,9 @@ public class GameLogic : MonoBehaviour {
 		_playerTurnCount = 1;
 		MoveAmericanSelection.MoveAway = true;
 		MoveRussianSelection.MoveAway  = false;
-		
+		gameOver = false;
 		gameStarted = true;
+		TXT_END_GAME_BUTTON = "";
 
 		var water2 = GameObject.Find("water2");
 		water2.AddComponent("OceanMovement");
@@ -229,7 +230,6 @@ public class GameLogic : MonoBehaviour {
 	public void EndGameButtons(){
 		GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), (30), groupWidth, groupHeigth));
 		if (GUI.Button (new Rect (0, 60, buttonWidth, buttonHeight), TXT_END_GAME_BUTTON)) {
-
 			Application.LoadLevel("mainMenu");
 			
 		}
