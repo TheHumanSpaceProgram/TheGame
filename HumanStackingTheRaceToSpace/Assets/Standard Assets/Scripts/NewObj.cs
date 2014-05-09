@@ -74,7 +74,6 @@ public class NewObj : MonoBehaviour {
 	
 	void OnMouseDown () {
 		if (created == false && GameLogic.GetGameStarted()) {
-			actionTaken = true;
 			GameObject instance = (GameObject)Instantiate(theObj, transform.position, transform.rotation);
 			instance.transform.parent = gameObject.transform.parent;
 			instance.transform.localScale = transform.localScale;
@@ -88,6 +87,7 @@ public class NewObj : MonoBehaviour {
 	}
 	
 	void GiveRigid (){
+		actionTaken = true;
 		Destroy (instance.GetComponent("DragMovement"));
 		instance.rigidbody2D.mass = 200;
 		instance.rigidbody2D.gravityScale = 1;
