@@ -8,8 +8,12 @@ public class NewObj : MonoBehaviour {
 	private int groupWidth = 200;
 	private int groupHeigth = 170;
 	*/
+	//Note to self: DON'T make these two variables static!
 	private bool created = false;
-	private bool commited = true;
+	private bool commited = false;
+
+	public static bool actionTaken = false;
+
 	public GameObject theObj;
 	public GameObject instance;
 	public MoveRussianSelection russianSelect;
@@ -29,20 +33,21 @@ public class NewObj : MonoBehaviour {
 		
 		
 		if (commited == false && created == true) {
+			gameObject.transform.Rotate(Vector3.back * Input.GetAxis("Mouse ScrollWheel") * 75, Space.World);
 			if (Input.GetKey("a")){
 				gameObject.transform.Rotate(Vector3.forward * Time.deltaTime * 75, Space.World);
 			}
 			if (Input.GetKey("d")){
 				gameObject.transform.Rotate(Vector3.back * Time.deltaTime * 75, Space.World);
 			}
-			if(Input.GetKey("space") && (!Input.GetKey("mouse 0"))){
+			if((Input.GetKey("mouse 1") || Input.GetKey("space")) && (!Input.GetKey("mouse 0"))){
 				
 				commited = true;
 				GiveRigid();
 				GameLogic.ChangePlayer();
 				//MoveSelectionOnScreen();
 			}
-			if(Input.GetKey("e")){
+			if((Input.GetKey("e") || Input.GetKey("mouse 2"))){
 				
 				MoveSelectionOnScreen();
 				Destroy(instance);
@@ -55,15 +60,13 @@ public class NewObj : MonoBehaviour {
 			if(DragMovement.shapePicked){
 				TimeOut = false;
 				commited = true;
-				gameObject.AddComponent("Rigidbody2D");
+				//gameObject.AddComponent("Rigidbody2D");
 				gameObject.AddComponent("PolygonCollider2D");
-				rigidbody2D.gravityScale = DragMovement.oldGravityScale;
-				rigidbody2D.mass = DragMovement.oldMass;
 				GiveRigid ();
 				GameLogic.ChangePlayer();
 			}
 			else{
-				GameLogic.GameOver();
+				GameLogic.GameOver(commited);
 			}
 		}
 	}
@@ -84,6 +87,7 @@ public class NewObj : MonoBehaviour {
 	}
 	
 	void GiveRigid (){
+		actionTaken = true;
 		Destroy (instance.GetComponent("DragMovement"));
 		instance.rigidbody2D.mass = 200;
 		instance.rigidbody2D.gravityScale = 1;

@@ -6,6 +6,8 @@ public class CameraMovement : MonoBehaviour {
 	private float movementSpeed = 0.5f;
 	private float maxUp = 290f;
 	private float maxDown = 120f;
+	public float upLimit;
+	public float downLimit;
 
 	// Use this for initialization
 	void Start () {
@@ -14,11 +16,12 @@ public class CameraMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		float y = (float)Input.mousePosition.y;
 		if(GameLogic.GetGameStarted()){
-			if(Input.GetKey("up") || Input.GetKey ("w")){
+			if(Input.GetKey("up") || Input.GetKey ("w") || y > upLimit){
 				this.transform.Translate(Vector3.up * movementSpeed);
 			}
-			if(Input.GetKey("down") || Input.GetKey ("s")){
+			if(Input.GetKey("down") || Input.GetKey ("s") || y < downLimit){
 				this.transform.Translate(Vector3.up * -1 * movementSpeed);
 			}
 
