@@ -34,7 +34,8 @@ public class GameLogic : MonoBehaviour {
 	private bool alphaVersion = true;
 
 	public GUIText guiPlayerNameText;
-	public GUIText CurrentPlayerScore;
+	public GUIText Player1Score;
+	public GUIText Player2Score;
 	public GUIText guiTimeForEachTurn;
 	public GUIText guiTurnCount;
 	public AudioClip clip;
@@ -113,6 +114,7 @@ public class GameLogic : MonoBehaviour {
 			CreatePlayers ();
 		}
 		_playerTurn = _playersList [0];
+		MoveTexts ();
 		this._TurnCount = 1;
 		_playerTurnCount = 1;
 		MoveAmericanSelection.MoveAway = true;
@@ -127,6 +129,7 @@ public class GameLogic : MonoBehaviour {
 		StartTimer ();
 	}
 
+	//Starts counting down to when the next turn starts
 	public static void ChangePlayer(){
 		_Timer.Stop ();
 
@@ -146,12 +149,8 @@ public class GameLogic : MonoBehaviour {
 
 	}
 
-	public void AddPlayer(Player player)
-	{
-		_playersList.Add (player);
-		_playerTurn = player;
-	}
 
+	//Is called at the start of every turn. Performs setup for the next turn.
 	public Player nextPlayer()
 	{
 		DragMovement.shapePicked = false;
@@ -168,9 +167,24 @@ public class GameLogic : MonoBehaviour {
 			_playerTurn = _playersList[_playerTurn.PlayerNumber + 1];
 		}
 
+		MoveTexts();
 		StartTimer ();
 
 		return _playerTurn;
+	}
+
+	//Moves the timer depending on whose turn it is
+	public void MoveTexts(){
+		if(_playerTurn.PlayerNumber == 0){
+			Vector3 temp = guiTimeForEachTurn.transform.position;
+			temp.x = 0.6f;
+			guiTimeForEachTurn.transform.position = temp;
+		}
+		else{
+			Vector3 temp = guiTimeForEachTurn.transform.position;
+			temp.x = 0.1f;
+			guiTimeForEachTurn.transform.position = temp;
+		}
 	}
 	
 	public void StartTimer()
@@ -265,7 +279,9 @@ public class GameLogic : MonoBehaviour {
 	{
 		if(gameStarted){
 			this.guiPlayerNameText.text 	= TXT_PLAYER_NAME 	+ _playerTurn.PlayerName;
-			this.CurrentPlayerScore.text 	= TXT_PLAYER_SCORE 	+ _playerTurn.PlayerCurrentScore;
+			this.Player1Score.text 			= TXT_PLAYER_SCORE 	+ _playersList[0].PlayerCurrentScore;
+			this.Player2Score.text 			= TXT_PLAYER_SCORE 	+ _playersList[1].PlayerCurrentScore;
+
 			this.guiTurnCount.text 			= TXT_TURNS 		+ this._TurnCount;
 
 			if((_TimePrTurn - _Time) == 7 || (_TimePrTurn - _Time) == 5 || (_TimePrTurn - _Time) == 3 || (_TimePrTurn - _Time) == 1)
