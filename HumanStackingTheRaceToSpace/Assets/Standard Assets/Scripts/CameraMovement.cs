@@ -6,7 +6,6 @@ public class CameraMovement : MonoBehaviour {
 	private float movementSpeed = 0.5f;
 	private float maxUp = 290f;
 	private float maxDown = 120f;
-	public float upLimit;
 	public float downLimit;
 
 	// Use this for initialization
@@ -18,7 +17,7 @@ public class CameraMovement : MonoBehaviour {
 	void Update () {
 		float y = (float)Input.mousePosition.y;
 		if(GameLogic.GetGameStarted()){
-			if(Input.GetKey("up") || Input.GetKey ("w") || y > upLimit){
+			if(Input.GetKey("up") || Input.GetKey ("w") || y > camera.pixelHeight - 5){
 				this.transform.Translate(Vector3.up * movementSpeed);
 			}
 			if(Input.GetKey("down") || Input.GetKey ("s") || y < downLimit){
