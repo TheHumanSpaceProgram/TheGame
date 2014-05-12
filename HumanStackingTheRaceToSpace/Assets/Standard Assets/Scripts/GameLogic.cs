@@ -54,7 +54,7 @@ public class GameLogic : MonoBehaviour {
 	private int _TurnCount;
 	public static int _playerTurnCount;
 	private static Player _playerTurn;
-	private static List<Player> _playersList = new List<Player>();
+	private static List<Player> _playersList;
 	private int maxPlayers = 2;
 	private static bool gameStarted = false;
 	public static bool gameOver = false;
@@ -81,6 +81,7 @@ public class GameLogic : MonoBehaviour {
 		gameOver = true;
 		MoveRussianSelection.MoveAway = true;
 		MoveAmericanSelection.MoveAway = true;
+		_WaitTimer.Stop ();
 		if(actionTaken){
 			TXT_END_GAME_BUTTON  = _playerTurn.PlayerName + " has lost";
 		}
@@ -295,9 +296,11 @@ public class GameLogic : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		_playersList = new List<Player>();
 		gameOver = false;
 		gameStarted = false;
-
+		MoveAmericanSelection.MoveAway = false;
+		MoveRussianSelection.MoveAway  = false;
 	}
 
 	// Update is called once per frame
