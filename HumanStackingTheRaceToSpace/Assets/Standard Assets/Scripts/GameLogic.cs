@@ -329,6 +329,7 @@ public class GameLogic : MonoBehaviour {
 
 	}
 	
+	//Works in a similar fashion as Update: This function gets called at a fixed interval.
 	void FixedUpdate(){
 		if(gameStarted){
 			if ((_Time == _TimePrTurn) && !timeOutCalled) 
