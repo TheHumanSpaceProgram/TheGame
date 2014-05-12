@@ -231,7 +231,7 @@ public class GameLogic : MonoBehaviour {
 		var water2 = GameObject.Find("water2");
 		Destroy(water2.GetComponent("OceanMovement"));
 
-		GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), (30), groupWidth, groupHeigth));
+		GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), 50, groupWidth, groupHeigth));
 
 		/* FOR MULTIPLAYER MORE THAN 2 PLAYERS
 		 */
@@ -321,8 +321,9 @@ public class GameLogic : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
-
+		if(Input.GetKey ("l")){
+			CheckSleeping.SceneSleeping();
+		}
 	}
 
 	private void Wait(){
@@ -370,14 +371,16 @@ public class GameLogic : MonoBehaviour {
 
 
 		if (_playerTurnCount % 2 != 0) {
-						MoveRussianSelection.MoveAway = true;
-				} else {
-						MoveAmericanSelection.MoveAway = true;
-				}
+			MoveRussianSelection.MoveAway = true;
+		} 
+		else {
+			MoveAmericanSelection.MoveAway = true;
+		}
 
 
 
-		if (_WaitTimeCounter == 4) {
+		//if (_WaitTimeCounter == 4) {
+		if(CheckSleeping.sleeping){
 			_WaitTimeCounter = 0;		
 			_playerTurnCount++;
 			if (_playerTurnCount % 2 != 0) {
