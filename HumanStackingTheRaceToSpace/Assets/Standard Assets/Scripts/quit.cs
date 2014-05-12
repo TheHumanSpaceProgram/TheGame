@@ -15,5 +15,17 @@ public class quit : MonoBehaviour {
 			Application.LoadLevel("mainMenu");
 		}
 
+		if (Input.GetKeyDown("p")){
+			if(Time.timeScale == 0)
+			{
+				Time.timeScale = 1;
+			}
+			else
+			{
+				Time.timeScale = 0;
+			}
+
+		}
+
 	}
 }
