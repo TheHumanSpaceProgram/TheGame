@@ -1,9 +1,10 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Scripts\NewObj.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Scripts\GameLogic.cs">
     <Files>
-      <File FileName="Assets\Standard Assets\Scripts\OceanBehaviour.cs" Line="31" Column="2" />
-      <File FileName="Assets\Standard Assets\Scripts\NewObj.cs" Line="15" Column="41" />
+      <File FileName="Assets\Standard Assets\Scripts\OceanBehaviour.cs" Line="11" Column="3" />
+      <File FileName="Assets\Standard Assets\Scripts\NewObj.cs" Line="17" Column="41" />
+      <File FileName="Assets\Standard Assets\Scripts\GameLogic.cs" Line="84" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

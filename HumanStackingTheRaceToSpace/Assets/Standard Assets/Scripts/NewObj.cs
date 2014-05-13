@@ -29,6 +29,8 @@ public class NewObj : MonoBehaviour {
 	public PhysicsMaterial2D myMat;
 	
 	public static bool TimeOut = false;
+
+	public int objectPoints = 10;
 	// Use this for initialization
 	void Start () {
 		
@@ -51,7 +53,7 @@ public class NewObj : MonoBehaviour {
 				
 				commited = true;
 				GiveRigid();
-				GameLogic.ChangePlayer();
+				GameLogic.ChangePlayer(this.objectPoints);
 				//MoveSelectionOnScreen();
 			}
 			if((Input.GetKey("e") || Input.GetKey("mouse 2"))){
@@ -70,7 +72,7 @@ public class NewObj : MonoBehaviour {
 				//gameObject.AddComponent("Rigidbody2D");
 				gameObject.AddComponent("PolygonCollider2D");
 				GiveRigid ();
-				GameLogic.ChangePlayer();
+				GameLogic.ChangePlayer(this.objectPoints);
 			}
 			else{
 				GameLogic.GameOver(commited);

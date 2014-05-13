@@ -24,14 +24,15 @@ public class Player {
 	}
 
 
-	public int AddCurrentScore(int score)
+	public int AddBonusToCurrentScore(int bonusscore)
 	{
-		PlayerCurrentScore += score;
+		PlayerCurrentScore += bonusscore;
 		return PlayerCurrentScore;
 	}
 
-	public int CalculateScore(int ShapePoints, int Seconds)
+	public int AddCurrentScore(int ShapePoints, int Seconds)
 	{
+
 		int newScore = ShapePoints * Seconds / 2;
 		PlayerCurrentScore -= newScore;
 
@@ -90,6 +91,8 @@ public class GameLogic : MonoBehaviour {
 	public static bool gameOver = false;
 	private static bool timeOutCalled = false;
 
+	private static int _TmpObjectPoint;
+
 
 	private int buttonWidth = 200;
 	private int buttonHeight = 50;
@@ -109,9 +112,13 @@ public class GameLogic : MonoBehaviour {
 	public static void GameOver(bool actionTaken){
 		_Timer.Elapsed -= OnTimedEvent;
 		gameOver = true;
+
+
 		MoveRussianSelection.MoveAway = true;
 		MoveAmericanSelection.MoveAway = true;
 		_WaitTimer.Stop ();
+	
+		/*
 		if(actionTaken){
 			TXT_END_GAME_BUTTON  = _playerTurn.PlayerName + " has lost";
 		}
@@ -123,7 +130,8 @@ public class GameLogic : MonoBehaviour {
 				TXT_END_GAME_BUTTON = _playersList[_playerTurn.PlayerNumber - 1].PlayerName + " has lost";
 			}
 		}
-	}
+*/
+}
 
 	private void TimeOut(){
 		_Timer.Elapsed -= OnTimedEvent;
@@ -159,7 +167,9 @@ public class GameLogic : MonoBehaviour {
 	}
 
 	//Starts counting down to when the next turn starts
-	public static void ChangePlayer(){
+	public static void ChangePlayer(int prevObjectPoints){
+		_TmpObjectPoint = prevObjectPoints;
+
 		_Timer.Stop ();
 
 		if(_WaitTimer != null)
@@ -182,6 +192,7 @@ public class GameLogic : MonoBehaviour {
 	//Is called at the start of every turn. Performs setup for the next turn.
 	public Player nextPlayer()
 	{
+
 		DragMovement.shapePicked = false;
 		NewObj.actionTaken = false;
 		int playersCount = _playersList.Count;
@@ -300,7 +311,11 @@ public class GameLogic : MonoBehaviour {
 
 		if(gameOver){
 			_Timer.Stop();
-			EndGameButtons ();
+			//EndGameButtons ();
+			gameOver = false;
+			_playerTurn.AddCurrentScore (_TmpObjectPoint, _Time);
+			_TmpObjectPoint = 0;
+			nextPlayer();
 		}
 	}
 
@@ -351,7 +366,8 @@ public class GameLogic : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKey ("l")){
-			CheckSleeping.SceneSleeping();
+			CheckSleeping.SceneSleeping();		
+
 		}
 	}
 
@@ -370,8 +386,7 @@ public class GameLogic : MonoBehaviour {
 			if (_TurnCount < _playerTurnCount) 
 			{
 				this._TurnCount++; 
-				_playerTurn.AddCurrentScore((_TimePrTurn*_TurnCount) - _Time*_TurnCount);
-
+				//_playerTurn.AddCurrentScore(_TmpObjectPoint, _Time);
 				_playerTurn = nextPlayer();
 
 			}
@@ -412,6 +427,7 @@ public class GameLogic : MonoBehaviour {
 		if(CheckSleeping.sleeping || (_WaitTimeCounter == 10)){
 			_WaitTimeCounter = 0;		
 			_playerTurnCount++;
+
 			if (_playerTurnCount % 2 != 0) {
 				MoveRussianSelection.MoveAway = false;
 			} else {
