@@ -110,7 +110,6 @@ public class NewObj : MonoBehaviour {
 
 	//Give the user a new random shape
 	void ReplaceSelectionShape(){
-		print ("Replacing selection shape");
 		GameObject tempShape = ShapeFactory.GetShape((GameLogic._playerTurnCount + 1) % 2);
 		tempShape.transform.parent = selectedShape.transform.parent;
 		tempShape.transform.position = selectedShape.transform.position;
