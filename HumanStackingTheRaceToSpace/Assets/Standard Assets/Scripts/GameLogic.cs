@@ -4,12 +4,25 @@ using System.Collections.Generic;
 using System.Timers;
 
 
-public class Player {
 
+public class Player {
+	
 	public string PlayerName { get; set; }
 	public int PlayerNumber { get; set; }
-	public int PlayerCurrentScore { get; set; }
-	public int PlayerTotalScore { get; set; }
+	public int PlayerCurrentScore;
+	private int PlayerTotalScore;
+
+	private int TimeUpPenaltyCount { get; set; }
+	private int TimeUpPenaltyFactor  = 50;
+
+	public Player(){
+		PlayerCurrentScore = 1000;
+		}
+	public Player(int StartScore){
+		PlayerCurrentScore = StartScore;
+		PlayerTotalScore = 0;
+	}
+
 
 	public int AddCurrentScore(int score)
 	{
@@ -17,15 +30,31 @@ public class Player {
 		return PlayerCurrentScore;
 	}
 
+	public int CalculateScore(int ShapePoints, int Seconds)
+	{
+		int newScore = ShapePoints * Seconds / 2;
+		PlayerCurrentScore -= newScore;
+
+		return PlayerCurrentScore;
+	}
+
+	public int TimeUpScorePenalty()
+	{
+		TimeUpPenaltyCount++;
+		PlayerCurrentScore -= (TimeUpPenaltyCount * TimeUpPenaltyFactor);
+		return PlayerCurrentScore;
+
+	}
+
+
+
 	public int AddTotalScore(int score)
 	{
 		PlayerTotalScore += score;
 		return PlayerTotalScore;
-
+		
 	}
 }
-
-
 
 public delegate void OnPlayerChange();
 
