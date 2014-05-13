@@ -8,6 +8,8 @@ public class NewObj : MonoBehaviour {
 	private int groupWidth = 200;
 	private int groupHeigth = 170;
 	*/
+
+
 	//Note to self: DON'T make these two variables static!
 	private bool created = false;
 	private bool commited = false;
@@ -19,6 +21,11 @@ public class NewObj : MonoBehaviour {
 	public MoveRussianSelection russianSelect;
 	public MoveAmericanSelection americanSelect;
 	private PolygonCollider2D polyC;
+
+	//Variables for the rigidbody
+	public int mass;
+	public int gravityScale;
+	public bool isKinematic;
 	public PhysicsMaterial2D myMat;
 	
 	public static bool TimeOut = false;
@@ -89,9 +96,9 @@ public class NewObj : MonoBehaviour {
 	void GiveRigid (){
 		actionTaken = true;
 		Destroy (instance.GetComponent("DragMovement"));
-		instance.rigidbody2D.mass = 200;
-		instance.rigidbody2D.gravityScale = 1;
-		instance.rigidbody2D.isKinematic = false;
+		instance.rigidbody2D.mass = mass;
+		instance.rigidbody2D.gravityScale = gravityScale;
+		instance.rigidbody2D.isKinematic = isKinematic;
 		instance.collider2D.sharedMaterial = myMat;
 		instance.collider2D.enabled = false;
 		instance.collider2D.enabled = true;
