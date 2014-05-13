@@ -1,82 +1,34 @@
 Initialize engine version: 4.3.4f1 (e444f76e01cd)
 GfxDevice: creating device client; threaded=1
 Direct3D:
-    Version:  Direct3D 9.0c [nvumdshim.dll 9.18.13.3221]
-    Renderer: Intel(R) HD Graphics Family
-    Vendor:   Intel
-    VRAM:     944 MB (via DXGI)
-    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=1 INTZ=1 RAWZ=0 NULL=1 RESZ=1 SlowINTZ=0
+    Version:  Direct3D 9.0c [aticfx32.dll 8.17.10.1099]
+    Renderer: AMD Radeon HD 6520G
+    Vendor:   ATI
+    VRAM:     1500 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=1 INTZ=1 RAWZ=0 NULL=1 RESZ=1 SlowINTZ=1
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Gvendur Stefáns\Documents\GitHub\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Gvendur Stefáns\Documents\GitHub\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Gvendur Stefáns\Documents\GitHub\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\Users\Gvendur Stefáns\Documents\GitHub\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\Gvendur Stefáns\Documents\GitHub\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
-Loading C:\Users\Gvendur Stefáns\Documents\GitHub\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\Gvendur Stefáns\Documents\GitHub\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
-Loading C:\Users\Gvendur Stefáns\Documents\GitHub\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
-- Completed reload, in  0.067 seconds
+Platform assembly: C:\Users\Kristinn\Desktop\Kiddi\version15\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Kristinn\Desktop\Kiddi\version15\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Kristinn\Desktop\Kiddi\version15\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Kristinn\Desktop\Kiddi\version15\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Kristinn\Desktop\Kiddi\version15\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading C:\Users\Kristinn\Desktop\Kiddi\version15\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Kristinn\Desktop\Kiddi\version15\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\Kristinn\Desktop\Kiddi\version15\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+- Completed reload, in  0.198 seconds
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
-Platform assembly: C:\Users\Gvendur Stefáns\Documents\GitHub\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\System.dll (this message is harmless)
-UnloadTime: 47.095318 ms
+Platform assembly: C:\Users\Kristinn\Desktop\Kiddi\version15\TheGame\HumanStackingTheRaceToSpace\HumanStackingTheRaceToSpace_Data\Managed\System.dll (this message is harmless)
+UnloadTime: 1.451212 ms
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 139.
-Total: 7.952277 ms (FindLiveObjects: 0.496215 ms CreateObjectMapping: 0.010262 ms MarkObjects: 0.110840 ms  DeleteObjects: 0.009749 ms)
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 328.
+Total: 2.403869 ms (FindLiveObjects: 0.087537 ms CreateObjectMapping: 0.042401 ms MarkObjects: 0.433585 ms  DeleteObjects: 0.033510 ms)
 
-UnloadTime: 0.371007 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 135.
-Total: 0.922129 ms (FindLiveObjects: 0.007184 ms CreateObjectMapping: 0.007184 ms MarkObjects: 0.102116 ms  DeleteObjects: 0.007184 ms)
-
-UnloadTime: 0.315073 ms
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 323.
-Total: 0.981141 ms (FindLiveObjects: 0.013855 ms CreateObjectMapping: 0.009749 ms MarkObjects: 0.120076 ms  DeleteObjects: 0.009236 ms)
-
-UnloadTime: 0.687620 ms
+UnloadTime: 1.643384 ms
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
 Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 141.
-Total: 1.602565 ms (FindLiveObjects: 0.007184 ms CreateObjectMapping: 0.009749 ms MarkObjects: 0.166773 ms  DeleteObjects: 0.586016 ms)
-
-UnloadTime: 0.302758 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 323.
-Total: 1.001154 ms (FindLiveObjects: 0.014368 ms CreateObjectMapping: 0.009236 ms MarkObjects: 0.160615 ms  DeleteObjects: 0.009236 ms)
-
-UnloadTime: 0.610134 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 141.
-Total: 1.734445 ms (FindLiveObjects: 0.007697 ms CreateObjectMapping: 0.007697 ms MarkObjects: 0.172418 ms  DeleteObjects: 0.717896 ms)
-
-UnloadTime: 0.403335 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 323.
-Total: 1.025272 ms (FindLiveObjects: 0.014368 ms CreateObjectMapping: 0.009749 ms MarkObjects: 0.178062 ms  DeleteObjects: 0.009236 ms)
-
-UnloadTime: 0.972418 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 141.
-Total: 1.756510 ms (FindLiveObjects: 0.007697 ms CreateObjectMapping: 0.009749 ms MarkObjects: 0.219114 ms  DeleteObjects: 0.687620 ms)
-
-UnloadTime: 0.356125 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 323.
-Total: 1.130981 ms (FindLiveObjects: 0.013855 ms CreateObjectMapping: 0.009236 ms MarkObjects: 0.258114 ms  DeleteObjects: 0.009236 ms)
-
-UnloadTime: 0.607055 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 141.
-Total: 1.784733 ms (FindLiveObjects: 0.007697 ms CreateObjectMapping: 0.010776 ms MarkObjects: 0.230404 ms  DeleteObjects: 0.697370 ms)
+Total: 5.369211 ms (FindLiveObjects: 0.023252 ms CreateObjectMapping: 0.040349 ms MarkObjects: 0.454102 ms  DeleteObjects: 3.035098 ms)
 
