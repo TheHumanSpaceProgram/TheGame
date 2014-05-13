@@ -1,10 +1,11 @@
 ﻿<Properties GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Scripts\GameLogic.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Scripts\NewObj.cs">
     <Files>
-      <File FileName="Assets\Standard Assets\Scripts\NewObj.cs" Line="42" Column="5" />
-      <File FileName="Assets\Standard Assets\Scripts\OceanBehaviour.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\GameLogic.cs" Line="383" Column="55" />
+      <File FileName="Assets\ShapeRemoval.cs" Line="5" Column="30" />
+      <File FileName="Assets\Standard Assets\Scripts\NewObj.cs" Line="100" Column="43" />
+      <File FileName="Assets\Standard Assets\Scripts\OceanBehaviour.cs" Line="28" Column="2" />
+      <File FileName="Assets\Standard Assets\Scripts\GameLogic.cs" Line="382" Column="58" />
       <File FileName="Assets\Standard Assets\Scripts\quit.cs" Line="1" Column="1" />
       <File FileName="Assets\Standard Assets\Scripts\mainmenu.cs" Line="1" Column="1" />
       <File FileName="Assets\Standard Assets\Scripts\DragMovement.cs" Line="1" Column="1" />
@@ -12,7 +13,7 @@
       <File FileName="Assets\Standard Assets\Scripts\MoveAmericanSelection.cs" Line="1" Column="1" />
       <File FileName="Assets\Standard Assets\Scripts\CameraMovement.cs" Line="1" Column="1" />
       <File FileName="Assets\Standard Assets\Scripts\General Scripts\OceanMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\CheckSleeping.cs" Line="45" Column="4" />
+      <File FileName="Assets\Standard Assets\Scripts\CheckSleeping.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

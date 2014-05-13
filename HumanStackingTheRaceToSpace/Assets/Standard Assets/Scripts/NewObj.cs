@@ -25,7 +25,6 @@ public class NewObj : MonoBehaviour {
 	//Variables for the rigidbody
 	public int mass;
 	public int gravityScale;
-	public bool isKinematic;
 	public PhysicsMaterial2D myMat;
 	
 	public static bool TimeOut = false;
@@ -98,7 +97,7 @@ public class NewObj : MonoBehaviour {
 		Destroy (instance.GetComponent("DragMovement"));
 		instance.rigidbody2D.mass = mass;
 		instance.rigidbody2D.gravityScale = gravityScale;
-		instance.rigidbody2D.isKinematic = isKinematic;
+		instance.rigidbody2D.isKinematic = false;
 		instance.collider2D.sharedMaterial = myMat;
 		instance.collider2D.enabled = false;
 		instance.collider2D.enabled = true;
