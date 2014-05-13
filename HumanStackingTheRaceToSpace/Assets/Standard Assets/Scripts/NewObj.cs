@@ -18,6 +18,7 @@ public class NewObj : MonoBehaviour {
 
 	public GameObject theObj;
 	public GameObject instance;
+	public static GameObject selectedShape;
 	public MoveRussianSelection russianSelect;
 	public MoveAmericanSelection americanSelect;
 	private PolygonCollider2D polyC;
@@ -50,6 +51,7 @@ public class NewObj : MonoBehaviour {
 				
 				commited = true;
 				GiveRigid();
+				ReplaceSelectionShape();
 				GameLogic.ChangePlayer();
 				//MoveSelectionOnScreen();
 			}
@@ -69,6 +71,7 @@ public class NewObj : MonoBehaviour {
 				//gameObject.AddComponent("Rigidbody2D");
 				gameObject.AddComponent("PolygonCollider2D");
 				GiveRigid ();
+				ReplaceSelectionShape();
 				GameLogic.ChangePlayer();
 			}
 			else{
@@ -81,6 +84,7 @@ public class NewObj : MonoBehaviour {
 	void OnMouseDown () {
 		if (created == false && GameLogic.GetGameStarted()) {
 			GameObject instance = (GameObject)Instantiate(theObj, transform.position, transform.rotation);
+			selectedShape = instance;
 			instance.transform.parent = gameObject.transform.parent;
 			instance.transform.localScale = transform.localScale;
 			transform.parent = null;
@@ -102,6 +106,15 @@ public class NewObj : MonoBehaviour {
 		instance.collider2D.enabled = false;
 		instance.collider2D.enabled = true;
 		
+	}
+
+	//Give the user a new random shape
+	void ReplaceSelectionShape(){
+		print ("Replacing selection shape");
+		GameObject tempShape = ShapeFactory.GetShape((GameLogic._playerTurnCount + 1) % 2);
+		tempShape.transform.parent = selectedShape.transform.parent;
+		tempShape.transform.position = selectedShape.transform.position;
+		Destroy(selectedShape.gameObject);
 	}
 	
 	void OnGUI () {

@@ -28,6 +28,10 @@ public class quit : MonoBehaviour {
 		}
 
 		if(Input.GetKeyDown ("y")){
+			GameObject temp = ShapeFactory.GetShape(0);
+			temp.transform.position = new Vector3(0, 150, 0);
+		}
+		if(Input.GetKeyDown ("u")){
 			GameObject temp = ShapeFactory.GetShape(1);
 			temp.transform.position = new Vector3(0, 150, 0);
 		}
