@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class ShapeFactory : MonoBehaviour {
+	public static bool verbose = true;
 	public static GameObject[][] ShapeLists;
 	public static System.Random RandomGenerator;
 	private static int NumberOfShapes;
@@ -30,8 +31,9 @@ public class ShapeFactory : MonoBehaviour {
 		//GameObject instance = (GameObject)Instantiate(theObj, transform.position, transform.rotation);
 		int index = RandomGenerator.Next() % NumberOfShapes;
 		GameObject returnValue = (GameObject)Instantiate(ShapeLists[PlayerNumber][index]);
-		print (index);
-
+		if(verbose){
+			print (index);
+		}
 		return returnValue;
 	}
 }
