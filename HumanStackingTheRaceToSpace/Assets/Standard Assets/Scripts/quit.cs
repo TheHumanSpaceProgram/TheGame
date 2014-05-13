@@ -27,5 +27,10 @@ public class quit : MonoBehaviour {
 
 		}
 
+		if(Input.GetKeyDown ("y")){
+			GameObject temp = ShapeFactory.GetShape(1);
+			temp.transform.position = new Vector3(0, 150, 0);
+		}
+
 	}
 }
