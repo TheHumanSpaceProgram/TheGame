@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class ShapeFactory : MonoBehaviour {
-	public static bool verbose = true;
+	public static bool verbose = false;
 	public static GameObject[][] ShapeLists;
 	public static System.Random RandomGenerator;
 	private static int NumberOfShapes;
