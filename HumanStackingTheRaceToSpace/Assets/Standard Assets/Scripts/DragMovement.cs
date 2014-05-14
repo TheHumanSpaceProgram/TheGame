@@ -8,6 +8,7 @@ public class DragMovement : MonoBehaviour {
 	public static float oldGravityScale;
 	public static float oldMass;
 	public static bool shapePicked;
+	public static bool mouseDown;
 	
 	// Use this for initialization
 	void Start () {
@@ -22,6 +23,7 @@ public class DragMovement : MonoBehaviour {
 	
 	//Setup for moving the shape
 	void OnMouseDown(){
+		mouseDown = true;
 		if(GameLogic.GetGameStarted()){
 			screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
 			offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
@@ -46,6 +48,7 @@ public class DragMovement : MonoBehaviour {
 	
 	//Commits the shape's position and reset it's properties
 	void OnMouseUp(){
+		mouseDown = false;
 		if(GameLogic.GetGameStarted()){
 			gameObject.AddComponent("Rigidbody2D");
 			gameObject.AddComponent("PolygonCollider2D");

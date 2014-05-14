@@ -78,6 +78,9 @@ public class NewObj : MonoBehaviour {
 					commited = true;
 					//gameObject.AddComponent("Rigidbody2D");
 					gameObject.AddComponent("PolygonCollider2D");
+					if(DragMovement.mouseDown){
+						gameObject.AddComponent("Rigidbody2D");
+					}
 					GiveRigid ();
 					ReplaceSelectionShape();
 					GameLogic.ChangePlayer();
