@@ -18,6 +18,7 @@ public class NewObj : MonoBehaviour {
 
 	public GameObject theObj;
 	public GameObject instance;
+	public static GameObject selectedShape;
 	public MoveRussianSelection russianSelect;
 	public MoveAmericanSelection americanSelect;
 	private PolygonCollider2D polyC;
@@ -25,7 +26,6 @@ public class NewObj : MonoBehaviour {
 	//Variables for the rigidbody
 	public int mass;
 	public int gravityScale;
-	public bool isKinematic;
 	public PhysicsMaterial2D myMat;
 	
 	public static bool TimeOut = false;
@@ -53,7 +53,12 @@ public class NewObj : MonoBehaviour {
 				
 				commited = true;
 				GiveRigid();
+<<<<<<< HEAD
 				GameLogic.ChangePlayer(this.objectPoints);
+=======
+				ReplaceSelectionShape();
+				GameLogic.ChangePlayer();
+>>>>>>> 83f9dbd210b036c607fe8fea257fb0ca4aa6c3e5
 				//MoveSelectionOnScreen();
 			}
 			if((Input.GetKey("e") || Input.GetKey("mouse 2"))){
@@ -72,7 +77,12 @@ public class NewObj : MonoBehaviour {
 				//gameObject.AddComponent("Rigidbody2D");
 				gameObject.AddComponent("PolygonCollider2D");
 				GiveRigid ();
+<<<<<<< HEAD
 				GameLogic.ChangePlayer(this.objectPoints);
+=======
+				ReplaceSelectionShape();
+				GameLogic.ChangePlayer();
+>>>>>>> 83f9dbd210b036c607fe8fea257fb0ca4aa6c3e5
 			}
 			else{
 				GameLogic.GameOver(commited);
@@ -84,6 +94,7 @@ public class NewObj : MonoBehaviour {
 	void OnMouseDown () {
 		if (created == false && GameLogic.GetGameStarted()) {
 			GameObject instance = (GameObject)Instantiate(theObj, transform.position, transform.rotation);
+			selectedShape = instance;
 			instance.transform.parent = gameObject.transform.parent;
 			instance.transform.localScale = transform.localScale;
 			transform.parent = null;
@@ -100,11 +111,19 @@ public class NewObj : MonoBehaviour {
 		Destroy (instance.GetComponent("DragMovement"));
 		instance.rigidbody2D.mass = mass;
 		instance.rigidbody2D.gravityScale = gravityScale;
-		instance.rigidbody2D.isKinematic = isKinematic;
+		instance.rigidbody2D.isKinematic = false;
 		instance.collider2D.sharedMaterial = myMat;
 		instance.collider2D.enabled = false;
 		instance.collider2D.enabled = true;
 		
+	}
+
+	//Give the user a new random shape
+	void ReplaceSelectionShape(){
+		GameObject tempShape = ShapeFactory.GetShape((GameLogic._playerTurnCount + 1) % 2);
+		tempShape.transform.parent = selectedShape.transform.parent;
+		tempShape.transform.position = selectedShape.transform.position;
+		Destroy(selectedShape.gameObject);
 	}
 	
 	void OnGUI () {
