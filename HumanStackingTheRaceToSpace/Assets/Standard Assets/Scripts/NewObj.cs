@@ -53,12 +53,9 @@ public class NewObj : MonoBehaviour {
 				
 				commited = true;
 				GiveRigid();
-<<<<<<< HEAD
 				GameLogic.ChangePlayer(this.objectPoints);
-=======
 				ReplaceSelectionShape();
-				GameLogic.ChangePlayer();
->>>>>>> 83f9dbd210b036c607fe8fea257fb0ca4aa6c3e5
+				GameLogic.ChangePlayer(this.objectPoints);
 				//MoveSelectionOnScreen();
 			}
 			if((Input.GetKey("e") || Input.GetKey("mouse 2"))){
@@ -77,12 +74,11 @@ public class NewObj : MonoBehaviour {
 				//gameObject.AddComponent("Rigidbody2D");
 				gameObject.AddComponent("PolygonCollider2D");
 				GiveRigid ();
-<<<<<<< HEAD
-				GameLogic.ChangePlayer(this.objectPoints);
-=======
+
 				ReplaceSelectionShape();
-				GameLogic.ChangePlayer();
->>>>>>> 83f9dbd210b036c607fe8fea257fb0ca4aa6c3e5
+				GameLogic.ChangePlayer(this.objectPoints);
+
+
 			}
 			else{
 				GameLogic.GameOver(commited);
