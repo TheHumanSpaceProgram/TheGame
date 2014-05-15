@@ -33,7 +33,7 @@ public class Player {
 	public int AddCurrentScore(int ShapePoints, int Seconds)
 	{
 
-		int newScore = ShapePoints * Seconds / 2;
+		int newScore = (ShapePoints * Seconds / 2) + 10;
 		PlayerCurrentScore -= newScore;
 
 		return PlayerCurrentScore;
