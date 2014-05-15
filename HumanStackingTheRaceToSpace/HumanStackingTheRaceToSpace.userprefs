@@ -1,16 +1,18 @@
 ﻿<Properties GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Scripts\NewObj.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Scripts\GameLogic.cs">
     <Files>
-      <File FileName="Assets\Standard Assets\Scripts\NewObj.cs" Line="78" Column="29" />
-      <File FileName="Assets\Standard Assets\Scripts\OceanBehaviour.cs" Line="11" Column="3" />
-      <File FileName="Assets\Standard Assets\Scripts\NewObj.cs" Line="169" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\GameLogic.cs" Line="426" Column="44" />
-      <File FileName="Assets\Standard Assets\Scripts\CheckSleeping.cs" Line="26" Column="29" />
+      <File FileName="Assets\Standard Assets\Scripts\NewObj.cs" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets\Scripts\OceanBehaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets\Scripts\CheckSleeping.cs" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets\Scripts\GameLogic.cs" Line="177" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="D:\UnityProjects\TheGame\HumanStackingTheRaceToSpace\Assets\Standard Assets\Scripts\GameLogic.cs" line="156" />
+      <Breakpoint file="D:\UnityProjects\TheGame\HumanStackingTheRaceToSpace\Assets\Standard Assets\Scripts\GameLogic.cs" line="212" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

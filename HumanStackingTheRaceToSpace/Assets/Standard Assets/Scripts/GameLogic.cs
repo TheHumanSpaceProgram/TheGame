@@ -116,6 +116,8 @@ public class GameLogic : MonoBehaviour {
 
 		MoveRussianSelection.MoveAway = true;
 		MoveAmericanSelection.MoveAway = true;
+
+
 		_WaitTimer.Stop ();
 	
 		/*
@@ -219,16 +221,21 @@ public class GameLogic : MonoBehaviour {
 			Vector3 temp = guiTimeForEachTurn.transform.position;
 			temp.x = 0.6f;
 			guiTimeForEachTurn.transform.position = temp;
+			MoveRussianSelection.MoveAway = false;
+			MoveAmericanSelection.MoveAway = true;
 		}
 		else{
 			Vector3 temp = guiTimeForEachTurn.transform.position;
 			temp.x = 0.1f;
 			guiTimeForEachTurn.transform.position = temp;
+			MoveRussianSelection.MoveAway = true;
+			MoveAmericanSelection.MoveAway = false;
 		}
 	}
 	
 	public void StartTimer()
 	{
+
 		if(_Timer != null)
 		{
 			_Timer.Elapsed -= OnTimedEvent;
@@ -315,6 +322,7 @@ public class GameLogic : MonoBehaviour {
 			gameOver = false;
 			_playerTurn.AddCurrentScore (_TmpObjectPoint, _Time);
 			_TmpObjectPoint = 0;
+
 			nextPlayer();
 		}
 	}
@@ -392,7 +400,6 @@ public class GameLogic : MonoBehaviour {
 			}
 			if (_Time > _TimePrTurn) 
 			{						
-
 				this._TurnCount++;
 				_playerTurn = nextPlayer ();
 			} 

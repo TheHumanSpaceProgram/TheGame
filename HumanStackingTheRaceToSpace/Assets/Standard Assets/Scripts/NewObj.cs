@@ -8,7 +8,7 @@ public class NewObj : MonoBehaviour {
 	private int groupWidth = 200;
 	private int groupHeigth = 170;
 	*/
-
+	private bool verbose = false;
 
 	//Note to self: DON'T make these two variables static!
 	private bool created = false;
@@ -50,12 +50,15 @@ public class NewObj : MonoBehaviour {
 				gameObject.transform.Rotate(Vector3.back * Time.deltaTime * 75, Space.World);
 			}
 			if((Input.GetKey("mouse 1") || Input.GetKey("space")) && (!Input.GetKey("mouse 0"))){
-				
+				if(verbose){
+					print (this.gameObject);
+					print ("Commiting");
+				}
 				commited = true;
 				GiveRigid();
-				GameLogic.ChangePlayer(this.objectPoints);
+				//GameLogic.ChangePlayer(this.objectPoints);
 				ReplaceSelectionShape();
-				GameLogic.ChangePlayer(this.objectPoints);
+				//GameLogic.ChangePlayer(this.objectPoints);
 				//MoveSelectionOnScreen();
 			}
 			if((Input.GetKey("e") || Input.GetKey("mouse 2"))){
@@ -64,26 +67,37 @@ public class NewObj : MonoBehaviour {
 				Destroy(instance);
 				//MoveSelectionOnScreen();
 			}
+
+			if(TimeOut)
+			{
+				if(verbose){
+					print (this.gameObject);
+				}
+				if(DragMovement.shapePicked){
+					if(verbose){
+						print ("ShapePicked");
+					}
+					TimeOut = false;
+					commited = true;
+					//gameObject.AddComponent("Rigidbody2D");
+					gameObject.AddComponent("PolygonCollider2D");
+					if(DragMovement.mouseDown){
+						gameObject.AddComponent("Rigidbody2D");
+					}
+					GiveRigid ();
+					ReplaceSelectionShape();
+					//GameLogic.ChangePlayer(this.objectPoints);
+				}
+				else{
+					if(verbose){
+						print("else");
+					}
+					GameLogic.GameOver(commited);
+				}
+
+			}
 		}
 		
-		if(TimeOut)
-		{
-			if(DragMovement.shapePicked){
-				TimeOut = false;
-				commited = true;
-				//gameObject.AddComponent("Rigidbody2D");
-				gameObject.AddComponent("PolygonCollider2D");
-				GiveRigid ();
-
-				ReplaceSelectionShape();
-				GameLogic.ChangePlayer(this.objectPoints);
-
-
-			}
-			else{
-				GameLogic.GameOver(commited);
-			}
-		}
 	}
 	
 	
@@ -119,7 +133,8 @@ public class NewObj : MonoBehaviour {
 		GameObject tempShape = ShapeFactory.GetShape((GameLogic._playerTurnCount + 1) % 2);
 		tempShape.transform.parent = selectedShape.transform.parent;
 		tempShape.transform.position = selectedShape.transform.position;
-		Destroy(selectedShape.gameObject);
+		//Destroy(selectedShape.gameObject);
+		selectedShape.SetActive(false);
 	}
 	
 	void OnGUI () {
