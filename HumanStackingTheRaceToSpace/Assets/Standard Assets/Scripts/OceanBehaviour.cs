@@ -22,10 +22,14 @@ public class OceanBehaviour : MonoBehaviour {
 			if(verbose){
 				print ("Collision enter");
 			}
+			NewObj theObj = (NewObj)theCollider.GetComponent("NewObj");
 
-			theCollider.gameObject.audio.Play();
+			if(!theObj.counted){
+				theObj.counted = true;
+				theCollider.gameObject.audio.Play();
 
-			GameLogic.GameOver(NewObj.actionTaken);
+				GameLogic.GameOver(NewObj.actionTaken);
+			}
 		}
 	}
 }

@@ -84,7 +84,7 @@ public class GameLogic : MonoBehaviour {
 
 	private int _TurnCount;
 	public static int _playerTurnCount;
-	private static Player _playerTurn;
+	public static Player _playerTurn;
 	private static List<Player> _playersList;
 	private int maxPlayers = 2;
 	private static bool gameStarted = false;
@@ -110,6 +110,7 @@ public class GameLogic : MonoBehaviour {
 
 
 	public static void GameOver(bool actionTaken){
+		print ("GameOver");
 		_Timer.Elapsed -= OnTimedEvent;
 		gameOver = true;
 
@@ -137,7 +138,13 @@ public class GameLogic : MonoBehaviour {
 
 	private void TimeOut(){
 		_Timer.Elapsed -= OnTimedEvent;
-		NewObj.TimeOut = true;
+		if(DragMovement.shapePicked){
+			NewObj.TimeOut = true;
+		}
+		else{
+			_playerTurn.TimeUpScorePenalty();
+			ChangePlayer(0);
+		}
 	}
 
 	public static bool GetGameStarted(){
@@ -172,6 +179,7 @@ public class GameLogic : MonoBehaviour {
 
 	//Starts counting down to when the next turn starts
 	public static void ChangePlayer(int prevObjectPoints){
+		print ("        changePlayer");
 		_TmpObjectPoint = prevObjectPoints;
 
 		_Timer.Stop ();
@@ -196,6 +204,7 @@ public class GameLogic : MonoBehaviour {
 	//Is called at the start of every turn. Performs setup for the next turn.
 	public Player nextPlayer()
 	{
+		print ("nextPlayer");
 
 		DragMovement.shapePicked = false;
 		NewObj.actionTaken = false;

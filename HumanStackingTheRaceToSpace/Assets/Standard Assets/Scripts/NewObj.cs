@@ -15,6 +15,7 @@ public class NewObj : MonoBehaviour {
 	private bool commited = false;
 
 	public static bool actionTaken = false;
+	public bool counted = false;
 
 	public GameObject theObj;
 	public GameObject instance;
@@ -56,7 +57,7 @@ public class NewObj : MonoBehaviour {
 				}
 				commited = true;
 				GiveRigid();
-				//GameLogic.ChangePlayer(this.objectPoints);
+				GameLogic.ChangePlayer(this.objectPoints);
 				ReplaceSelectionShape();
 				//GameLogic.ChangePlayer(this.objectPoints);
 				//MoveSelectionOnScreen();
@@ -73,6 +74,7 @@ public class NewObj : MonoBehaviour {
 				if(verbose){
 					print (this.gameObject);
 				}
+				GameLogic._playerTurn.TimeUpScorePenalty();
 				if(DragMovement.shapePicked){
 					if(verbose){
 						print ("ShapePicked");
@@ -86,13 +88,14 @@ public class NewObj : MonoBehaviour {
 					}
 					GiveRigid ();
 					ReplaceSelectionShape();
-					//GameLogic.ChangePlayer(this.objectPoints);
+					GameLogic.ChangePlayer(this.objectPoints);
 				}
 				else{
 					if(verbose){
-						print("else");
+						print("else WTF?!");
 					}
-					GameLogic.GameOver(commited);
+					//GameLogic.GameOver(commited);
+					GameLogic.ChangePlayer(0);
 				}
 
 			}
@@ -130,6 +133,7 @@ public class NewObj : MonoBehaviour {
 
 	//Give the user a new random shape
 	void ReplaceSelectionShape(){
+		print ((GameLogic._playerTurnCount + 1) % 2);
 		GameObject tempShape = ShapeFactory.GetShape((GameLogic._playerTurnCount + 1) % 2);
 		tempShape.transform.parent = selectedShape.transform.parent;
 		tempShape.transform.position = selectedShape.transform.position;
