@@ -118,7 +118,6 @@ public class GameLogic : MonoBehaviour {
 		MoveRussianSelection.MoveAway = true;
 		MoveAmericanSelection.MoveAway = true;
 
-		//Not sure about the parameter here
 		ChangePlayer(objectPoints);
 		//_WaitTimer.Stop ();
 	
