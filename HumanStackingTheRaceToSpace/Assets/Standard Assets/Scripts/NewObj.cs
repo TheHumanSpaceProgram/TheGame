@@ -11,8 +11,8 @@ public class NewObj : MonoBehaviour {
 	private bool verbose = false;
 
 	//Note to self: DON'T make these two variables static!
-	private bool created = false;
-	private bool commited = false;
+	public bool created = false;
+	public bool commited = false;
 
 	public static bool actionTaken = false;
 	public bool counted = false;

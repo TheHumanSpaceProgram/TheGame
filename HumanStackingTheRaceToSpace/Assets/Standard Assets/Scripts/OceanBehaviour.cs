@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class OceanBehaviour : MonoBehaviour {
-	bool verbose = false;
+	bool verbose = true;
 
 
 	// Use this for initialization
@@ -24,7 +24,10 @@ public class OceanBehaviour : MonoBehaviour {
 			}
 			NewObj theObj = (NewObj)theCollider.GetComponent("NewObj");
 
-			if(!theObj.counted){
+			if(!theObj.counted && theObj.commited){
+				if(verbose){
+					print("Valid collision");
+				}
 				theObj.counted = true;
 				theCollider.gameObject.audio.Play();
 
