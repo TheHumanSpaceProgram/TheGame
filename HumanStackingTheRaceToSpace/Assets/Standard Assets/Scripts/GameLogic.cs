@@ -108,18 +108,19 @@ public class GameLogic : MonoBehaviour {
 	private static string TXT_ADD_PLAYER_BUTTON		= "Add Player ";
 
 
-
-	public static void GameOver(bool actionTaken){
+	//Gets called when a shape has sunk
+	public static void GameOver(int objectPoints){
 		print ("GameOver");
 		_Timer.Elapsed -= OnTimedEvent;
-		gameOver = true;
-
+		//gameOver = true;
+		_playerTurn.AddCurrentScore(objectPoints, _Time);
 
 		MoveRussianSelection.MoveAway = true;
 		MoveAmericanSelection.MoveAway = true;
 
-
-		_WaitTimer.Stop ();
+		//Not sure about the parameter here
+		ChangePlayer(objectPoints);
+		//_WaitTimer.Stop ();
 	
 		/*
 		if(actionTaken){

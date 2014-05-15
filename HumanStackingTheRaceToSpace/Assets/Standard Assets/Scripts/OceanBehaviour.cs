@@ -28,7 +28,7 @@ public class OceanBehaviour : MonoBehaviour {
 				theObj.counted = true;
 				theCollider.gameObject.audio.Play();
 
-				GameLogic.GameOver(NewObj.actionTaken);
+				GameLogic.GameOver(theObj.objectPoints);
 			}
 		}
 	}
