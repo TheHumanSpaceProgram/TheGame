@@ -11,8 +11,8 @@ public class NewObj : MonoBehaviour {
 	private bool verbose = false;
 
 	//Note to self: DON'T make these two variables static!
-	private bool created = false;
-	private bool commited = false;
+	public bool created = false;
+	public bool commited = false;
 
 	public static bool actionTaken = false;
 	public bool counted = false;
@@ -133,7 +133,6 @@ public class NewObj : MonoBehaviour {
 
 	//Give the user a new random shape
 	void ReplaceSelectionShape(){
-		print ((GameLogic._playerTurnCount + 1) % 2);
 		GameObject tempShape = ShapeFactory.GetShape((GameLogic._playerTurnCount + 1) % 2);
 		tempShape.transform.parent = selectedShape.transform.parent;
 		tempShape.transform.position = selectedShape.transform.position;

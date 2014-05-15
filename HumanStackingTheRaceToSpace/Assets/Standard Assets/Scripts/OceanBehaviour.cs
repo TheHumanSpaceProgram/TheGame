@@ -24,11 +24,14 @@ public class OceanBehaviour : MonoBehaviour {
 			}
 			NewObj theObj = (NewObj)theCollider.GetComponent("NewObj");
 
-			if(!theObj.counted){
+			if(!theObj.counted && theObj.commited){
+				if(verbose){
+					print("Valid collision");
+				}
 				theObj.counted = true;
 				theCollider.gameObject.audio.Play();
 
-				GameLogic.GameOver(NewObj.actionTaken);
+				GameLogic.GameOver(theObj.objectPoints);
 			}
 		}
 	}
