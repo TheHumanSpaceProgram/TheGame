@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class OceanBehaviour : MonoBehaviour {
-	bool verbose = true;
+	bool verbose = false;
 
 
 	// Use this for initialization
