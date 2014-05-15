@@ -16,7 +16,7 @@ public class Player {
 	private int TimeUpPenaltyFactor  = 50;
 
 	public Player(){
-		PlayerCurrentScore = 1000;
+		PlayerCurrentScore = 500;
 		}
 	public Player(int StartScore){
 		PlayerCurrentScore = StartScore;
@@ -65,7 +65,7 @@ public class GameLogic : MonoBehaviour {
 
 	private bool alphaVersion = true;
 	private static bool verbose = false;
-	private static bool scoreVerbose = false;
+	private static bool scoreVerbose = true;
 
 	public GUIText guiPlayerNameText;
 	public GUIText Player1Score;
