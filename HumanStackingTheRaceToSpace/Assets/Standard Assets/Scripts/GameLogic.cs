@@ -62,6 +62,8 @@ public delegate void OnPlayerChange();
 public class GameLogic : MonoBehaviour {
 
 	private bool alphaVersion = true;
+	private static bool verbose = false;
+	private static bool scoreVerbose = false;
 
 	public GUIText guiPlayerNameText;
 	public GUIText Player1Score;
@@ -110,10 +112,17 @@ public class GameLogic : MonoBehaviour {
 
 	//Gets called when a shape has sunk
 	public static void GameOver(int objectPoints){
-		print ("GameOver");
+		if(verbose){
+			print ("GameOver");
+		}
 		_Timer.Elapsed -= OnTimedEvent;
 		//gameOver = true;
-		_playerTurn.AddCurrentScore(objectPoints, _Time);
+		if(scoreVerbose){
+			print("Score: " + _playerTurn.PlayerCurrentScore + " -> " + _playerTurn.AddCurrentScore(objectPoints, _Time));
+		}
+		else{
+			_playerTurn.AddCurrentScore (objectPoints, _Time);
+		}
 
 		MoveRussianSelection.MoveAway = true;
 		MoveAmericanSelection.MoveAway = true;
@@ -179,7 +188,9 @@ public class GameLogic : MonoBehaviour {
 
 	//Starts counting down to when the next turn starts
 	public static void ChangePlayer(int prevObjectPoints){
-		print ("        changePlayer");
+		if(verbose){
+			print ("        changePlayer");
+		}
 		_TmpObjectPoint = prevObjectPoints;
 
 		_Timer.Stop ();
@@ -204,7 +215,9 @@ public class GameLogic : MonoBehaviour {
 	//Is called at the start of every turn. Performs setup for the next turn.
 	public Player nextPlayer()
 	{
-		print ("nextPlayer");
+		if(verbose){
+			print ("nextPlayer");
+		}
 
 		DragMovement.shapePicked = false;
 		NewObj.actionTaken = false;
