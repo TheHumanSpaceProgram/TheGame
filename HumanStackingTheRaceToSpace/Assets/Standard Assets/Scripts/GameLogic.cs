@@ -122,7 +122,7 @@ public class GameLogic : MonoBehaviour {
 	
 		/*
 		if(actionTaken){
-			TXT_END_GAME_BUTTON  = _playerTurn.PlayerName + " has lost";
+			TXT_END_GAME_BUTTON  = _playerTurn.PlayerName + " have been defeated";
 		}
 		else{
 			if(_playerTurn.PlayerNumber == 0){
@@ -148,6 +148,8 @@ public class GameLogic : MonoBehaviour {
 		if(alphaVersion){
 			CreatePlayers ();
 			CreatePlayers ();
+			_playersList[0].PlayerName = "The USSR";
+			_playersList[1].PlayerName = "The USA";
 		}
 		else{
 			CreatePlayers ();
