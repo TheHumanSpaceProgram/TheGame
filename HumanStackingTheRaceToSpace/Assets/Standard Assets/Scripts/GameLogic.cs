@@ -465,7 +465,7 @@ public class GameLogic : MonoBehaviour {
 
 
 		
-		if(CheckSleeping.sleeping || (_WaitTimeCounter == 10)){
+		if(CheckSleeping.sleeping || (_WaitTimeCounter == 15)){
 			_WaitTimeCounter = 0;		
 			_playerTurnCount++;
 
