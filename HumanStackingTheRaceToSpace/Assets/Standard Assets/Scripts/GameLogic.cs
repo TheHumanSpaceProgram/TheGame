@@ -36,6 +36,8 @@ public class Player {
 		int newScore = (ShapePoints * Seconds / 2) + 10;
 		PlayerCurrentScore -= newScore;
 
+
+
 		return PlayerCurrentScore;
 	}
 
@@ -346,10 +348,15 @@ public class GameLogic : MonoBehaviour {
 			_Timer.Stop();
 			//EndGameButtons ();
 			gameOver = false;
-			_playerTurn.AddCurrentScore (_TmpObjectPoint, _Time);
-			_TmpObjectPoint = 0;
 
-			nextPlayer();
+			int tmpScore = _playerTurn.AddCurrentScore (_TmpObjectPoint, _Time);
+			if(tmpScore > 0){
+				_TmpObjectPoint = 0;
+				nextPlayer();
+			}
+			else{
+				Application.LoadLevel("endScene");
+			}
 		}
 	}
 
