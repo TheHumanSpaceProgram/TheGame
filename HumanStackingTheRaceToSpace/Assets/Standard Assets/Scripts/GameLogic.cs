@@ -92,6 +92,7 @@ public class GameLogic : MonoBehaviour {
 	private static bool gameStarted = false;
 	public static bool gameOver = false;
 	private static bool timeOutCalled = false;
+	public static bool buzzer = false;
 
 	private static int _TmpObjectPoint;
 
@@ -108,6 +109,7 @@ public class GameLogic : MonoBehaviour {
 	private static string TXT_START_GAME_BUTTON		= "Start Game";
 	private static string TXT_END_GAME_BUTTON		= "";
 	private static string TXT_ADD_PLAYER_BUTTON		= "Add Player ";
+
 
 
 	//Gets called when a shape has sunk
@@ -360,7 +362,7 @@ public class GameLogic : MonoBehaviour {
 
 			this.guiTurnCount.text 			= TXT_TURNS 		+ this._TurnCount;
 
-			if((_TimePrTurn - _Time) == 7 || (_TimePrTurn - _Time) == 5 || (_TimePrTurn - _Time) == 3 || (_TimePrTurn - _Time) == 1)
+			if((_TimePrTurn - _Time) == 6 || (_TimePrTurn - _Time) == 4 || (_TimePrTurn - _Time) == 2)
 			{
 				this.guiTimeForEachTurn.text	= "";
 
@@ -373,8 +375,10 @@ public class GameLogic : MonoBehaviour {
 
 			if((_TimePrTurn - _Time) == 5 || (_TimePrTurn - _Time) == 3)
 			{
-				AudioListener.volume = 0.999999F;			
-				AudioSource.PlayClipAtPoint(clip, new Vector3(5, 1, 2), 0.999999999F);
+				buzzer = true;
+			}
+			else{
+				buzzer = false;
 			}
 			
 			

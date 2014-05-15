@@ -5,6 +5,7 @@ public class PlaySound : MonoBehaviour {
 	private bool playing = false;
 	public AudioClip SovietAnthem;
 	public AudioClip UsaAnthem;
+	public AudioClip buzzer;
 	// Use this for initialization
 	void Start () {
 	
@@ -29,6 +30,10 @@ public class PlaySound : MonoBehaviour {
 				//audio.PlayOneShot(SovietAnthem);
 			}
 
+		}
+		if(GameLogic.buzzer){
+			AudioListener.volume = 0.999999F;			
+			AudioSource.PlayClipAtPoint(buzzer, new Vector3(5, 1, 2), 0.999999999F);
 		}
 	}
 
