@@ -1,51 +1,15 @@
 ﻿<Properties GitUserInfo="UsingGIT">
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Scripts\ShapeFactory.cs">
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\ScoreBoard\winnerboard.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Scripts\GameLogic.cs">
     <Files>
-      <File FileName="Assets\Standard Assets\ScoreBoard\winnerboard.cs" Line="13" Column="17" />
-      <File FileName="Assets\Standard Assets\Scripts\GameLogic.cs" Line="482" Column="3" />
-      <File FileName="Assets\Standard Assets\Scripts\ShapeFactory.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\NewObj.cs" Line="187" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\DragMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\quit.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\OceanBehaviour.cs" Line="38" Column="2" />
-      <File FileName="Assets\Standard Assets\Scripts\mainmenu.cs" Line="23" Column="38" />
-=======
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-=======
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
->>>>>>> 3f947663060ab6d37f3ac9a4dfce3dcfd2f6da37
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Scripts\OceanBehaviour.cs">
->>>>>>> 25a69e64df2109ed582d2706c82c0bb42cdcf079
-    <Files>
-      <File FileName="Assets\Standard Assets\Scripts\OceanBehaviour.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\NewObj.cs" Line="58" Column="30" />
-      <File FileName="Assets\Standard Assets\Scripts\GameLogic.cs" Line="5" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\ShapeFactory.cs" Line="12" Column="21" />
-      <File FileName="Assets\Standard Assets\Scripts\DragMovement.cs" Line="1" Column="1" />
-<<<<<<< HEAD
-      <File FileName="Assets\Standard Assets\Scripts\quit.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\PlaySound.cs" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\mainmenu.cs" Line="23" Column="39" />
-      <File FileName="Assets\Standard Assets\Scripts\singleplayer\SCameraMove.cs" Line="1" Column="1" />
-=======
-<<<<<<< HEAD
-      <File FileName="Assets\Standard Assets\Scripts\quit.cs" Line="1" Column="1" />
       <File FileName="Assets\Standard Assets\Scripts\OceanBehaviour.cs" Line="35" Column="5" />
-      <File FileName="Assets\Standard Assets\Scripts\PlaySound.cs" Line="36" Column="38" />
->>>>>>> 2c3d790ab7d17cf6542fca9fa276f2d2fcdaf616
-=======
+      <File FileName="Assets\Standard Assets\Scripts\NewObj.cs" Line="44" Column="3" />
+      <File FileName="Assets\Standard Assets\Scripts\GameLogic.cs" Line="190" Column="3" />
+      <File FileName="Assets\Standard Assets\Scripts\ShapeFactory.cs" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets\Scripts\DragMovement.cs" Line="1" Column="1" />
       <File FileName="Assets\Standard Assets\Scripts\quit.cs" Line="28" Column="4" />
       <File FileName="Assets\Standard Assets\Scripts\PlaySound.cs" Line="36" Column="66" />
       <File FileName="Assets\Standard Assets\Scripts\PointPopupMovement.cs" Line="18" Column="22" />
->>>>>>> 3f947663060ab6d37f3ac9a4dfce3dcfd2f6da37
->>>>>>> 25a69e64df2109ed582d2706c82c0bb42cdcf079
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
