@@ -19,6 +19,7 @@ public class NewObj : MonoBehaviour {
 
 	public GameObject theObj;
 	public GameObject instance;
+	public GameObject pointPopup;
 	public static GameObject selectedShape;
 	public MoveRussianSelection russianSelect;
 	public MoveAmericanSelection americanSelect;
@@ -40,8 +41,6 @@ public class NewObj : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-		
 		if (commited == false && created == true) {
 			gameObject.transform.Rotate(Vector3.back * Input.GetAxis("Mouse ScrollWheel") * 75, Space.World);
 			if (Input.GetKey("a")){

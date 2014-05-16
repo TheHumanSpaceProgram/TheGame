@@ -36,6 +36,11 @@ public class OceanBehaviour : MonoBehaviour {
 				theObj.counted = true;
 				theCollider.gameObject.audio.Play();
 
+				var temp = (GameObject)Instantiate (theObj.pointPopup, Camera.main.WorldToViewportPoint(theObj.transform.position), Quaternion.identity);
+				PointPopupMovement temp2 = (PointPopupMovement)temp.GetComponent ("PointPopupMovement");
+				temp2.exists = true;
+				temp2.text = "<b>-" + ((theObj.objectPoints * GameLogic._Time / 2) + 10) + "</b>";
+
 				GameLogic.GameOver(theObj.objectPoints);
 			}
 		}
