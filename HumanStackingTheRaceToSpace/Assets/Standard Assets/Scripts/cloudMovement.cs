@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class cloudMovement : MonoBehaviour {
+	public bool intro;
 	// Use this for initialization
 	void Start () {
 	
@@ -10,7 +11,7 @@ public class cloudMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (GameLogic.GetGameStarted()) {
+		if (GameLogic.GetGameStarted() || intro == true) {
 			transform.Translate (Vector3.right * 5 * Time.deltaTime, Space.World);
 			if (transform.position.x > 60) {
 				y = transform.position.y;
