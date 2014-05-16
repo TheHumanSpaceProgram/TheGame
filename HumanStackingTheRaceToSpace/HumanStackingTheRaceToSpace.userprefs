@@ -1,10 +1,27 @@
+<<<<<<< HEAD
 ﻿<Properties>
+=======
+﻿<Properties GitUserInfo="UsingGIT">
+>>>>>>> 4ac41db475d01289cf189fa745e08934649495af
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\ScoreBoard\winnerboard.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Scripts\singleplayer\SOceanBehaviour.cs">
     <Files>
+<<<<<<< HEAD
       <File FileName="Assets\Standard Assets\ScoreBoard\winnerboard.cs" Line="14" Column="78" />
       <File FileName="Assets\Standard Assets\Scripts\GameLogic.cs" Line="219" Column="17" />
       <File FileName="Assets\Standard Assets\Scripts\CheckSleeping.cs" Line="37" Column="3" />
+=======
+      <File FileName="Assets\Standard Assets\Scripts\NewObj.cs" Line="44" Column="3" />
+      <File FileName="Assets\Standard Assets\Scripts\GameLogic.cs" Line="179" Column="3" />
+      <File FileName="Assets\Standard Assets\Scripts\ShapeFactory.cs" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets\Scripts\DragMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets\Scripts\quit.cs" Line="18" Column="37" />
+      <File FileName="Assets\Standard Assets\Scripts\PlaySound.cs" Line="36" Column="66" />
+      <File FileName="Assets\Standard Assets\Scripts\PointPopupMovement.cs" Line="18" Column="22" />
+      <File FileName="Assets\Standard Assets\Scripts\singleplayer\SNewObj.cs" Line="41" Column="5" />
+      <File FileName="Assets\Standard Assets\Scripts\singleplayer\SOceanBehaviour.cs" Line="41" Column="5" />
+      <File FileName="Assets\Standard Assets\Scripts\singleplayer\SPointPopupMovement.cs" Line="8" Column="30" />
+>>>>>>> 4ac41db475d01289cf189fa745e08934649495af
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

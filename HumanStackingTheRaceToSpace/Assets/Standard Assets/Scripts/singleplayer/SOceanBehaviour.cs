@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class OceanBehaviour : MonoBehaviour {
+public class SOceanBehaviour : MonoBehaviour {
 	bool verbose = false;
 	bool shapeNameVerbose = false;
 
@@ -23,9 +23,9 @@ public class OceanBehaviour : MonoBehaviour {
 			if(verbose){
 				print ("Collision enter");
 			}
-			NewObj theObj = (NewObj)theCollider.GetComponent("NewObj");
+			SNewObj theObj = (SNewObj)theCollider.GetComponent("SNewObj");
 
-			if(!theObj.counted && theObj.commited){
+			if(theObj.commited && !theObj.counted){
 				if(verbose){
 					print("Valid collision");
 				}
@@ -38,11 +38,9 @@ public class OceanBehaviour : MonoBehaviour {
 
 				//Display the number of points lost
 				var temp = (GameObject)Instantiate (theObj.pointPopup, Camera.main.WorldToViewportPoint(theObj.transform.position), Quaternion.identity);
-				PointPopupMovement temp2 = (PointPopupMovement)temp.GetComponent ("PointPopupMovement");
+				SPointPopupMovement temp2 = (SPointPopupMovement)temp.GetComponent ("SPointPopupMovement");
 				temp2.exists = true;
-				temp2.text = "<b>-" + ((theObj.objectPoints * GameLogic._Time / 2) + 10) + "</b>";
-
-				GameLogic.GameOver(theObj.objectPoints);
+				//temp2.text = "<b>-" + ((theObj.objectPoints * GameLogic._Time / 2) + 10) + "</b>";
 			}
 		}
 	}

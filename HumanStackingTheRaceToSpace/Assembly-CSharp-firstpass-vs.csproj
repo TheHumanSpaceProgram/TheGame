@@ -69,6 +69,8 @@
      <Compile Include="Assets\Standard Assets\Scripts\singleplayer\SDragMove.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\singleplayer\SGameLogic.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\singleplayer\SNewObj.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\singleplayer\SOceanBehaviour.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\singleplayer\SPointPopupMovement.cs" />
      <Compile Include="Assets\Standard Assets\Water (Basic)\Sources\Scripts\WaterSimple.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />

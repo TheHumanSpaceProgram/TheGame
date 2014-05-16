@@ -12,6 +12,12 @@ public class quit : MonoBehaviour {
 	void Update () {
 	
 		if (Input.GetKeyDown ("escape")) {
+			if(GameLogic._Timer != null){
+			GameLogic._Timer.Stop ();
+			}
+			if(GameLogic._WaitTimer != null){
+				GameLogic._WaitTimer.Stop ();
+			}
 			Application.LoadLevel("mainMenu");
 		}
 

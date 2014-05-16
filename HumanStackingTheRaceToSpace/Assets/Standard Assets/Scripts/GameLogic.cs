@@ -16,7 +16,7 @@ public class Player {
 	private int TimeUpPenaltyFactor  = 50;
 
 	public Player(){
-		PlayerCurrentScore = 100;
+		PlayerCurrentScore = 750;
 		}
 	public Player(int StartScore){
 		PlayerCurrentScore = StartScore;
@@ -65,7 +65,7 @@ public class GameLogic : MonoBehaviour {
 
 	private bool alphaVersion = true;
 	private static bool verbose = false;
-	private static bool scoreVerbose = true;
+	private static bool scoreVerbose = false;
 
 	public GUIText guiPlayerNameText;
 	public GUIText Player1Score;
@@ -77,8 +77,8 @@ public class GameLogic : MonoBehaviour {
 	string PlayerName { get; set; }
 
 
-	private static Timer _Timer;
-	private static Timer _WaitTimer;
+	public static Timer _Timer;
+	public static Timer _WaitTimer;
 
 	private static int _MinTimeLimit = 15;
 	private static int _StartTime = 30000;
@@ -92,6 +92,7 @@ public class GameLogic : MonoBehaviour {
 	public static Player _playerTurn;
 	private static List<Player> _playersList;
 	private int maxPlayers = 2;
+	public static int startingPlayer = 0;
 	private static bool gameStarted = false;
 	public static bool gameOver = false;
 	private static bool timeOutCalled = false;
@@ -175,12 +176,22 @@ public class GameLogic : MonoBehaviour {
 		else{
 			CreatePlayers ();
 		}
-		_playerTurn = _playersList [0];
+		
+		if(startingPlayer == 0){
+			MoveAmericanSelection.MoveAway = true;
+			MoveRussianSelection.MoveAway  = false;
+		}
+		else{
+			MoveAmericanSelection.MoveAway = false;
+			MoveRussianSelection.MoveAway = true;
+		}
+
+
+		_playerTurn = _playersList [startingPlayer];
+
 		MoveTexts ();
 		this._TurnCount = 1;
 		_playerTurnCount = 1;
-		MoveAmericanSelection.MoveAway = true;
-		MoveRussianSelection.MoveAway  = false;
 		gameOver = false;
 		gameStarted = true;
 		TXT_END_GAME_BUTTON = "";
@@ -188,6 +199,7 @@ public class GameLogic : MonoBehaviour {
 		var water2 = GameObject.Find("water2");
 		water2.AddComponent("OceanMovement");
 		
+		startingPlayer = (startingPlayer + 1) % maxPlayers;
 		StartTimer ();
 	}
 
