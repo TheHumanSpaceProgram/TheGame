@@ -122,7 +122,7 @@ public class GameLogic : MonoBehaviour {
 		_Timer.Elapsed -= OnTimedEvent;
 		//gameOver = true;
 		if(scoreVerbose){
-			print("Score: " + _playerTurn.PlayerCurrentScore + " -> " + _playerTurn.AddCurrentScore(objectPoints, _Time));
+			print("Score: " + _playerTurn.PlayerCurrentScore + " -> " + _playerTurn.AddCurrentScore(objectPoints, _Time) + " (objectPoints: " + objectPoints + ", time: " + _Time + ")");
 		}
 		else{
 			_playerTurn.AddCurrentScore (objectPoints, _Time);
