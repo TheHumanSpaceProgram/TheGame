@@ -16,7 +16,7 @@ public class Player {
 	private int TimeUpPenaltyFactor  = 50;
 
 	public Player(){
-		PlayerCurrentScore = 1000;
+		PlayerCurrentScore = 500;
 		}
 	public Player(int StartScore){
 		PlayerCurrentScore = StartScore;
@@ -65,7 +65,7 @@ public class GameLogic : MonoBehaviour {
 
 	private bool alphaVersion = true;
 	private static bool verbose = false;
-	private static bool scoreVerbose = false;
+	private static bool scoreVerbose = true;
 
 	public GUIText guiPlayerNameText;
 	public GUIText Player1Score;
@@ -94,6 +94,7 @@ public class GameLogic : MonoBehaviour {
 	private static bool gameStarted = false;
 	public static bool gameOver = false;
 	private static bool timeOutCalled = false;
+	public static bool buzzer = false;
 
 	private static int _TmpObjectPoint;
 
@@ -112,6 +113,7 @@ public class GameLogic : MonoBehaviour {
 	private static string TXT_ADD_PLAYER_BUTTON		= "Add Player ";
 
 
+
 	//Gets called when a shape has sunk
 	public static void GameOver(int objectPoints){
 		if(verbose){
@@ -120,7 +122,7 @@ public class GameLogic : MonoBehaviour {
 		_Timer.Elapsed -= OnTimedEvent;
 		//gameOver = true;
 		if(scoreVerbose){
-			print("Score: " + _playerTurn.PlayerCurrentScore + " -> " + _playerTurn.AddCurrentScore(objectPoints, _Time));
+			print("Score: " + _playerTurn.PlayerCurrentScore + " -> " + _playerTurn.AddCurrentScore(objectPoints, _Time) + " (objectPoints: " + objectPoints + ", time: " + _Time + ")");
 		}
 		else{
 			_playerTurn.AddCurrentScore (objectPoints, _Time);
@@ -367,7 +369,7 @@ public class GameLogic : MonoBehaviour {
 
 			this.guiTurnCount.text 			= TXT_TURNS 		+ this._TurnCount;
 
-			if((_TimePrTurn - _Time) == 7 || (_TimePrTurn - _Time) == 5 || (_TimePrTurn - _Time) == 3 || (_TimePrTurn - _Time) == 1)
+			if((_TimePrTurn - _Time) == 6 || (_TimePrTurn - _Time) == 4 || (_TimePrTurn - _Time) == 2)
 			{
 				this.guiTimeForEachTurn.text	= "";
 
@@ -380,8 +382,10 @@ public class GameLogic : MonoBehaviour {
 
 			if((_TimePrTurn - _Time) == 5 || (_TimePrTurn - _Time) == 3)
 			{
-				AudioListener.volume = 0.999999F;			
-				AudioSource.PlayClipAtPoint(clip, new Vector3(5, 1, 2), 0.999999999F);
+				buzzer = true;
+			}
+			else{
+				buzzer = false;
 			}
 			
 			
@@ -445,6 +449,7 @@ public class GameLogic : MonoBehaviour {
 	private static void OnTimedEvent(object source, ElapsedEventArgs e)
 	{
 		_Time++;				
+		print ("OnTimedEvent. _Time: " + _Time);
 	}
 
 	private static void OnWaitTimedEvent(object source, ElapsedEventArgs e)
@@ -461,7 +466,7 @@ public class GameLogic : MonoBehaviour {
 
 
 		
-		if(CheckSleeping.sleeping || (_WaitTimeCounter == 10)){
+		if(CheckSleeping.sleeping || (_WaitTimeCounter == 15)){
 			_WaitTimeCounter = 0;		
 			_playerTurnCount++;
 

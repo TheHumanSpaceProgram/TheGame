@@ -3,6 +3,7 @@ using System.Collections;
 
 public class OceanBehaviour : MonoBehaviour {
 	bool verbose = false;
+	bool shapeNameVerbose = false;
 
 
 	// Use this for initialization
@@ -28,6 +29,10 @@ public class OceanBehaviour : MonoBehaviour {
 				if(verbose){
 					print("Valid collision");
 				}
+				if(shapeNameVerbose){
+					print (theCollider.gameObject.name);
+				}
+
 				theObj.counted = true;
 				theCollider.gameObject.audio.Play();
 
