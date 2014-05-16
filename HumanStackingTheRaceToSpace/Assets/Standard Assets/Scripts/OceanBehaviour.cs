@@ -36,6 +36,7 @@ public class OceanBehaviour : MonoBehaviour {
 				theObj.counted = true;
 				theCollider.gameObject.audio.Play();
 
+				//Display the number of points lost
 				var temp = (GameObject)Instantiate (theObj.pointPopup, Camera.main.WorldToViewportPoint(theObj.transform.position), Quaternion.identity);
 				PointPopupMovement temp2 = (PointPopupMovement)temp.GetComponent ("PointPopupMovement");
 				temp2.exists = true;
