@@ -45,7 +45,7 @@ public class Player {
 	{
 		TimeUpPenaltyCount++;
 		PlayerCurrentScore -= (TimeUpPenaltyCount * TimeUpPenaltyFactor);
-		return PlayerCurrentScore;
+		return (TimeUpPenaltyCount * TimeUpPenaltyFactor);
 
 	}
 
@@ -68,8 +68,8 @@ public class GameLogic : MonoBehaviour {
 	private static bool scoreVerbose = false;
 
 	public GUIText guiPlayerNameText;
-	public GUIText Player1Score;
-	public GUIText Player2Score;
+	public static GUIText Player1Score;
+	public static GUIText Player2Score;
 	public GUIText guiTimeForEachTurn;
 	public GUIText guiTurnCount;
 	public AudioClip clip;
@@ -153,11 +153,30 @@ public class GameLogic : MonoBehaviour {
 
 	private void TimeOut(){
 		_Timer.Elapsed -= OnTimedEvent;
+
+		int pointsLost =_playerTurn.TimeUpScorePenalty();
+
+		GUIText theText;
+		if(GameLogic._playerTurn.PlayerNumber == 0){
+			theText = GameLogic.Player1Score;
+		}
+		else{
+			theText = GameLogic.Player2Score;
+		}
+		
+		GameObject temp = (GameObject)Instantiate (theText.gameObject, theText.transform.position, Quaternion.identity);
+		temp.guiText.alignment = TextAlignment.Right;
+		temp.AddComponent("ScoreDecreaseMovement");
+		
+		ScoreDecreaseMovement theMovement = (ScoreDecreaseMovement)temp.GetComponent("ScoreDecreaseMovement");
+		//PointPopupMovement temp2 = (PointPopupMovement)temp.GetComponent ("PointPopupMovement");
+		theMovement.exists = true;
+		theMovement.text = "<b>        " + pointsLost + "</b>";
+		
 		if(DragMovement.shapePicked){
 			NewObj.TimeOut = true;
 		}
 		else{
-			_playerTurn.TimeUpScorePenalty();
 			ChangePlayer(0);
 		}
 	}
@@ -390,8 +409,8 @@ public class GameLogic : MonoBehaviour {
 	{
 		if(gameStarted){
 			this.guiPlayerNameText.text 	= TXT_PLAYER_NAME 	+ _playerTurn.PlayerName;
-			this.Player1Score.text 			= TXT_PLAYER_SCORE 	+ _playersList[0].PlayerCurrentScore;
-			this.Player2Score.text 			= TXT_PLAYER_SCORE 	+ _playersList[1].PlayerCurrentScore;
+			Player1Score.text 				= TXT_PLAYER_SCORE 	+ _playersList[0].PlayerCurrentScore;
+			Player2Score.text	 			= TXT_PLAYER_SCORE 	+ _playersList[1].PlayerCurrentScore;
 
 			this.guiTurnCount.text 			= TXT_TURNS 		+ this._TurnCount;
 
@@ -430,6 +449,9 @@ public class GameLogic : MonoBehaviour {
 		gameStarted = false;
 		MoveAmericanSelection.MoveAway = false;
 		MoveRussianSelection.MoveAway  = false;
+
+		Player1Score = (GUIText)GameObject.Find("GUIPlayer1Score").guiText;
+		Player2Score = (GUIText)GameObject.Find("GUIPlayer2Score").guiText;
 	}
 
 	// Update is called once per frame

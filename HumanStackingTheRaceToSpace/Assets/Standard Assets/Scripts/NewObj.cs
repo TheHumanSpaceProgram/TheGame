@@ -74,7 +74,6 @@ public class NewObj : MonoBehaviour {
 				if(verbose){
 					print (this.gameObject);
 				}
-				GameLogic._playerTurn.TimeUpScorePenalty();
 				if(DragMovement.shapePicked){
 					if(verbose){
 						print ("ShapePicked");
