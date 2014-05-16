@@ -64,8 +64,8 @@ public delegate void OnPlayerChange();
 public class GameLogic : MonoBehaviour {
 
 	private bool alphaVersion = true;
-	private static bool verbose = false;
-	private static bool scoreVerbose = true;
+	private static bool verbose = true;
+	private static bool scoreVerbose = false;
 
 	public GUIText guiPlayerNameText;
 	public GUIText Player1Score;
@@ -77,8 +77,8 @@ public class GameLogic : MonoBehaviour {
 	string PlayerName { get; set; }
 
 
-	private static Timer _Timer;
-	private static Timer _WaitTimer;
+	public static Timer _Timer;
+	public static Timer _WaitTimer;
 
 	private static int _MinTimeLimit = 15;
 	private static int _StartTime = 30000;
@@ -92,7 +92,7 @@ public class GameLogic : MonoBehaviour {
 	public static Player _playerTurn;
 	private static List<Player> _playersList;
 	private int maxPlayers = 2;
-	private int startingPlayer = 0;
+	public static int startingPlayer = 0;
 	private static bool gameStarted = false;
 	public static bool gameOver = false;
 	private static bool timeOutCalled = false;
@@ -176,6 +176,7 @@ public class GameLogic : MonoBehaviour {
 		else{
 			CreatePlayers ();
 		}
+		print ("StartingPlayer: " + startingPlayer);
 		if(startingPlayer == 0){
 			MoveAmericanSelection.MoveAway = true;
 			MoveRussianSelection.MoveAway  = false;
