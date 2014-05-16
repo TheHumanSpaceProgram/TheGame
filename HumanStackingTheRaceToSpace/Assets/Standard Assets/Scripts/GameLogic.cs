@@ -84,7 +84,7 @@ public class GameLogic : MonoBehaviour {
 	private static int _StartTime = 15000;
 	private int _TimePrTurn = _StartTime / 1000 ;
 	private static int _WaitTimeLimit = 15;
-	private static int _Time;
+	public static int _Time;
 	private static int _WaitTimeCounter;
 
 	private int _TurnCount;
