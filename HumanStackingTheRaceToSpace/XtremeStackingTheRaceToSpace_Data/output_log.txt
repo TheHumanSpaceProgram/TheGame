@@ -15,32 +15,8 @@ Platform assembly: C:\Users\Kristinn\Desktop\Kiddi\version20\TheGame\HumanStacki
 Loading C:\Users\Kristinn\Desktop\Kiddi\version20\TheGame\HumanStackingTheRaceToSpace\XtremeStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
 Platform assembly: C:\Users\Kristinn\Desktop\Kiddi\version20\TheGame\HumanStackingTheRaceToSpace\XtremeStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
 Loading C:\Users\Kristinn\Desktop\Kiddi\version20\TheGame\HumanStackingTheRaceToSpace\XtremeStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
-- Completed reload, in  0.174 seconds
+- Completed reload, in  0.197 seconds
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 Platform assembly: C:\Users\Kristinn\Desktop\Kiddi\version20\TheGame\HumanStackingTheRaceToSpace\XtremeStackingTheRaceToSpace_Data\Managed\System.dll (this message is harmless)
-UnloadTime: 0.935559 ms
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 295.
-Total: 2.346422 ms (FindLiveObjects: 0.069072 ms CreateObjectMapping: 0.041717 ms MarkObjects: 0.408965 ms  DeleteObjects: 0.029407 ms)
-
-UnloadTime: 1.463522 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 31 unused Assets to reduce memory usage. Loaded Objects now: 149.
-Total: 20.472212 ms (FindLiveObjects: 0.023936 ms CreateObjectMapping: 0.038981 ms MarkObjects: 0.337841 ms  DeleteObjects: 18.308386 ms)
-
-UnloadTime: 0.626442 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 411.
-Total: 2.034569 ms (FindLiveObjects: 0.056762 ms CreateObjectMapping: 0.041033 ms MarkObjects: 0.398707 ms  DeleteObjects: 0.025987 ms)
-
-UnloadTime: 1.941560 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 151.
-Total: 18.723507 ms (FindLiveObjects: 0.025987 ms CreateObjectMapping: 0.041033 ms MarkObjects: 0.517019 ms  DeleteObjects: 16.327845 ms)
-
