@@ -32,8 +32,11 @@ public class PlaySound : MonoBehaviour {
 
 		}
 		if(GameLogic.buzzer){
-			AudioListener.volume = 0.999999F;			
-			AudioSource.PlayClipAtPoint(buzzer, new Vector3(5, 1, 2), 0.999999999F);
+			AudioListener.volume = 0.99999F;			
+			AudioSource.PlayClipAtPoint(buzzer, new Vector3(5, 1, 2), 0.05F);
+		}
+		else{
+			AudioListener.volume = 0.99999F;
 		}
 	}
 

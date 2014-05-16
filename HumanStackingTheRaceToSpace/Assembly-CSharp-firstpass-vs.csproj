@@ -59,11 +59,16 @@
      <Compile Include="Assets\Standard Assets\Scripts\NewObj.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\OceanBehaviour.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\PlaySound.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\PointPopupMovement.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\ShapeFactory.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\ShapeRemoval.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\cloudMovement.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\mainmenu.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\quit.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\singleplayer\SCameraMove.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\singleplayer\SDragMove.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\singleplayer\SGameLogic.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\singleplayer\SNewObj.cs" />
      <Compile Include="Assets\Standard Assets\Water (Basic)\Sources\Scripts\WaterSimple.cs" />
      <None Include="Assets\Standard Assets\Projectors\Guidelines.txt" />
      <None Include="Assets\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
