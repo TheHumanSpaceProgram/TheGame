@@ -83,6 +83,7 @@ public class GameLogic : MonoBehaviour {
 	private static int _MinTimeLimit = 15;
 	private static int _StartTime = 30000;
 	private int _TimePrTurn = _StartTime / 1000 ;
+	private static int _WaitTimeLimit = 15;
 	private static int _Time;
 	private static int _WaitTimeCounter;
 
@@ -466,7 +467,7 @@ public class GameLogic : MonoBehaviour {
 
 
 		
-		if(CheckSleeping.sleeping || (_WaitTimeCounter == 15)){
+		if(CheckSleeping.sleeping || (_WaitTimeCounter == _WaitTimeLimit)){
 			_WaitTimeCounter = 0;		
 			_playerTurnCount++;
 
