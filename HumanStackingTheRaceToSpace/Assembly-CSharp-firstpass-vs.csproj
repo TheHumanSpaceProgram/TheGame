@@ -63,6 +63,8 @@
      <Compile Include="Assets\Standard Assets\Scripts\ShapeFactory.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\ShapeRemoval.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\cloudMovement.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\introsound.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\introtext.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\mainmenu.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\quit.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\singleplayer\SCameraMove.cs" />
