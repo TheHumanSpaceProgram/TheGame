@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class quit : MonoBehaviour {
-
+	public bool intro;
 	// Use this for initialization
 	void Start () {
 	
@@ -12,16 +12,10 @@ public class quit : MonoBehaviour {
 	void Update () {
 	
 		if (Input.GetKeyDown ("escape")) {
-			if(GameLogic._Timer != null){
-			GameLogic._Timer.Stop ();
-			}
-			if(GameLogic._WaitTimer != null){
-				GameLogic._WaitTimer.Stop ();
-			}
 			Application.LoadLevel("mainMenu");
 		}
 
-		if (Input.GetKeyDown("p")){
+		if (Input.GetKeyDown("p") && !intro){
 			if(Time.timeScale == 0)
 			{
 				Time.timeScale = 1;
