@@ -6,7 +6,7 @@
       <File FileName="Assets\Standard Assets\Scripts\GameLogic.cs" Line="514" Column="1" />
       <File FileName="Assets\Standard Assets\Scripts\CheckSleeping.cs" Line="37" Column="3" />
       <File FileName="Assets\Standard Assets\Scripts\CameraMovement.cs" Line="23" Column="40" />
-      <File FileName="d:\UnityProjects\TheGame\HumanStackingTheRaceToSpace\Assets\Standard Assets\Scripts\OceanBehaviour.cs" Line="3" Column="1" />
+      <File FileName="d:\UnityProjects\TheGame\HumanStackingTheRaceToSpace\Assets\Standard Assets\Scripts\OceanBehaviour.cs" Line="24" Column="45" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
