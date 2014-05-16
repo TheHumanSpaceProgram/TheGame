@@ -18,7 +18,7 @@ public class mainmenu : MonoBehaviour {
 		{
 			Application.LoadLevel("humanStacking");
 		}
-		if(GUI.Button(new Rect(0,60,buttonWidth,buttonHeight), "Single Player"))
+		if(GUI.Button(new Rect(0,60,buttonWidth,buttonHeight), "Single Player Sandbox mode"))
 		{
 			Application.LoadLevel("singleplayer");
 		}
