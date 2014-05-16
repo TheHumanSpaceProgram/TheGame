@@ -92,6 +92,7 @@ public class GameLogic : MonoBehaviour {
 	public static Player _playerTurn;
 	private static List<Player> _playersList;
 	private int maxPlayers = 2;
+	private int startingPlayer = 0;
 	private static bool gameStarted = false;
 	public static bool gameOver = false;
 	private static bool timeOutCalled = false;
@@ -175,12 +176,21 @@ public class GameLogic : MonoBehaviour {
 		else{
 			CreatePlayers ();
 		}
-		_playerTurn = _playersList [0];
+		if(startingPlayer == 0){
+			MoveAmericanSelection.MoveAway = true;
+			MoveRussianSelection.MoveAway  = false;
+		}
+		else{
+			MoveAmericanSelection.MoveAway = false;
+			MoveRussianSelection.MoveAway = true;
+		}
+
+
+		_playerTurn = _playersList [startingPlayer];
+
 		MoveTexts ();
 		this._TurnCount = 1;
 		_playerTurnCount = 1;
-		MoveAmericanSelection.MoveAway = true;
-		MoveRussianSelection.MoveAway  = false;
 		gameOver = false;
 		gameStarted = true;
 		TXT_END_GAME_BUTTON = "";
@@ -188,6 +198,7 @@ public class GameLogic : MonoBehaviour {
 		var water2 = GameObject.Find("water2");
 		water2.AddComponent("OceanMovement");
 		
+		startingPlayer = (startingPlayer + 1) % maxPlayers;
 		StartTimer ();
 	}
 
