@@ -16,7 +16,7 @@ public class Player {
 	private int TimeUpPenaltyFactor  = 50;
 
 	public Player(){
-		PlayerCurrentScore = 100;
+		PlayerCurrentScore = 750;
 		}
 	public Player(int StartScore){
 		PlayerCurrentScore = StartScore;
