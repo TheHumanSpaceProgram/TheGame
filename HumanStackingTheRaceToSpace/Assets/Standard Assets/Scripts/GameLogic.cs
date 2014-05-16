@@ -449,6 +449,7 @@ public class GameLogic : MonoBehaviour {
 	private static void OnTimedEvent(object source, ElapsedEventArgs e)
 	{
 		_Time++;				
+		print ("OnTimedEvent. _Time: " + _Time);
 	}
 
 	private static void OnWaitTimedEvent(object source, ElapsedEventArgs e)
