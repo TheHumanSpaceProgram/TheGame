@@ -7,12 +7,14 @@ public class SNewObj : MonoBehaviour {
 	
 	//Note to self: DON'T make these two variables static!
 	private bool created = false;
-	private bool commited = false;
+	public bool commited = false;
+	public bool counted = false;
 	
 	public static bool actionTaken = false;
 	
 	public GameObject theObj;
 	public GameObject instance;
+	public GameObject pointPopup;
 	public static GameObject selectedShape;
 	public MoveRussianSelection russianSelect;
 	private PolygonCollider2D polyC;
