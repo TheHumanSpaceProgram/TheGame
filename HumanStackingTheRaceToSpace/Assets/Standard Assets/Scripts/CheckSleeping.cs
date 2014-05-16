@@ -34,6 +34,7 @@ public class CheckSleeping : MonoBehaviour {
 				return false;
 			}
 		}
+
 		return true;
 	}
 

@@ -16,7 +16,7 @@ public class Player {
 	private int TimeUpPenaltyFactor  = 50;
 
 	public Player(){
-		PlayerCurrentScore = 500;
+		PlayerCurrentScore = 100;
 		}
 	public Player(int StartScore){
 		PlayerCurrentScore = StartScore;
@@ -215,7 +215,26 @@ public class GameLogic : MonoBehaviour {
 
 	}
 
+	public void GoToEndScene(){
+		SwapPlayer ();
+		_Timer.Elapsed -= OnTimedEvent;
+		int playersCount = _playersList.Count;
+		int currentPlayer = _playerTurn.PlayerNumber;
+		
 
+		Application.LoadLevel("endScene");
+	}
+
+	private void SwapPlayer(){
+		int playersCount = _playersList.Count;
+		int currentPlayer = _playerTurn.PlayerNumber;
+		
+		if (currentPlayer == (playersCount - 1)) {
+			_playerTurn = _playersList [0];
+		} else {
+			_playerTurn = _playersList [_playerTurn.PlayerNumber + 1];
+		}
+	}
 	//Is called at the start of every turn. Performs setup for the next turn.
 	public Player nextPlayer()
 	{
@@ -225,20 +244,14 @@ public class GameLogic : MonoBehaviour {
 
 		DragMovement.shapePicked = false;
 		NewObj.actionTaken = false;
-		int playersCount = _playersList.Count;
-		int currentPlayer = _playerTurn.PlayerNumber;
+		if (_playerTurn.PlayerCurrentScore <= 0) {
+				GoToEndScene ();		
+		} else {
+			SwapPlayer();
 
-		if (currentPlayer == (playersCount - 1)) 
-		{
-				_playerTurn = _playersList [0];
-		} 
-		else 
-		{
-			_playerTurn = _playersList[_playerTurn.PlayerNumber + 1];
+			MoveTexts ();
+			StartTimer ();
 		}
-
-		MoveTexts();
-		StartTimer ();
 
 		return _playerTurn;
 	}
@@ -483,4 +496,6 @@ public class GameLogic : MonoBehaviour {
 
 		}
 	}
+
+	
 }
