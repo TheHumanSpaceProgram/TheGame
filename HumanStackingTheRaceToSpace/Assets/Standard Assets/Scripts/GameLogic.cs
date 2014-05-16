@@ -80,8 +80,8 @@ public class GameLogic : MonoBehaviour {
 	private static Timer _Timer;
 	private static Timer _WaitTimer;
 
-	private static int _MinTimeLimit = 15;
-	private static int _StartTime = 30000;
+	private static int _MinTimeLimit = 10;
+	private static int _StartTime = 15000;
 	private int _TimePrTurn = _StartTime / 1000 ;
 	private static int _WaitTimeLimit = 15;
 	private static int _Time;
