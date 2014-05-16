@@ -64,7 +64,7 @@ public delegate void OnPlayerChange();
 public class GameLogic : MonoBehaviour {
 
 	private bool alphaVersion = true;
-	private static bool verbose = true;
+	private static bool verbose = false;
 	private static bool scoreVerbose = false;
 
 	public GUIText guiPlayerNameText;
@@ -176,7 +176,7 @@ public class GameLogic : MonoBehaviour {
 		else{
 			CreatePlayers ();
 		}
-		print ("StartingPlayer: " + startingPlayer);
+		
 		if(startingPlayer == 0){
 			MoveAmericanSelection.MoveAway = true;
 			MoveRussianSelection.MoveAway  = false;
