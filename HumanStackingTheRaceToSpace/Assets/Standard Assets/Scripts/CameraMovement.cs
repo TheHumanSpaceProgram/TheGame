@@ -16,7 +16,7 @@ public class CameraMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		float y = (float)Input.mousePosition.y;
-		if(GameLogic.GetGameStarted()){
+		if(GameLogic.GetGameStarted() && !winnerboard.WinnerScreen){
 			if(Input.GetKey("up") || Input.GetKey ("w") || y > camera.pixelHeight - 5){
 				this.transform.Translate(Vector3.up * movementSpeed);
 			}
