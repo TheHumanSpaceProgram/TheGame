@@ -60,6 +60,7 @@
      <Compile Include="Assets\Standard Assets\Scripts\OceanBehaviour.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\PlaySound.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\PointPopupMovement.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\RestartButton.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\ScoreDecreaseMovement.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\ShapeFactory.cs" />
      <Compile Include="Assets\Standard Assets\Scripts\ShapeRemoval.cs" />
