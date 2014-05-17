@@ -19,7 +19,7 @@ public class RestartButton : MonoBehaviour {
 	
 	void OnGUI () {
 		GUI.BeginGroup (new Rect (((Screen.width / 2) - (groupWidth / 2)), ((Screen.height / 2) - (groupHeigth / 2)), groupWidth, groupHeigth));
-		if(GUI.Button(new Rect(0,240,buttonWidth,buttonHeight), "Rematch"))
+		if(GUI.Button(new Rect(0,260,buttonWidth,buttonHeight), "Rematch"))
 		{
 			Application.LoadLevel("humanStacking");
 		}

@@ -15,8 +15,46 @@ Platform assembly: C:\Users\Kristinn\Desktop\Kiddi\version20\TheGame\HumanStacki
 Loading C:\Users\Kristinn\Desktop\Kiddi\version20\TheGame\HumanStackingTheRaceToSpace\XtremeStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
 Platform assembly: C:\Users\Kristinn\Desktop\Kiddi\version20\TheGame\HumanStackingTheRaceToSpace\XtremeStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
 Loading C:\Users\Kristinn\Desktop\Kiddi\version20\TheGame\HumanStackingTheRaceToSpace\XtremeStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
-- Completed reload, in  0.197 seconds
+- Completed reload, in  0.139 seconds
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 Platform assembly: C:\Users\Kristinn\Desktop\Kiddi\version20\TheGame\HumanStackingTheRaceToSpace\XtremeStackingTheRaceToSpace_Data\Managed\System.dll (this message is harmless)
+The referenced script on this Behaviour is missing!
+ 
+(Filename:  Line: 1699)
+
+The referenced script on this Behaviour is missing!
+ 
+(Filename:  Line: 1699)
+
+UnloadTime: 2.935288 ms
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 122.
+Total: 8.974789 ms (FindLiveObjects: 0.038982 ms CreateObjectMapping: 0.038982 ms MarkObjects: 0.193543 ms  DeleteObjects: 6.846499 ms)
+
+UnloadTime: 0.746132 ms
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 468.
+Total: 2.330039 ms (FindLiveObjects: 0.069757 ms CreateObjectMapping: 0.047872 ms MarkObjects: 0.467102 ms  DeleteObjects: 0.029407 ms)
+
+UnloadTime: 2.866215 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 50 unused Assets to reduce memory usage. Loaded Objects now: 230.
+Total: 6.759644 ms (FindLiveObjects: 0.045137 ms CreateObjectMapping: 0.049924 ms MarkObjects: 0.599778 ms  DeleteObjects: 4.344802 ms)
+
+UnloadTime: 1.138005 ms
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 467.
+Total: 2.675407 ms (FindLiveObjects: 0.071125 ms CreateObjectMapping: 0.050608 ms MarkObjects: 0.727667 ms  DeleteObjects: 0.144302 ms)
+
+UnloadTime: 2.221299 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 160.
+Total: 23.350319 ms (FindLiveObjects: 0.027355 ms CreateObjectMapping: 0.045137 ms MarkObjects: 0.692788 ms  DeleteObjects: 20.843149 ms)
+
