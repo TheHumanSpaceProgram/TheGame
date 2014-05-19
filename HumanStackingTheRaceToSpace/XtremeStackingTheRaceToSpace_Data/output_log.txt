@@ -15,7 +15,7 @@ Platform assembly: C:\Users\Kristinn\Desktop\Kiddi\version20\TheGame\HumanStacki
 Loading C:\Users\Kristinn\Desktop\Kiddi\version20\TheGame\HumanStackingTheRaceToSpace\XtremeStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
 Platform assembly: C:\Users\Kristinn\Desktop\Kiddi\version20\TheGame\HumanStackingTheRaceToSpace\XtremeStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
 Loading C:\Users\Kristinn\Desktop\Kiddi\version20\TheGame\HumanStackingTheRaceToSpace\XtremeStackingTheRaceToSpace_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
-- Completed reload, in  0.139 seconds
+- Completed reload, in  1.608 seconds
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -28,33 +28,153 @@ The referenced script on this Behaviour is missing!
  
 (Filename:  Line: 1699)
 
-UnloadTime: 2.935288 ms
+UnloadTime: 2.877157 ms
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
 Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 122.
-Total: 8.974789 ms (FindLiveObjects: 0.038982 ms CreateObjectMapping: 0.038982 ms MarkObjects: 0.193543 ms  DeleteObjects: 6.846499 ms)
+Total: 8.616427 ms (FindLiveObjects: 0.038982 ms CreateObjectMapping: 0.038982 ms MarkObjects: 0.205169 ms  DeleteObjects: 6.471723 ms)
 
-UnloadTime: 0.746132 ms
+UnloadTime: 0.648335 ms
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
 Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 468.
-Total: 2.330039 ms (FindLiveObjects: 0.069757 ms CreateObjectMapping: 0.047872 ms MarkObjects: 0.467102 ms  DeleteObjects: 0.029407 ms)
+Total: 2.100933 ms (FindLiveObjects: 0.073860 ms CreateObjectMapping: 0.044453 ms MarkObjects: 0.445217 ms  DeleteObjects: 0.030775 ms)
 
-UnloadTime: 2.866215 ms
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+One shot audio (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
 
-Unloading 50 unused Assets to reduce memory usage. Loaded Objects now: 230.
-Total: 6.759644 ms (FindLiveObjects: 0.045137 ms CreateObjectMapping: 0.049924 ms MarkObjects: 0.599778 ms  DeleteObjects: 4.344802 ms)
+One shot audio (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
 
-UnloadTime: 1.138005 ms
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+One shot audio (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
 
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 467.
-Total: 2.675407 ms (FindLiveObjects: 0.071125 ms CreateObjectMapping: 0.050608 ms MarkObjects: 0.727667 ms  DeleteObjects: 0.144302 ms)
+One shot audio (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
 
-UnloadTime: 2.221299 ms
+One shot audio (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+One shot audio (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+One shot audio (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+One shot audio (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+One shot audio (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+One shot audio (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+One shot audio (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+P1rectangle(Clone) (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+P1rectangle (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Proto2Circle (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Proto1HalfCircle (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+P2rectangle (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+P2triangle (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Proto2HalfCircle (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+P1pentagon (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+P2pentagon (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Proto2Triangle (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Proto1Circle (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Proto2Rectangle (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+P1circle (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Proto1Rectangle (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Proto2Pentagon (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Proto2Bomb (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+P1triangle (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+P2circle (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+skybox (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Proto1Pentagon (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Proto1Triangle (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Proto1Bomb (UnityEngine.AudioSource)
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+UnloadTime: 2.449037 ms
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
 Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 160.
-Total: 23.350319 ms (FindLiveObjects: 0.027355 ms CreateObjectMapping: 0.045137 ms MarkObjects: 0.692788 ms  DeleteObjects: 20.843149 ms)
+Total: 22.925617 ms (FindLiveObjects: 0.028039 ms CreateObjectMapping: 0.044453 ms MarkObjects: 0.551905 ms  DeleteObjects: 20.611309 ms)
 
