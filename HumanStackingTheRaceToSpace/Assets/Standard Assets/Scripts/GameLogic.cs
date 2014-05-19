@@ -228,7 +228,7 @@ public class GameLogic : MonoBehaviour {
 			print ("        changePlayer");
 		}
 		_TmpObjectPoint = prevObjectPoints;
-
+		stopbuzz ();
 		_Timer.Stop ();
 
 		if(_WaitTimer != null)
@@ -407,6 +407,7 @@ public class GameLogic : MonoBehaviour {
 
 	public void UpdateGuiTXT()
 	{
+		bool playing = false;
 		if(gameStarted){
 			this.guiPlayerNameText.text 	= TXT_PLAYER_NAME 	+ _playerTurn.PlayerName;
 			Player1Score.text 				= TXT_PLAYER_SCORE 	+ _playersList[0].PlayerCurrentScore;
@@ -425,11 +426,13 @@ public class GameLogic : MonoBehaviour {
 
 			}
 
-			if((_TimePrTurn - _Time) == 5 || (_TimePrTurn - _Time) == 3)
+			if((_TimePrTurn - _Time) == 5 || (_TimePrTurn - _Time) == 3 && !playing)
 			{
+				playing = true;
 				buzzer = true;
 			}
 			else{
+				playing = false;
 				buzzer = false;
 			}
 			
@@ -492,8 +495,23 @@ public class GameLogic : MonoBehaviour {
 			}
 		}
 	}
-	
 
+	public static AudioSource[] allSound;
+	public static void stopbuzz()
+	{
+		buzzer = false;
+		allSound = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+
+		foreach (AudioSource Curr in allSound) {
+			print(Curr);
+			if (Curr.transform.name == "One shot audio")
+			{
+				Destroy(Curr);
+			}
+		}
+		buzzer = false;
+		
+	}
 	private static void OnTimedEvent(object source, ElapsedEventArgs e)
 	{
 		_Time++;				

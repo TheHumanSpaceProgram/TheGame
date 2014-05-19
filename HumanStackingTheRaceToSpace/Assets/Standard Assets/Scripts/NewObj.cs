@@ -54,7 +54,6 @@ public class NewObj : MonoBehaviour {
 					print (this.gameObject);
 					print ("Commiting");
 				}
-				GameLogic.buzzer = false;
 				commited = true;
 				GiveRigid();
 				GameLogic.ChangePlayer(this.objectPoints);
