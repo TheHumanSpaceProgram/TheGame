@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class introsound : MonoBehaviour {
-	public AudioClip falling;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -18,7 +18,6 @@ public class introsound : MonoBehaviour {
 				theCollider.gameObject.audio.Play();
 		}
 		if (theCollider.tag.Equals ("Finish")) {
-			print ("finish");
 			Application.LoadLevel("mainMenu");		
 		}
 

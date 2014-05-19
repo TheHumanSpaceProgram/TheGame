@@ -510,8 +510,7 @@ public class GameLogic : MonoBehaviour {
 			}
 		}
 		buzzer = false;
-
-
+		
 	}
 	private static void OnTimedEvent(object source, ElapsedEventArgs e)
 	{
