@@ -3,12 +3,18 @@ Attributions:
 Sound effects
 --------------------------------
 Water splash: https://www.youtube.com/watch?v=AxvzQ386Uao
-
+Sea-waves: https (sound)://www.freesound.org/people/Eelke/sounds/144827/
 
 Music
 --------------------------------
-
+USA Anthem: https://www.youtube.com/watch?v=jAYPN-1Yjt0
+Soviet Anthem: https://www.youtube.com/watch?v=0yDrtNEr_5M
 
 
 Graphics
 --------------------------------
+cloud: http://s.techairlines.com/wp-content/uploads/2011/04/cloud.png
+icelandic flag: https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTkwsDO44NFqIp4gDEp9nnkpfbe4e3jOj0sgXFhnAK_yQu4lKpdAw
+nasa logo (edited): http://upload.wikimedia.org/wikipedia/commons/2/25/Nasa-logo.gif
+plank (edited): http://4vector.com/i/free-vector-wood-plank-clip-art_127808_wood-plank-clip-art/Wood_Plank_clip_art_hight.png
+skybox: http://2.bp.blogspot.com/_KGaQn18jqjI/SdhqAVt-JBI/AAAAAAAAF3Y/1GY9EjuokHY/s1600/picos+de+europa+nevados+al+fondo+y+cielo+azul.jpg
