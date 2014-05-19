@@ -19,10 +19,22 @@ public class quit : MonoBehaviour {
 			if(Time.timeScale == 0)
 			{
 				Time.timeScale = 1;
+				if(GameLogic._Timer != null){
+					GameLogic._Timer.Start();
+				}
+				if(GameLogic._WaitTimer != null){
+					GameLogic._WaitTimer.Start();
+				}
 			}
 			else
 			{
 				Time.timeScale = 0;
+				if(GameLogic._Timer != null){
+					GameLogic._Timer.Stop();
+				}
+				if(GameLogic._WaitTimer != null){
+					GameLogic._WaitTimer.Stop();
+				}
 			}
 
 		}
